@@ -1,0 +1,35 @@
+name: Sync Testiny data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *' # каждые 6 часов
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Sync Testiny projects/tests to docs/data
+        run: node scripts/sync-testiny.js
+        env:
+          TESTINY_API_KEY: ${{ secrets.TESTINY_API_KEY }}
+
+      - name: Commit changes
+        run: |
+          if git diff --quiet docs/data; then
+            echo "No changes in docs/data"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/data
+          git commit -m "chore: sync Testiny data"
+          git push
