@@ -138,6 +138,12 @@ select:focus {
     background: rgba(255, 255, 255, 0.08);
 }
 
+input[type='checkbox'] {
+    width: auto;
+    height: auto;
+    padding: 0;
+}
+
 .actions {
     display: flex;
     align-items: center;
