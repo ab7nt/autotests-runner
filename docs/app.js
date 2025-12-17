@@ -195,7 +195,7 @@ function getFolderParentId(folder) {
 }
 
 function getFolderName(folder) {
-    return folder.name || folder.title || folder.folder_name || '??? ?????';
+    return folder.name || folder.title || folder.folder_name || 'Без папки';
 }
 
 function getTestFolderId(test) {
@@ -413,7 +413,7 @@ function renderRootTests(tests) {
 
     const title = document.createElement("span");
     title.className = "folder__title";
-    title.textContent = "??? ?????";
+    title.textContent = "Без папки";
 
     const meta = document.createElement("span");
     meta.className = "folder__meta";
@@ -486,7 +486,7 @@ async function loadProjects() {
 
 async function loadTests() {
     if (!state.projectId) {
-        showToast('?? ?????? ??????.');
+        showToast('Не выбран проект.');
         return;
     }
     setLoading(els.btnLoadTests, true, "...");
@@ -503,7 +503,7 @@ async function loadTests() {
             .map((f) => f.id);
         state.openFolders = new Set(rootFolderIds);
         renderTests();
-        showToast('????? ?????????');
+        showToast('Тесты загружены');
     } catch (e) {
         console.error(e);
         showToast(e.message);
