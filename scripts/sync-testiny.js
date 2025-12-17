@@ -62,6 +62,51 @@ async function fetchTests(projectId) {
     return { data: acc, totalCount: total };
 }
 
+async function fetchTestFolders(projectId) {
+    let offset = 0;
+    let total = 0;
+    const acc = [];
+    const limit = 2000;
+
+    while (true) {
+        const res = await post('/testcase-folder/find', {
+            pagination: { offset, limit },
+            filter: { project_id: Number(projectId) },
+            omitLargeValues: true,
+        });
+
+        acc.push(...(res.data || []));
+        total = res.meta?.totalCount ?? acc.length;
+        offset += res.data?.length ?? 0;
+
+        if (offset >= total || !res.data?.length) break;
+    }
+
+    return { data: acc, totalCount: total };
+}
+
+async function fetchTestFolderMappings(projectId) {
+    let offset = 0;
+    let total = 0;
+    const acc = [];
+    const limit = 2000;
+
+    while (true) {
+        const res = await post('/testcase-folder-testcase-mapping/find', {
+            pagination: { offset, limit },
+            filter: { project_id: Number(projectId) },
+        });
+
+        acc.push(...(res.data || []));
+        total = res.meta?.totalCount ?? acc.length;
+        offset += res.data?.length ?? 0;
+
+        if (offset >= total || !res.data?.length) break;
+    }
+
+    return { data: acc, totalCount: total };
+}
+
 async function main() {
     console.log('Syncing projects...');
     const projects = await fetchProjects();
@@ -80,12 +125,16 @@ async function main() {
     for (const project of projects.data || []) {
         console.log(`Syncing tests for project #${project.id} "${project.name}"...`);
         const tests = await fetchTests(project.id);
+        const folders = await fetchTestFolders(project.id);
+        const mappings = await fetchTestFolderMappings(project.id);
         const testsPayload = {
             projectId: project.id,
             projectName: project.name,
             generatedAt: new Date().toISOString(),
             totalCount: tests.totalCount,
             data: tests.data,
+            folders: folders.data,
+            folderMappings: mappings.data,
         };
         fs.writeFileSync(path.join(outDir, `tests-${project.id}.json`), JSON.stringify(testsPayload, null, 2));
         console.log(`Saved tests-${project.id}.json (${tests.totalCount})`);

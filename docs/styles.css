@@ -203,30 +203,101 @@ button.chip {
     gap: 8px;
 }
 
-.test-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+.test-tree {
+    display: flex;
+    flex-direction: column;
     gap: 10px;
 }
 
-.test {
+details.folder,
+.folder {
     border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 12px;
     background: rgba(255, 255, 255, 0.02);
+    overflow: hidden;
+}
+
+details.folder + details.folder,
+.folder + .folder {
+    margin-top: 8px;
+}
+
+details.folder > summary {
+    list-style: none;
+}
+
+details.folder > summary::-webkit-details-marker {
+    display: none;
+}
+
+.folder__header {
+    display: grid;
+    grid-template-columns: auto auto 1fr auto;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    cursor: pointer;
+}
+
+.folder__header input[type='checkbox'] {
+    margin: 0;
+}
+
+.folder__caret {
+    color: var(--muted);
+    width: 14px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.folder__title {
+    font-weight: 600;
+}
+
+.folder__meta {
+    color: var(--muted);
+    font-size: 12px;
+    justify-self: end;
+}
+
+.folder__body {
+    padding: 0 12px 12px 36px;
     display: flex;
     flex-direction: column;
     gap: 8px;
-    transition: border-color 0.15s ease, transform 0.15s ease;
 }
 
-.test:hover {
-    border-color: var(--accent);
-    transform: translateY(-1px);
+.folder--root {
+    border-style: dashed;
 }
 
-.test__title {
-    margin: 0;
+.folder__header--root {
+    cursor: default;
+    grid-template-columns: auto 1fr auto;
+}
+
+.folder__body--open {
+    padding-left: 12px;
+}
+
+.test-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 10px;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.test-row__main {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.test-row__title {
     font-weight: 600;
 }
 
@@ -234,11 +305,12 @@ button.chip {
     color: var(--muted);
 }
 
-.test__footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 6px;
+.test-row.disabled {
+    opacity: 0.6;
+}
+
+.test-row__actions button {
+    min-width: 120px;
 }
 
 .pill {
@@ -264,15 +336,6 @@ button.chip {
 .pill.neutral {
     background: rgba(255, 255, 255, 0.08);
     color: var(--muted);
-}
-
-.test.disabled {
-    opacity: 0.6;
-    pointer-events: none;
-}
-
-.test button {
-    width: 100%;
 }
 
 .runs {

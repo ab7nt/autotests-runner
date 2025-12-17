@@ -41,6 +41,12 @@ const state = {
     tests: [],
     totalTests: 0,
     runs: new Map(),
+    folders: [],
+    folderMappings: [],
+    testFolderMap: new Map(),
+    openFolders: new Set(),
+    selectedTests: new Set(),
+    searchQuery: '',
 };
 
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
@@ -163,12 +169,270 @@ function updateTestsMeta(filteredCount) {
     const autoCount = state.tests.filter(isAutomated).length;
     const total = state.totalTests || state.tests.length;
     const visible = filteredCount ?? state.tests.length;
-    els.testsMeta.textContent = `Показано ${visible} • Авто ${autoCount}/${total}`;
+    els.testsMeta.textContent = `Tests ${visible} / automated ${autoCount}/${total}`;
 }
 
+function buildTestFolderMap() {
+    const map = new Map();
+    (state.folderMappings || []).forEach((m) => {
+        const testId = m.testcase_id ?? m.testcaseId ?? m.test_id ?? m.testcaseId;
+        const folderId = m.testcase_folder_id ?? m.testcaseFolderId ?? m.folder_id ?? m.folderId;
+        if (testId) {
+            map.set(testId, folderId ?? null);
+        }
+    });
+    return map;
+}
+
+function getFolderParentId(folder) {
+    return (
+        folder.testcase_folder_parent_id ??
+        folder.parent_id ??
+        folder.parentId ??
+        folder.folder_parent_id ??
+        null
+    );
+}
+
+function getFolderName(folder) {
+    return folder.name || folder.title || folder.folder_name || '??? ?????';
+}
+
+function getTestFolderId(test) {
+    return (
+        test.testcase_folder_id ??
+        test.folder_id ??
+        test.testcaseFolderId ??
+        state.testFolderMap.get(test.id) ??
+        null
+    );
+}
+
+function buildFolderTree(tests) {
+    const folders = (state.folders || []).map((f) => ({
+        id: f.id,
+        name: getFolderName(f),
+        parentId: getFolderParentId(f),
+        children: [],
+        tests: [],
+    }));
+
+    const foldersById = new Map();
+    folders.forEach((f) => foldersById.set(f.id, f));
+
+    folders.forEach((folder) => {
+        const parent = folder.parentId ? foldersById.get(folder.parentId) : null;
+        if (parent) {
+            parent.children.push(folder);
+        }
+    });
+
+    const roots = folders.filter((f) => !f.parentId || !foldersById.has(f.parentId));
+    const rootTests = [];
+
+    tests.forEach((test) => {
+        const folderId = getTestFolderId(test);
+        if (folderId && foldersById.has(folderId)) {
+            foldersById.get(folderId).tests.push(test);
+        } else {
+            rootTests.push(test);
+        }
+    });
+
+    function prune(folder) {
+        folder.children = folder.children.map(prune).filter(Boolean);
+        if (folder.tests.length || folder.children.length) {
+            return folder;
+        }
+        return null;
+    }
+
+    const prunedRoots = roots.map(prune).filter(Boolean);
+    return { roots: prunedRoots, rootTests };
+}
+
+function collectFolderTests(folder, acc = []) {
+    acc.push(...folder.tests);
+    folder.children.forEach((child) => collectFolderTests(child, acc));
+    return acc;
+}
+
+function folderSelectionState(folder, testsCache) {
+    const tests = testsCache || collectFolderTests(folder, []);
+    if (!tests.length) return "none";
+    const selected = tests.filter((t) => state.selectedTests.has(t.id)).length;
+    if (selected === 0) return "none";
+    if (selected === tests.length) return "all";
+    return "partial";
+}
+
+function renderTestRow(test) {
+    const automated = isAutomated(test);
+    const row = document.createElement("div");
+    row.className = `test-row ${automated ? "" : "disabled"}`;
+
+    const left = document.createElement("div");
+    left.className = "test-row__main";
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.checked = state.selectedTests.has(test.id);
+    checkbox.addEventListener("change", (e) => {
+        if (e.target.checked) {
+            state.selectedTests.add(test.id);
+        } else {
+            state.selectedTests.delete(test.id);
+        }
+        renderTests();
+    });
+
+    const title = document.createElement("span");
+    title.className = "test-row__title";
+    title.textContent = test.title;
+
+    const badge = document.createElement("span");
+    badge.className = `pill ${automated ? "ok" : "neutral"}`;
+    badge.textContent = automated ? "automated" : "manual";
+
+    left.append(checkbox, title, badge);
+
+    const action = document.createElement("div");
+    action.className = "test-row__actions";
+
+    const btn = document.createElement("button");
+    btn.textContent = automated ? "Run" : "Not automated";
+    btn.className = automated ? "primary" : "ghost";
+    btn.disabled = !automated;
+    btn.addEventListener("click", () => startRun(test));
+
+    action.appendChild(btn);
+
+    row.append(left, action);
+    return row;
+}
+
+function renderFolderNode(folder) {
+    const details = document.createElement("details");
+    details.className = "folder";
+    const forceOpen = Boolean(state.searchQuery);
+    const isOpen = forceOpen || state.openFolders.has(folder.id);
+    details.open = isOpen;
+
+    const summary = document.createElement("summary");
+    summary.className = "folder__header";
+
+    const folderTests = collectFolderTests(folder, []);
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    const selection = folderSelectionState(folder, folderTests);
+    checkbox.checked = selection === "all";
+    checkbox.indeterminate = selection === "partial";
+    checkbox.addEventListener("click", (e) => e.stopPropagation());
+    checkbox.addEventListener("change", (e) => {
+        folderTests.forEach((t) => {
+            if (e.target.checked) {
+                state.selectedTests.add(t.id);
+            } else {
+                state.selectedTests.delete(t.id);
+            }
+        });
+        renderTests();
+    });
+
+    const caret = document.createElement("span");
+    caret.className = "folder__caret";
+    caret.textContent = isOpen ? "?" : "?";
+
+    const title = document.createElement("span");
+    title.className = "folder__title";
+    title.textContent = folder.name;
+
+    const meta = document.createElement("span");
+    meta.className = "folder__meta";
+    meta.textContent = `${folderTests.length} items`;
+
+    summary.append(checkbox, caret, title, meta);
+    summary.addEventListener("click", () => {
+        if (forceOpen) return;
+        setTimeout(() => {
+            caret.textContent = details.open ? "?" : "?";
+        }, 0);
+    });
+    details.appendChild(summary);
+
+    const body = document.createElement("div");
+    body.className = "folder__body";
+
+    folder.tests.forEach((test) => body.appendChild(renderTestRow(test)));
+    folder.children.forEach((child) => body.appendChild(renderFolderNode(child)));
+
+    details.appendChild(body);
+
+    details.addEventListener("toggle", () => {
+        if (forceOpen) {
+            details.open = true;
+            caret.textContent = "?";
+            return;
+        }
+        if (details.open) {
+            state.openFolders.add(folder.id);
+        } else {
+            state.openFolders.delete(folder.id);
+        }
+        caret.textContent = details.open ? "?" : "?";
+    });
+
+    return details;
+}
+
+
+function renderRootTests(tests) {
+    if (!tests.length) return null;
+    const block = document.createElement("div");
+    block.className = "folder folder--root";
+
+    const header = document.createElement("div");
+    header.className = "folder__header folder__header--root";
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    const selected = tests.filter((t) => state.selectedTests.has(t.id)).length;
+    checkbox.checked = selected > 0 && selected === tests.length;
+    checkbox.indeterminate = selected > 0 && selected < tests.length;
+    checkbox.addEventListener("change", (e) => {
+        tests.forEach((t) => {
+            if (e.target.checked) {
+                state.selectedTests.add(t.id);
+            } else {
+                state.selectedTests.delete(t.id);
+            }
+        });
+        renderTests();
+    });
+
+    const title = document.createElement("span");
+    title.className = "folder__title";
+    title.textContent = "??? ?????";
+
+    const meta = document.createElement("span");
+    meta.className = "folder__meta";
+    meta.textContent = `${tests.length} items`;
+
+    header.append(checkbox, title, meta);
+    block.appendChild(header);
+
+    const body = document.createElement("div");
+    body.className = "folder__body folder__body--open";
+    tests.forEach((t) => body.appendChild(renderTestRow(t)));
+
+    block.appendChild(body);
+    return block;
+}
 function renderTests() {
     const query = els.search.value.trim().toLowerCase();
-    els.testsContainer.innerHTML = '';
+    state.searchQuery = query;
+    els.testsContainer.innerHTML = "";
     let items = state.tests;
 
     if (query) {
@@ -176,38 +440,20 @@ function renderTests() {
     }
 
     if (!items.length) {
-        els.testsEmpty.style.display = 'block';
+        els.testsEmpty.style.display = "block";
         updateTestsMeta(0);
         return;
     }
-    els.testsEmpty.style.display = 'none';
+    els.testsEmpty.style.display = "none";
 
-    items.forEach((test) => {
-        const automated = isAutomated(test);
-        const card = document.createElement('div');
-        card.className = `test ${automated ? '' : 'disabled'}`;
+    const { roots, rootTests } = buildFolderTree(items);
+    const fragment = document.createDocumentFragment();
 
-        const title = document.createElement('p');
-        title.className = `test__title ${automated ? '' : 'muted'}`;
-        title.textContent = test.title;
+    const rootBlock = renderRootTests(rootTests);
+    if (rootBlock) fragment.appendChild(rootBlock);
+    roots.forEach((folder) => fragment.appendChild(renderFolderNode(folder)));
 
-        const footer = document.createElement('div');
-        footer.className = 'test__footer';
-
-        const badge = document.createElement('span');
-        badge.className = `pill ${automated ? 'ok' : 'neutral'}`;
-        badge.textContent = automated ? 'automated' : 'muted';
-
-        const btn = document.createElement('button');
-        btn.textContent = automated ? 'Запустить' : 'Нет автотеста';
-        btn.className = automated ? 'primary' : 'ghost';
-        btn.disabled = !automated;
-        btn.addEventListener('click', () => startRun(test));
-
-        footer.append(badge, btn);
-        card.append(title, footer);
-        els.testsContainer.appendChild(card);
-    });
+    els.testsContainer.appendChild(fragment);
 
     updateTestsMeta(items.length);
 }
@@ -240,16 +486,24 @@ async function loadProjects() {
 
 async function loadTests() {
     if (!state.projectId) {
-        showToast('Выберите проект.');
+        showToast('?? ?????? ??????.');
         return;
     }
-    setLoading(els.btnLoadTests, true, '...');
+    setLoading(els.btnLoadTests, true, "...");
     try {
         const cached = await fetchCacheJson(`${DATA_BASE}/tests-${state.projectId}.json`);
         state.tests = cached?.data || [];
         state.totalTests = cached?.totalCount || state.tests.length;
+        state.folders = cached?.folders || [];
+        state.folderMappings = cached?.folderMappings || [];
+        state.testFolderMap = buildTestFolderMap();
+        state.selectedTests = new Set();
+        const rootFolderIds = (state.folders || [])
+            .filter((f) => !getFolderParentId(f))
+            .map((f) => f.id);
+        state.openFolders = new Set(rootFolderIds);
         renderTests();
-        showToast('Тесты из кеша');
+        showToast('????? ?????????');
     } catch (e) {
         console.error(e);
         showToast(e.message);
