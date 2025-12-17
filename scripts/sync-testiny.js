@@ -126,7 +126,12 @@ async function main() {
         console.log(`Syncing tests for project #${project.id} "${project.name}"...`);
         const tests = await fetchTests(project.id);
         const folders = await fetchTestFolders(project.id);
-        const mappings = await fetchTestFolderMappings(project.id);
+        let mappings = { data: [], totalCount: 0 };
+        try {
+            mappings = await fetchTestFolderMappings(project.id);
+        } catch (err) {
+            console.warn(`Failed to fetch folder mappings for project #${project.id}: ${err.message}`);
+        }
         const testsPayload = {
             projectId: project.id,
             projectName: project.name,
