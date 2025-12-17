@@ -1,4 +1,4 @@
-const API_BASE = 'https://app.testiny.io/api/v1';
+const DATA_BASE = './data';
 const STORAGE_KEY = 'testiny-gh-launcher-v1';
 const DEFAULTS = {
     repo: 'ab7nt/HelloPrintAutotests',
@@ -8,7 +8,6 @@ const DEFAULTS = {
 };
 
 const els = {
-    testinyKey: document.getElementById('testiny-key'),
     ghToken: document.getElementById('gh-token'),
     repo: document.getElementById('repo'),
     branch: document.getElementById('branch'),
@@ -27,12 +26,10 @@ const els = {
     search: document.getElementById('search'),
     testsMeta: document.getElementById('tests-meta'),
     btnClearRuns: document.getElementById('btn-clear-runs'),
-    toggleTestiny: document.getElementById('toggle-testiny-visibility'),
     toggleGh: document.getElementById('toggle-gh-visibility'),
 };
 
 const state = {
-    testinyKey: '',
     ghToken: '',
     repo: DEFAULTS.repo,
     branch: DEFAULTS.branch,
@@ -69,7 +66,6 @@ function persistState() {
     };
 
     if (state.remember) {
-        payload.testinyKey = state.testinyKey;
         payload.ghToken = state.ghToken;
     }
 
@@ -77,7 +73,6 @@ function persistState() {
 }
 
 function hydrateForm() {
-    els.testinyKey.value = state.testinyKey;
     els.ghToken.value = state.ghToken;
     els.repo.value = state.repo;
     els.branch.value = state.branch;
@@ -108,7 +103,6 @@ function togglePassword(input, btn) {
 }
 
 function syncStateFromInputs() {
-    state.testinyKey = els.testinyKey.value.trim();
     state.ghToken = els.ghToken.value.trim();
     state.repo = els.repo.value.trim() || DEFAULTS.repo;
     state.branch = els.branch.value.trim() || DEFAULTS.branch;
@@ -118,28 +112,8 @@ function syncStateFromInputs() {
 }
 
 function requireTokens() {
-    if (!state.testinyKey) throw new Error('Добавьте Testiny API key.');
     if (!state.ghToken) throw new Error('Добавьте GitHub token.');
     if (!state.repo) throw new Error('Укажите репозиторий owner/repo.');
-}
-
-async function testinyRequest(path, body) {
-    if (!state.testinyKey) throw new Error('Сначала введите Testiny API key.');
-    const res = await fetch(`${API_BASE}${path}`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-Api-Key': state.testinyKey,
-        },
-        body: JSON.stringify(body),
-    });
-
-    if (!res.ok) {
-        const text = await res.text();
-        throw new Error(`Testiny ${res.status}: ${text}`);
-    }
-
-    return res.json();
 }
 
 async function githubRequest(path, { method = 'GET', body } = {}) {
@@ -243,20 +217,19 @@ function isAutomated(test) {
     return val.includes('automated') || val === 'auto';
 }
 
+async function fetchCacheJson(url) {
+    const res = await fetch(url, { cache: 'no-store' });
+    if (!res.ok) throw new Error(`Не найден кеш ${url}`);
+    return res.json();
+}
+
 async function loadProjects() {
-    syncStateFromInputs();
-    setLoading(els.btnLoadProjects, true, '...'); // loading state
+    setLoading(els.btnLoadProjects, true, '...');
     try {
-        const body = {
-            pagination: { limit: 200 },
-            order: [{ col: 'name', dir: 'asc' }],
-            includeDeleted: false,
-            includeTotalCount: true,
-        };
-        const data = await testinyRequest('/project/find', body);
-        state.projects = data.data || [];
+        const cached = await fetchCacheJson(`${DATA_BASE}/projects.json`);
+        state.projects = cached?.data || [];
         renderProjects();
-        showToast('Проекты обновлены');
+        showToast('Проекты из кеша');
     } catch (e) {
         console.error(e);
         showToast(e.message);
@@ -266,30 +239,17 @@ async function loadProjects() {
 }
 
 async function loadTests() {
-    syncStateFromInputs();
     if (!state.projectId) {
         showToast('Выберите проект.');
         return;
     }
     setLoading(els.btnLoadTests, true, '...');
     try {
-        const body = {
-            filter: { project_id: Number(state.projectId) },
-            pagination: { limit: 500 },
-            order: [{ col: 'title', dir: 'asc' }],
-            includeDeleted: false,
-            includeTotalCount: true,
-        };
-
-        const data = await testinyRequest('/testcase/find', body);
-        state.tests = data.data || [];
-        state.totalTests = data.meta?.totalCount || state.tests.length;
+        const cached = await fetchCacheJson(`${DATA_BASE}/tests-${state.projectId}.json`);
+        state.tests = cached?.data || [];
+        state.totalTests = cached?.totalCount || state.tests.length;
         renderTests();
-        if (state.totalTests > state.tests.length) {
-            showToast(`Показаны первые ${state.tests.length} из ${state.totalTests}`);
-        } else {
-            showToast('Тесты загружены');
-        }
+        showToast('Тесты из кеша');
     } catch (e) {
         console.error(e);
         showToast(e.message);
@@ -466,7 +426,6 @@ function bindEvents() {
     els.search.addEventListener('input', renderTests);
     els.btnClearRuns.addEventListener('click', clearRuns);
 
-    els.toggleTestiny.addEventListener('click', () => togglePassword(els.testinyKey, els.toggleTestiny));
     els.toggleGh.addEventListener('click', () => togglePassword(els.ghToken, els.toggleGh));
 }
 
