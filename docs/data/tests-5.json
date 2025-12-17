@@ -1,7 +1,7 @@
 {
   "projectId": 5,
   "projectName": "HelloPrint API",
-  "generatedAt": "2025-12-17T22:09:16.350Z",
+  "generatedAt": "2025-12-17T23:07:03.564Z",
   "totalCount": 55,
   "data": [
     {
@@ -1379,5 +1379,143 @@
       "testcase_type": "Automated",
       "cf__runautotests": null
     }
-  ]
+  ],
+  "folders": [
+    {
+      "id": 835,
+      "title": "API checklist",
+      "sort_index": 0,
+      "created_at": "2025-12-16T12:38:53.104Z",
+      "created_by": 23476,
+      "modified_at": "2025-12-16T12:38:53.104Z",
+      "modified_by": 23476,
+      "deleted_at": null,
+      "deleted_by": null,
+      "_etag": "1snd1fdsdqcv46ng",
+      "project_id": 5,
+      "testcase_folder_parent_id": 0,
+      "description": ""
+    },
+    {
+      "id": 836,
+      "title": "Контрагенты",
+      "sort_index": 0,
+      "created_at": "2025-12-16T12:38:53.104Z",
+      "created_by": 23476,
+      "modified_at": "2025-12-16T12:38:53.120Z",
+      "modified_by": 23476,
+      "deleted_at": null,
+      "deleted_by": null,
+      "_etag": "qq6dff311cqdxsgs",
+      "project_id": 5,
+      "testcase_folder_parent_id": 835,
+      "description": ""
+    },
+    {
+      "id": 837,
+      "title": "Заказы",
+      "sort_index": 0,
+      "created_at": "2025-12-16T12:38:53.104Z",
+      "created_by": 23476,
+      "modified_at": "2025-12-16T12:38:53.120Z",
+      "modified_by": 23476,
+      "deleted_at": null,
+      "deleted_by": null,
+      "_etag": "5jnyrzctzdndh58c",
+      "project_id": 5,
+      "testcase_folder_parent_id": 835,
+      "description": ""
+    },
+    {
+      "id": 838,
+      "title": "Система лояльности",
+      "sort_index": 0,
+      "created_at": "2025-12-16T12:38:53.104Z",
+      "created_by": 23476,
+      "modified_at": "2025-12-16T12:38:53.120Z",
+      "modified_by": 23476,
+      "deleted_at": null,
+      "deleted_by": null,
+      "_etag": "j2xzethg51j3gft3",
+      "project_id": 5,
+      "testcase_folder_parent_id": 835,
+      "description": ""
+    },
+    {
+      "id": 839,
+      "title": "Документы",
+      "sort_index": 0,
+      "created_at": "2025-12-16T12:38:53.104Z",
+      "created_by": 23476,
+      "modified_at": "2025-12-16T12:38:53.120Z",
+      "modified_by": 23476,
+      "deleted_at": null,
+      "deleted_by": null,
+      "_etag": "ypy9mce5g8ps97rj",
+      "project_id": 5,
+      "testcase_folder_parent_id": 835,
+      "description": ""
+    },
+    {
+      "id": 840,
+      "title": "Реестр заказов",
+      "sort_index": 0,
+      "created_at": "2025-12-16T12:38:53.104Z",
+      "created_by": 23476,
+      "modified_at": "2025-12-16T12:38:53.104Z",
+      "modified_by": 23476,
+      "deleted_at": null,
+      "deleted_by": null,
+      "_etag": "n3h9kd9r18xrd92e",
+      "project_id": 5,
+      "testcase_folder_parent_id": 0,
+      "description": ""
+    },
+    {
+      "id": 841,
+      "title": "Создание контрагента",
+      "sort_index": 0,
+      "created_at": "2025-12-16T12:38:53.104Z",
+      "created_by": 23476,
+      "modified_at": "2025-12-16T12:38:53.104Z",
+      "modified_by": 23476,
+      "deleted_at": null,
+      "deleted_by": null,
+      "_etag": "bsce6rrq2ad1837h",
+      "project_id": 5,
+      "testcase_folder_parent_id": 0,
+      "description": ""
+    },
+    {
+      "id": 842,
+      "title": "Проверка создания заказа",
+      "sort_index": 0,
+      "created_at": "2025-12-16T12:38:53.104Z",
+      "created_by": 23476,
+      "modified_at": "2025-12-16T12:38:53.104Z",
+      "modified_by": 23476,
+      "deleted_at": null,
+      "deleted_by": null,
+      "_etag": "yfp11xf0zgryat3c",
+      "project_id": 5,
+      "testcase_folder_parent_id": 0,
+      "description": ""
+    },
+    {
+      "id": 843,
+      "title": "Проверка создания контрагента",
+      "sort_index": 0,
+      "created_at": "2025-12-16T12:38:53.104Z",
+      "created_by": 23476,
+      "modified_at": "2025-12-16T12:38:53.104Z",
+      "modified_by": 23476,
+      "deleted_at": null,
+      "deleted_by": null,
+      "_etag": "n4qrq6qd9nfc8lj9",
+      "project_id": 5,
+      "testcase_folder_parent_id": 0,
+      "description": ""
+    }
+  ],
+  "folderMappings": []
 }
