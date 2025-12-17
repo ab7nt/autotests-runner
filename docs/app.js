@@ -1,4 +1,4 @@
-const DATA_BASE = './data';
+const DATA_BASE = 'data';
 const STORAGE_KEY = 'testiny-gh-launcher-v1';
 const DEFAULTS = {
     repo: 'ab7nt/HelloPrintAutotests',
@@ -219,7 +219,7 @@ function isAutomated(test) {
 
 async function fetchCacheJson(url) {
     const res = await fetch(url, { cache: 'no-store' });
-    if (!res.ok) throw new Error(`Не найден кеш ${url}`);
+    if (!res.ok) throw new Error(`Не найден кеш ${url}. Запустите workflow Sync Testiny data.`);
     return res.json();
 }
 
