@@ -1,109 +1,115 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Testiny → GitHub Actions</title>
-    <link rel="stylesheet" href="./styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
-</head>
-<body>
-    <div class="page">
-        <header class="hero">
-            <div>
-                <p class="eyebrow">Live Testiny launcher</p>
-                <h1>Запускай Playwright по названию теста</h1>
-                <p class="sub">Выбирай проект в Testiny, кликай автоматизированные тесты, следи за статусом GitHub Actions без перезагрузки.</p>
-            </div>
-            <div class="badge">beta</div>
-        </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Testiny → GitHub Actions</title>
+        <link rel="stylesheet" href="./styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <div class="page">
+            <header class="hero">
+                <div>
+                    <p class="eyebrow">Live Testiny launcher</p>
+                    <h1>Запускай Playwright по названию теста</h1>
+                    <p class="sub">
+                        Выбирай проект в Testiny, кликай автоматизированные тесты, следи за статусом GitHub Actions без
+                        перезагрузки.
+                    </p>
+                </div>
+                <div class="badge">beta</div>
+            </header>
 
-        <section class="grid two">
-            <div class="card">
-                <div class="card__header">
-                    <h2>Подключения</h2>
-                    <button class="ghost" id="btn-save">Сохранить</button>
+            <section class="grid two">
+                <div class="card">
+                    <div class="card__header">
+                        <h2>Подключения</h2>
+                        <button class="chip" id="btn-save">Сохранить</button>
+                    </div>
+                    <div class="field">
+                        <label for="testiny-key">Testiny API key</label>
+                        <div class="input-wrap">
+                            <input id="testiny-key" type="password" placeholder="X-Api-Key" autocomplete="off" />
+                            <button class="chip ghost" id="toggle-testiny-visibility">Показать</button>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="gh-token">GitHub token (repo / workflow)</label>
+                        <div class="input-wrap">
+                            <input id="gh-token" type="password" placeholder="ghp_xxx" autocomplete="off" />
+                            <button class="chip ghost" id="toggle-gh-visibility">Показать</button>
+                        </div>
+                        <p class="hint">Нужны права repo + workflow. Токены хранятся только в браузере.</p>
+                    </div>
+                    <div class="field inline">
+                        <div>
+                            <label for="repo">Репозиторий</label>
+                            <input id="repo" type="text" placeholder="owner/repo" />
+                        </div>
+                        <div>
+                            <label for="branch">Ветка</label>
+                            <input id="branch" type="text" placeholder="main" />
+                        </div>
+                        <div>
+                            <label for="workflow">Workflow файл</label>
+                            <input id="workflow" type="text" placeholder="testiny-run.yml" />
+                        </div>
+                        <div>
+                            <label for="environment">ENVIRONMENT</label>
+                            <input id="environment" type="text" placeholder="staging" />
+                        </div>
+                    </div>
+                    <label class="checkbox">
+                        <input id="remember" type="checkbox" />
+                        <span>Запомнить токены в этом браузере</span>
+                    </label>
                 </div>
-                <div class="field">
-                    <label for="testiny-key">Testiny API key</label>
-                    <div class="input-wrap">
-                        <input id="testiny-key" type="password" placeholder="X-Api-Key" autocomplete="off" />
-                        <button class="chip ghost" id="toggle-testiny-visibility">Показать</button>
-                    </div>
-                </div>
-                <div class="field">
-                    <label for="gh-token">GitHub token (repo / workflow)</label>
-                    <div class="input-wrap">
-                        <input id="gh-token" type="password" placeholder="ghp_xxx" autocomplete="off" />
-                        <button class="chip ghost" id="toggle-gh-visibility">Показать</button>
-                    </div>
-                    <p class="hint">Нужны права repo + workflow. Токены хранятся только в браузере.</p>
-                </div>
-                <div class="field inline">
-                    <div>
-                        <label for="repo">Репозиторий</label>
-                        <input id="repo" type="text" placeholder="owner/repo" />
-                    </div>
-                    <div>
-                        <label for="branch">Ветка</label>
-                        <input id="branch" type="text" placeholder="main" />
-                    </div>
-                    <div>
-                        <label for="workflow">Workflow файл</label>
-                        <input id="workflow" type="text" placeholder="testiny-run.yml" />
-                    </div>
-                    <div>
-                        <label for="environment">ENVIRONMENT</label>
-                        <input id="environment" type="text" placeholder="staging" />
-                    </div>
-                </div>
-                <label class="checkbox">
-                    <input id="remember" type="checkbox" />
-                    <span>Запомнить токены в этом браузере</span>
-                </label>
-            </div>
 
-            <div class="card">
+                <div class="card">
+                    <div class="card__header">
+                        <h2>Проекты Testiny</h2>
+                        <div class="actions">
+                            <button class="chip" id="btn-load-projects">Обновить проекты</button>
+                            <button class="primary" id="btn-load-tests">Загрузить тесты</button>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="project-select">Проект</label>
+                        <select id="project-select"></select>
+                    </div>
+                    <p class="hint">В списке тестов можно запустить только automated. Остальные будут заблокированы.</p>
+                </div>
+            </section>
+
+            <section class="card">
                 <div class="card__header">
-                    <h2>Проекты Testiny</h2>
+                    <h2>Тесты</h2>
                     <div class="actions">
-                        <button class="ghost" id="btn-load-projects">Обновить проекты</button>
-                        <button class="primary" id="btn-load-tests">Загрузить тесты</button>
+                        <input id="search" type="search" placeholder="Поиск по названию" />
+                        <span class="chip" id="tests-meta">—</span>
                     </div>
                 </div>
-                <div class="field">
-                    <label for="project-select">Проект</label>
-                    <select id="project-select"></select>
+                <div id="tests" class="test-grid"></div>
+                <div class="empty" id="tests-empty">Загрузите тесты из проекта Testiny.</div>
+            </section>
+
+            <section class="card">
+                <div class="card__header">
+                    <h2>Запуски GitHub Actions</h2>
+                    <button class="ghost" id="btn-clear-runs">Очистить список</button>
                 </div>
-                <p class="hint">В списке тестов можно запустить только automated. Остальные будут заблокированы.</p>
-            </div>
-        </section>
+                <div id="runs" class="runs"></div>
+                <div class="empty" id="runs-empty">Пока нет активных запусков.</div>
+            </section>
+        </div>
 
-        <section class="card">
-            <div class="card__header">
-                <h2>Тесты</h2>
-                <div class="actions">
-                    <input id="search" type="search" placeholder="Поиск по названию" />
-                    <span class="chip" id="tests-meta">—</span>
-                </div>
-            </div>
-            <div id="tests" class="test-grid"></div>
-            <div class="empty" id="tests-empty">Загрузите тесты из проекта Testiny.</div>
-        </section>
-
-        <section class="card">
-            <div class="card__header">
-                <h2>Запуски GitHub Actions</h2>
-                <button class="ghost" id="btn-clear-runs">Очистить список</button>
-            </div>
-            <div id="runs" class="runs"></div>
-            <div class="empty" id="runs-empty">Пока нет активных запусков.</div>
-        </section>
-    </div>
-
-    <div id="toast" class="toast"></div>
-    <script src="./app.js" defer></script>
-</body>
+        <div id="toast" class="toast"></div>
+        <script src="./app.js" defer></script>
+    </body>
 </html>
