@@ -30,10 +30,10 @@ async function post(endpoint, body) {
 
 async function fetchProjects() {
     return post('/project/find', {
-        pagination: { limit: 200 },
-        order: [{ col: 'name', dir: 'asc' }],
-        includeDeleted: false,
+        pagination: { offset: 0, limit: 200 },
+        order: [{ column: 'name', order: 'asc' }],
         includeTotalCount: true,
+        filter: {},
     });
 }
 
@@ -46,11 +46,10 @@ async function fetchTests(projectId) {
     // если тестов много, PAGE_LIMIT можно увеличить до 1000
     while (true) {
         const res = await post('/testcase/find', {
-            filter: { project_id: Number(projectId) },
-            pagination: { limit: PAGE_LIMIT, offset },
-             order: [{ col: 'title', dir: 'asc' }],
-            includeDeleted: false,
+            pagination: { offset, limit: PAGE_LIMIT },
+            order: [{ column: 'title', order: 'asc' }],
             includeTotalCount: true,
+            filter: { project_id: Number(projectId) },
         });
 
         acc.push(...(res.data || []));
