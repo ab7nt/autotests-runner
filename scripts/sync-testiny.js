@@ -48,7 +48,7 @@ async function fetchTests(projectId) {
         const res = await post('/testcase/find', {
             filter: { project_id: Number(projectId) },
             pagination: { limit: PAGE_LIMIT, offset },
-            order: [{ col: 'title', dir: 'asc' }],
+             order: [{ col: 'title', dir: 'asc' }],
             includeDeleted: false,
             includeTotalCount: true,
         });
@@ -88,10 +88,7 @@ async function main() {
             totalCount: tests.totalCount,
             data: tests.data,
         };
-        fs.writeFileSync(
-            path.join(outDir, `tests-${project.id}.json`),
-            JSON.stringify(testsPayload, null, 2)
-        );
+        fs.writeFileSync(path.join(outDir, `tests-${project.id}.json`), JSON.stringify(testsPayload, null, 2));
         console.log(`Saved tests-${project.id}.json (${tests.totalCount})`);
     }
 }
