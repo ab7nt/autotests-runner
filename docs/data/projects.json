@@ -1,0 +1,76 @@
+{
+  "generatedAt": "2025-12-17T21:04:35.091Z",
+  "totalCount": 5,
+  "data": [
+    {
+      "id": 2,
+      "created_at": "2025-12-16T12:15:55.101Z",
+      "created_by": 23476,
+      "modified_at": "2025-12-16T12:15:55.101Z",
+      "modified_by": 23476,
+      "deleted_at": null,
+      "deleted_by": null,
+      "_etag": "dsz84nsj15b1le1t",
+      "owner_user_id": 23476,
+      "name": "copy.ru",
+      "project_key": "COPY",
+      "description": ""
+    },
+    {
+      "id": 4,
+      "created_at": "2025-12-16T12:17:38.029Z",
+      "created_by": 23476,
+      "modified_at": "2025-12-16T12:17:38.029Z",
+      "modified_by": 23476,
+      "deleted_at": null,
+      "deleted_by": null,
+      "_etag": "2mcfq9r8bhz6v2cy",
+      "owner_user_id": 23476,
+      "name": "HelloPrint",
+      "project_key": "HP",
+      "description": ""
+    },
+    {
+      "id": 5,
+      "created_at": "2025-12-16T12:17:52.879Z",
+      "created_by": 23476,
+      "modified_at": "2025-12-16T12:17:52.879Z",
+      "modified_by": 23476,
+      "deleted_at": null,
+      "deleted_by": null,
+      "_etag": "9vz2m9pbvxdvc35l",
+      "owner_user_id": 23476,
+      "name": "HelloPrint API",
+      "project_key": "HPAPI",
+      "description": ""
+    },
+    {
+      "id": 3,
+      "created_at": "2025-12-16T12:17:18.135Z",
+      "created_by": 23476,
+      "modified_at": "2025-12-16T12:17:18.135Z",
+      "modified_by": 23476,
+      "deleted_at": null,
+      "deleted_by": null,
+      "_etag": "lbl15g4ejhqyn1te",
+      "owner_user_id": 23476,
+      "name": "litera.studio",
+      "project_key": "LITER",
+      "description": ""
+    },
+    {
+      "id": 1,
+      "created_at": "2025-12-16T11:10:46.391Z",
+      "created_by": 23476,
+      "modified_at": "2025-12-16T12:15:36.392Z",
+      "modified_by": 23476,
+      "deleted_at": null,
+      "deleted_by": null,
+      "_etag": "tqrbts625mlrr3rt",
+      "owner_user_id": 23476,
+      "name": "mdmprint.ru",
+      "project_key": "MDM",
+      "description": ""
+    }
+  ]
+}
