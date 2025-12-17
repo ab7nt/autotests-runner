@@ -213,7 +213,7 @@ function renderTests() {
 }
 
 function isAutomated(test) {
-    const val = (test.automation || '').toString().toLowerCase();
+    const val = (test.testcase_type || test.automation || '').toString().toLowerCase();
     return val.includes('automated') || val === 'auto';
 }
 
