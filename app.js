@@ -107,6 +107,16 @@ function togglePassword(input, btn) {
     btn.textContent = isHidden ? 'Скрыть' : 'Показать';
 }
 
+function syncStateFromInputs() {
+    state.testinyKey = els.testinyKey.value.trim();
+    state.ghToken = els.ghToken.value.trim();
+    state.repo = els.repo.value.trim() || DEFAULTS.repo;
+    state.branch = els.branch.value.trim() || DEFAULTS.branch;
+    state.workflow = els.workflow.value.trim() || DEFAULTS.workflow;
+    state.environment = els.environment.value.trim() || DEFAULTS.environment;
+    state.remember = els.remember.checked;
+}
+
 function requireTokens() {
     if (!state.testinyKey) throw new Error('Добавьте Testiny API key.');
     if (!state.ghToken) throw new Error('Добавьте GitHub token.');
@@ -234,6 +244,7 @@ function isAutomated(test) {
 }
 
 async function loadProjects() {
+    syncStateFromInputs();
     setLoading(els.btnLoadProjects, true, '...'); // loading state
     try {
         const body = {
@@ -255,6 +266,7 @@ async function loadProjects() {
 }
 
 async function loadTests() {
+    syncStateFromInputs();
     if (!state.projectId) {
         showToast('Выберите проект.');
         return;
@@ -287,6 +299,7 @@ async function loadTests() {
 }
 
 async function startRun(test) {
+    syncStateFromInputs();
     try {
         requireTokens();
     } catch (e) {
@@ -439,13 +452,7 @@ function clearRuns() {
 
 function bindEvents() {
     els.btnSave.addEventListener('click', () => {
-        state.testinyKey = els.testinyKey.value.trim();
-        state.ghToken = els.ghToken.value.trim();
-        state.repo = els.repo.value.trim() || DEFAULTS.repo;
-        state.branch = els.branch.value.trim() || DEFAULTS.branch;
-        state.workflow = els.workflow.value.trim() || DEFAULTS.workflow;
-        state.environment = els.environment.value.trim() || DEFAULTS.environment;
-        state.remember = els.remember.checked;
+        syncStateFromInputs();
         persistState();
         showToast('Сохранено');
     });
