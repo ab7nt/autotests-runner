@@ -478,15 +478,7 @@ async function loadProjects() {
         if (state.projectId) {
             loadTests();
         }
-        showToast('??????? ?????????');
-    } catch (e) {
-        console.error(e);
-        showToast(e.message);
-    } finally {
-        setLoading(els.btnLoadProjects, false);
-    }
-}
-        showToast('??????? ?????????');
+        showToast('Проекты загружены');
     } catch (e) {
         console.error(e);
         showToast(e.message);
@@ -497,10 +489,10 @@ async function loadProjects() {
 
 async function loadTests() {
     if (!state.projectId) {
-        showToast('?? ?????? ??????.');
+        showToast('Не выбран проект.');
         return;
     }
-    setLoading(els.btnLoadTests, true, "...");, true, "...");
+    setLoading(els.btnLoadTests, true, "...");
     try {
         const cached = await fetchCacheJson(`${DATA_BASE}/tests-${state.projectId}.json`);
         state.tests = cached?.data || [];
@@ -514,7 +506,7 @@ async function loadTests() {
             .map((f) => f.id);
         state.openFolders = new Set(rootFolderIds);
         renderTests();
-        showToast('????? ?????????');
+        showToast('Тесты загружены');
     } catch (e) {
         console.error(e);
         showToast(e.message);
