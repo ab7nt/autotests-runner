@@ -177,7 +177,7 @@ function updateTestsMeta(filteredCount) {
     const autoCount = state.tests.filter(isAutomated).length;
     const total = state.totalTests || state.tests.length;
     const visible = filteredCount ?? state.tests.length;
-    els.testsMeta.textContent = `Tests ${visible} / automated ${autoCount}/${total}`;
+    els.testsMeta.textContent = `tests ${total} automated ${autoCount}`;
 }
 
 function buildTestFolderMap() {
