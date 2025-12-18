@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Testiny → GitHub Actions</title>
+    <title>Testiny + GitHub Actions</title>
     <link rel="stylesheet" href="./styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,10 +14,10 @@
         <header class="hero">
             <div>
                 <p class="eyebrow">Testiny autotests launcher</p>
-                <h1>Запуск автотестов по названию</h1>
+                <h1>Запуск автотестов из Testiny через GitHub Actions</h1>
                 <p class="sub">
-                    Список проектов и тестов берётся из кеша в <code>docs/data</code>. Обновляется workflow <strong>Sync Testiny data</strong>.
-                    Запуск тестов идёт через GitHub Actions по названию (--grep).
+                    Проекты и тесты берутся из кэша в <code>docs/data</code>. Обновите его через workflow <strong>Sync Testiny data</strong>.
+                    Запуск тестов идет через GitHub Actions по имени теста (--grep).
                 </p>
             </div>
             <div class="badge">beta</div>
@@ -26,7 +26,7 @@
         <section class="grid two">
             <div class="card">
                 <div class="card__header">
-                    <h2>Подключения</h2>
+                    <h2>Настройки</h2>
                     <button id="btn-save">Сохранить</button>
                 </div>
                 <div class="field">
@@ -35,7 +35,7 @@
                         <input id="gh-token" type="password" placeholder="ghp_xxx" autocomplete="off" />
                         <button class="chip ghost" id="toggle-gh-visibility">Показать</button>
                     </div>
-                    <p class="hint">Нужно запросить у прямого руководителя. Токен хранится только в браузере (если включено запоминание).</p>
+                    <p class="hint">Токен нужен с доступом к репозиторию и запуску workflow. Хранится локально в браузере.</p>
                 </div>
                 <div class="field inline">
                     <div>
@@ -51,28 +51,27 @@
                         <input id="workflow" type="text" placeholder="testiny-run.yml" />
                     </div>
                     <div>
-                        <label for="environment">ENVIRONMENT</label>
+                        <label for="environment">Окружение</label>
                         <input id="environment" type="text" placeholder="staging" />
                     </div>
                 </div>
                 <label class="checkbox">
                     <input id="remember" type="checkbox" />
-                    <span>Запомнить токен и настройки в этом браузере</span>
+                    <span>Запомнить токен и сохранить его в этом браузере</span>
                 </label>
             </div>
 
             <div class="card">
                 <div class="card__header">
-                    <h2>Проекты Testiny</h2>
+                    <h2>Данные Testiny</h2>
                     <div class="actions">
                     </div>
                 </div>
                 <div class="field">
-                    <!-- <label for="project-select">Проект</label> -->
                     <select id="project-select"></select>
                 </div>
                 <p class="hint">
-                    Используется кеш из <code>docs/data</code>, который заполняет workflow <strong>Sync Testiny data</strong>. Запускать можно только automated — остальные будут отключены.
+                    Данные берутся из <code>docs/data</code> и обновляются workflow <strong>Sync Testiny data</strong>. Запускаются только automated-тесты.
                 </p>
             </div>
         </section>
@@ -86,16 +85,16 @@
                 </div>
             </div>
             <div id="tests" class="test-tree"></div>
-            <div class="empty" id="tests-empty">Загрузите тесты из проекта (данные берутся из кеша).</div>
+            <div class="empty" id="tests-empty">Нет тестов для выбранного проекта (или данные не загружены).</div>
         </section>
 
         <section class="card">
             <div class="card__header">
                 <h2>Запуски GitHub Actions</h2>
-                <button class="ghost" id="btn-clear-runs">Очистить список</button>
+                <button class="ghost" id="btn-clear-runs">Очистить историю</button>
             </div>
             <div id="runs" class="runs"></div>
-            <div class="empty" id="runs-empty">Пока нет активных запусков.</div>
+            <div class="empty" id="runs-empty">Пока нет запусков. Запустите тест.</div>
         </section>
     </div>
 

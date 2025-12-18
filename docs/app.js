@@ -64,7 +64,7 @@ function loadStoredState() {
             pendingRunLookups: new Map(),
         });
     } catch (e) {
-        console.warn('РќРµ СѓРґР°Р»РѕСЃСЊ РїСЂРѕС‡РёС‚Р°С‚СЊ СЃРѕС…СЂР°РЅС‘РЅРЅРѕРµ СЃРѕСЃС‚РѕСЏРЅРёРµ', e);
+        console.warn('Не удалось прочитать сохраненное состояние', e);
     }
 }
 
@@ -111,7 +111,7 @@ function setLoading(button, loading, label) {
 function togglePassword(input, btn) {
     const isHidden = input.type === 'password';
     input.type = isHidden ? 'text' : 'password';
-    btn.textContent = isHidden ? 'РЎРєСЂС‹С‚СЊ' : 'РџРѕРєР°Р·Р°С‚СЊ';
+    btn.textContent = isHidden ? 'Скрыть' : 'Показать';
 }
 
 function syncStateFromInputs() {
@@ -124,12 +124,12 @@ function syncStateFromInputs() {
 }
 
 function requireTokens() {
-    if (!state.ghToken) throw new Error('Р”РѕР±Р°РІСЊС‚Рµ GitHub token.');
-    if (!state.repo) throw new Error('РЈРєР°Р¶РёС‚Рµ СЂРµРїРѕР·РёС‚РѕСЂРёР№ owner/repo.');
+    if (!state.ghToken) throw new Error('Добавьте GitHub token.');
+    if (!state.repo) throw new Error('Укажите репозиторий owner/repo.');
 }
 
 async function githubRequest(path, { method = 'GET', body } = {}) {
-    if (!state.ghToken) throw new Error('РЎРЅР°С‡Р°Р»Р° РІРІРµРґРёС‚Рµ GitHub token.');
+    if (!state.ghToken) throw new Error('Сначала введите GitHub token.');
 
     const headers = {
         Accept: 'application/vnd.github+json',
@@ -203,7 +203,7 @@ function getFolderParentId(folder) {
 }
 
 function getFolderName(folder) {
-    return folder.name || folder.title || folder.folder_name || 'Р‘РµР· РїР°РїРєРё';
+    return folder.name || folder.title || folder.folder_name || 'Без папки';
 }
 
 function getTestFolderId(test) {
@@ -277,6 +277,8 @@ function folderSelectionState(folder, testsCache) {
 
 function renderTestRow(test) {
     const automated = isAutomated(test);
+    const runInfo = state.latestRunByTestId.get(test.id) || null;
+    const isBusy = Boolean(automated && runInfo && runInfo.status !== "completed");
     const row = document.createElement("div");
     row.className = `test-row ${automated ? "" : "disabled"}`;
 
@@ -306,12 +308,21 @@ function renderTestRow(test) {
     action.className = "test-row__actions";
 
     const btn = document.createElement("button");
-    btn.textContent = automated ? "Run" : "Not automated";
+    if (!automated) {
+        btn.textContent = "Not automated";
+    } else if (isBusy) {
+        btn.textContent = runInfo.status === "queued" ? "В очереди" : "В работе";
+    } else {
+        btn.textContent = "Run";
+    }
     btn.className = automated ? "primary" : "ghost";
-    btn.disabled = !automated;
+    btn.disabled = !automated || isBusy;
     btn.addEventListener("click", () => startRun(test));
 
-    action.append(status, btn);
+    if (status) {
+        action.append(status);
+    }
+    action.append(btn);
 
     row.append(left, action);
     return row;
@@ -319,6 +330,7 @@ function renderTestRow(test) {
 
 function renderTestStatus(testId) {
     const status = getRunStatus(state.latestRunByTestId.get(testId));
+    if (!status) return null;
     const pill = document.createElement("span");
     pill.className = `pill test-row__status ${status.className}`;
     pill.textContent = status.label;
@@ -326,9 +338,7 @@ function renderTestStatus(testId) {
 }
 
 function getRunStatus(run) {
-    if (!run) {
-        return { className: "neutral", label: "not run" };
-    }
+    if (!run) return null;
     if (run.status === "queued") {
         return { className: "queued", label: "queued" };
     }
@@ -450,7 +460,7 @@ function renderRootTests(tests) {
 
     const title = document.createElement("span");
     title.className = "folder__title";
-    title.textContent = "Р‘РµР· РїР°РїРєРё";
+    title.textContent = "Без папки";
 
     const meta = document.createElement("span");
     meta.className = "folder__meta";
@@ -502,7 +512,7 @@ function isAutomated(test) {
 
 async function fetchCacheJson(url) {
     const res = await fetch(url, { cache: 'no-store' });
-    if (!res.ok) throw new Error(`РќРµ РЅР°Р№РґРµРЅ РєРµС€ ${url}. Р—Р°РїСѓСЃС‚РёС‚Рµ workflow Sync Testiny data.`);
+    if (!res.ok) throw new Error(`Не найден кэш ${url}. Запустите workflow Sync Testiny data.`);
     return res.json();
 }
 
@@ -515,7 +525,7 @@ async function loadProjects() {
         if (state.projectId) {
             loadTests();
         }
-        showToast('РџСЂРѕРµРєС‚С‹ Р·Р°РіСЂСѓР¶РµРЅС‹');
+        showToast('Проекты загружены');
     } catch (e) {
         console.error(e);
         showToast(e.message);
@@ -526,7 +536,7 @@ async function loadProjects() {
 
 async function loadTests() {
     if (!state.projectId) {
-        showToast('РќРµ РІС‹Р±СЂР°РЅ РїСЂРѕРµРєС‚.');
+        showToast('Не выбран проект.');
         return;
     }
     setLoading(els.btnLoadTests, true, "...");
@@ -546,7 +556,7 @@ async function loadTests() {
             .map((f) => f.id);
         state.openFolders = new Set(rootFolderIds);
         renderTests();
-        showToast('РўРµСЃС‚С‹ Р·Р°РіСЂСѓР¶РµРЅС‹');
+        showToast('Тесты загружены');
     } catch (e) {
         console.error(e);
         showToast(e.message);
@@ -565,7 +575,7 @@ async function startRun(test) {
     }
 
     const startedAt = new Date().toISOString();
-    showToast(`Р—Р°РїСѓСЃРє С‚РµСЃС‚Р°: ${test.title}`);
+    showToast(`Запуск теста: ${test.title}`);
     try {
         await githubRequest(`/repos/${state.repo}/actions/workflows/${state.workflow}/dispatches`, {
             method: 'POST',
@@ -591,7 +601,7 @@ async function startRun(test) {
         if (run) {
             registerRun(run, test.title, test.id);
         } else {
-            showToast('Run Р·Р°РїСѓС‰РµРЅ, РїСЂРѕРґРѕР»Р¶Р°СЋ РёСЃРєР°С‚СЊ РµРіРѕ РІ GitHub Actions...');
+            showToast('Run запущен, продолжаю искать его в GitHub Actions...');
             startRunDiscovery(startedAt, test);
         }
     } catch (e) {
@@ -722,7 +732,7 @@ function renderRuns() {
         link.href = run.html_url;
         link.target = '_blank';
         link.rel = 'noreferrer';
-        link.textContent = 'РћС‚РєСЂС‹С‚СЊ run';
+        link.textContent = 'Открыть run';
 
         row.append(title, status, link);
         els.runsContainer.appendChild(row);
@@ -797,7 +807,7 @@ function bindEvents() {
     els.btnSave.addEventListener('click', () => {
         syncStateFromInputs();
         persistState();
-        showToast('РЎРѕС…СЂР°РЅРµРЅРѕ');
+        showToast('Сохранено');
     });
 
     els.projectSelect.addEventListener('change', (e) => {
