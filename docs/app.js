@@ -718,7 +718,7 @@ function renderRuns() {
         link.href = run.html_url;
         link.target = '_blank';
         link.rel = 'noreferrer';
-        link.textContent = 'Открыть run';
+        link.textContent = 'Открыть';
 
         row.append(title, status, link);
         els.runsContainer.appendChild(row);

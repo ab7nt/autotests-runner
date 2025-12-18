@@ -178,7 +178,8 @@ button {
     cursor: pointer;
     color: #0b1221;
     background: var(--accent);
-    transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+    transition: transform 0.15s ease, box-shadow 0.2s ease, opacity 0.15s ease, background 0.35s ease,
+        color 0.35s ease;
 }
 
 button:hover {
@@ -372,18 +373,20 @@ details.folder > summary::-webkit-details-marker {
 }
 
 button.is-busy {
-    animation: pulse 1.4s ease-out infinite;
+    background: linear-gradient(120deg, #6be7b1, #7dc3ff, #6be7b1);
+    background-size: 220% 220%;
+    animation: gradient-shift 2s ease-in-out infinite;
 }
 
-@keyframes pulse {
+@keyframes gradient-shift {
     0% {
-        box-shadow: 0 0 0 0 rgba(125, 195, 255, 0.4);
+        background-position: 0% 50%;
     }
-    70% {
-        box-shadow: 0 0 0 10px rgba(125, 195, 255, 0);
+    50% {
+        background-position: 100% 50%;
     }
     100% {
-        box-shadow: 0 0 0 0 rgba(125, 195, 255, 0);
+        background-position: 0% 50%;
     }
 }
 
@@ -466,6 +469,7 @@ button.is-busy {
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.06em;
+    padding-top: 4px;
 }
 
 .status.queued {
