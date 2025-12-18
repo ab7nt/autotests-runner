@@ -375,18 +375,15 @@ details.folder > summary::-webkit-details-marker {
 button.is-busy {
     background: linear-gradient(120deg, #6be7b1, #7dc3ff, #6be7b1);
     background-size: 220% 220%;
-    animation: gradient-shift 2s ease-in-out infinite;
+    animation: gradient-shift 3s linear infinite alternate;
 }
 
 @keyframes gradient-shift {
     0% {
         background-position: 0% 50%;
     }
-    50% {
-        background-position: 100% 50%;
-    }
     100% {
-        background-position: 0% 50%;
+        background-position: 100% 50%;
     }
 }
 
