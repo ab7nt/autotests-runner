@@ -90,7 +90,7 @@ function hydrateForm() {
 function showToast(message) {
     els.toast.textContent = message;
     els.toast.classList.add('show');
-    setTimeout(() => els.toast.classList.remove('show'), 2600);
+    setTimeout(() => els.toast.classList.remove('show'), 5600);
 }
 
 function setLoading(button, loading, label) {
@@ -524,7 +524,7 @@ async function startRun(test) {
     }
 
     const startedAt = new Date().toISOString();
-    showToast(`Стартуем: ${test.title}`);
+    showToast(`Запуск теста: ${test.title}`);
     try {
         await githubRequest(`/repos/${state.repo}/actions/workflows/${state.workflow}/dispatches`, {
             method: 'POST',
