@@ -311,11 +311,14 @@ function renderTestRow(test) {
     if (!automated) {
         btn.textContent = "Not automated";
     } else if (isBusy) {
-        btn.textContent = runInfo.status === "queued" ? "В очереди" : "В работе";
+        btn.textContent = runInfo.status === "queued" ? "Queued" : "Running";
     } else {
         btn.textContent = "Run";
     }
     btn.className = automated ? "primary" : "ghost";
+    if (isBusy) {
+        btn.classList.add("is-busy");
+    }
     btn.disabled = !automated || isBusy;
     btn.addEventListener("click", () => startRun(test));
 
@@ -329,33 +332,16 @@ function renderTestRow(test) {
 }
 
 function renderTestStatus(testId) {
-    const status = getRunStatus(state.latestRunByTestId.get(testId));
-    if (!status) return null;
-    const pill = document.createElement("span");
-    pill.className = `pill test-row__status ${status.className}`;
-    pill.textContent = status.label;
-    return pill;
-}
-
-function getRunStatus(run) {
-    if (!run) return null;
-    if (run.status === "queued") {
-        return { className: "queued", label: "queued" };
-    }
-    if (run.status === "in_progress") {
-        return { className: "running", label: "running" };
-    }
-    if (run.status === "completed") {
-        const conclusion = (run.conclusion || "").toLowerCase();
-        if (conclusion === "success") {
-            return { className: "success", label: "success" };
-        }
-        if (conclusion) {
-            return { className: "failure", label: conclusion.replace("_", " ") };
-        }
-        return { className: "neutral", label: "completed" };
-    }
-    return { className: "neutral", label: run.status };
+    const run = state.latestRunByTestId.get(testId);
+    if (!run || run.status !== "completed") return null;
+    const wrap = document.createElement("span");
+    const icon = document.createElement("ion-icon");
+    const conclusion = (run.conclusion || "").toLowerCase();
+    const isSuccess = conclusion === "success";
+    wrap.className = `status-icon-wrap ${isSuccess ? "status-icon-wrap--ok" : "status-icon-wrap--bad"}`;
+    icon.setAttribute("name", isSuccess ? "checkmark-circle" : "close-circle");
+    wrap.appendChild(icon);
+    return wrap;
 }
 
 function renderFolderNode(folder) {
@@ -844,5 +830,3 @@ function init() {
 }
 
 init();
-
-

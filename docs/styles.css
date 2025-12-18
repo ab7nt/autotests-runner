@@ -357,8 +357,34 @@ details.folder > summary::-webkit-details-marker {
     gap: 8px;
 }
 
-.test-row__actions .test-row__status {
-    margin-right: 4px;
+.status-icon-wrap {
+    display: inline-flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.status-icon-wrap--ok {
+    color: var(--accent);
+}
+
+.status-icon-wrap--bad {
+    color: var(--danger);
+}
+
+button.is-busy {
+    animation: pulse 1.4s ease-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(125, 195, 255, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(125, 195, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(125, 195, 255, 0);
+    }
 }
 
 .pill {
