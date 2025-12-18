@@ -41,6 +41,7 @@ const state = {
     tests: [],
     totalTests: 0,
     runs: new Map(),
+    latestRunByTestId: new Map(),
     folders: [],
     folderMappings: [],
     testFolderMap: new Map(),
@@ -56,7 +57,7 @@ function loadStoredState() {
         const raw = localStorage.getItem(STORAGE_KEY);
         if (!raw) return;
         const saved = JSON.parse(raw);
-        Object.assign(state, saved, { runs: new Map() });
+        Object.assign(state, saved, { runs: new Map(), latestRunByTestId: new Map() });
     } catch (e) {
         console.warn('Не удалось прочитать сохранённое состояние', e);
     }
@@ -293,7 +294,8 @@ function renderTestRow(test) {
     title.className = "test-row__title";
     title.textContent = test.title;
 
-    left.append(checkbox, title);
+    const status = renderTestStatus(test.id);
+    left.append(checkbox, title, status);
 
     const action = document.createElement("div");
     action.className = "test-row__actions";
@@ -308,6 +310,37 @@ function renderTestRow(test) {
 
     row.append(left, action);
     return row;
+}
+
+function renderTestStatus(testId) {
+    const status = getRunStatus(state.latestRunByTestId.get(testId));
+    const pill = document.createElement("span");
+    pill.className = `pill test-row__status ${status.className}`;
+    pill.textContent = status.label;
+    return pill;
+}
+
+function getRunStatus(run) {
+    if (!run) {
+        return { className: "neutral", label: "not run" };
+    }
+    if (run.status === "queued") {
+        return { className: "queued", label: "queued" };
+    }
+    if (run.status === "in_progress") {
+        return { className: "running", label: "running" };
+    }
+    if (run.status === "completed") {
+        const conclusion = (run.conclusion || "").toLowerCase();
+        if (conclusion === "success") {
+            return { className: "success", label: "success" };
+        }
+        if (conclusion) {
+            return { className: "failure", label: conclusion.replace("_", " ") };
+        }
+        return { className: "neutral", label: "completed" };
+    }
+    return { className: "neutral", label: run.status };
 }
 
 function renderFolderNode(folder) {
@@ -500,6 +533,7 @@ async function loadTests() {
         state.folderMappings = cached?.folderMappings || [];
         state.testFolderMap = buildTestFolderMap();
         state.selectedTests = new Set();
+        state.latestRunByTestId = new Map();
         const rootFolderIds = (state.folders || [])
             .filter((f) => !getFolderParentId(f))
             .map((f) => f.id);
@@ -537,8 +571,17 @@ async function startRun(test) {
             }),
         });
 
+        state.latestRunByTestId.set(test.id, {
+            status: "queued",
+            conclusion: null,
+            testTitle: test.title,
+            created_at: startedAt,
+            testId: test.id,
+        });
+        renderTests();
+
         const run = await waitForRun(startedAt);
-        registerRun(run, test.title);
+        registerRun(run, test.title, test.id);
     } catch (e) {
         console.error(e);
         showToast(e.message);
@@ -558,7 +601,7 @@ async function waitForRun(startedAt) {
     throw new Error('Не удалось найти созданный workflow run.');
 }
 
-function registerRun(run, testTitle) {
+function registerRun(run, testTitle, testId) {
     const existing = state.runs.get(run.id);
     if (existing?.interval) clearInterval(existing.interval);
 
@@ -569,10 +612,15 @@ function registerRun(run, testTitle) {
         conclusion: run.conclusion,
         testTitle,
         created_at: run.created_at,
+        testId,
     };
 
     state.runs.set(run.id, item);
+    if (testId) {
+        state.latestRunByTestId.set(testId, item);
+    }
     renderRuns();
+    renderTests();
     startPolling(run.id);
 }
 
@@ -630,14 +678,19 @@ function startPolling(runId) {
         try {
             const data = await githubRequest(`/repos/${state.repo}/actions/runs/${runId}`);
             const prev = state.runs.get(runId);
-            state.runs.set(runId, {
+            const updated = {
                 ...prev,
                 status: data.status,
                 conclusion: data.conclusion,
                 html_url: data.html_url,
                 created_at: data.created_at,
-            });
+            };
+            state.runs.set(runId, updated);
+            if (updated.testId) {
+                state.latestRunByTestId.set(updated.testId, updated);
+            }
             renderRuns();
+            renderTests();
             if (data.status === 'completed') {
                 const current = state.runs.get(runId);
                 clearInterval(current.interval);
@@ -663,7 +716,9 @@ function clearRuns() {
         if (r.interval) clearInterval(r.interval);
     });
     state.runs.clear();
+    state.latestRunByTestId.clear();
     renderRuns();
+    renderTests();
 }
 
 function bindEvents() {

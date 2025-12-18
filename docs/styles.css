@@ -333,6 +333,12 @@ details.folder > summary::-webkit-details-marker {
     font-weight: 600;
 }
 
+.test-row__status {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
 .muted {
     color: var(--muted);
 }
@@ -368,6 +374,29 @@ details.folder > summary::-webkit-details-marker {
 .pill.neutral {
     background: rgba(255, 255, 255, 0.08);
     color: var(--muted);
+}
+
+.pill.queued {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--muted);
+}
+
+.pill.running {
+    background: rgba(125, 195, 255, 0.16);
+    color: #cfe7ff;
+    border-color: rgba(125, 195, 255, 0.45);
+}
+
+.pill.success {
+    background: rgba(107, 231, 177, 0.2);
+    color: #d7ffef;
+    border-color: rgba(107, 231, 177, 0.45);
+}
+
+.pill.failure {
+    background: rgba(255, 107, 107, 0.18);
+    color: #ffd8d8;
+    border-color: rgba(255, 107, 107, 0.5);
 }
 
 .runs {
