@@ -250,10 +250,16 @@ details.folder > summary::-webkit-details-marker {
 }
 
 .folder__caret {
-    color: var(--muted);
-    width: 14px;
-    text-align: center;
-    font-weight: 700;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid var(--muted);
+    border-bottom: 2px solid var(--muted);
+    transform: rotate(-45deg);
+    transition: transform 0.18s ease;
+}
+
+.folder__caret.is-open {
+    transform: rotate(45deg);
 }
 
 .folder__title {
