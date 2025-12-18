@@ -351,6 +351,16 @@ details.folder > summary::-webkit-details-marker {
     min-width: 120px;
 }
 
+.test-row__actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.test-row__actions .test-row__status {
+    margin-right: 4px;
+}
+
 .pill {
     padding: 6px 10px;
     border-radius: 999px;

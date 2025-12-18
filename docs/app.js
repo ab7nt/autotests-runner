@@ -295,7 +295,7 @@ function renderTestRow(test) {
     title.textContent = test.title;
 
     const status = renderTestStatus(test.id);
-    left.append(checkbox, title, status);
+    left.append(checkbox, title);
 
     const action = document.createElement("div");
     action.className = "test-row__actions";
@@ -306,7 +306,7 @@ function renderTestRow(test) {
     btn.disabled = !automated;
     btn.addEventListener("click", () => startRun(test));
 
-    action.appendChild(btn);
+    action.append(status, btn);
 
     row.append(left, action);
     return row;
