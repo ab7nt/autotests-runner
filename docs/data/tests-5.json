@@ -1,7 +1,7 @@
 {
   "projectId": 5,
   "projectName": "HelloPrint API",
-  "generatedAt": "2025-12-18T06:25:41.353Z",
+  "generatedAt": "2025-12-18T09:58:46.730Z",
   "totalCount": 55,
   "data": [
     {
@@ -27,7 +27,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 837,
+        "title": "Заказы",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.120Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "5jnyrzctzdndh58c",
+        "project_id": 5,
+        "testcase_folder_parent_id": 835,
+        "description": ""
+      }
     },
     {
       "id": 1645,
@@ -52,7 +68,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 835,
+        "title": "API checklist",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.104Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "1snd1fdsdqcv46ng",
+        "project_id": 5,
+        "testcase_folder_parent_id": 0,
+        "description": ""
+      }
     },
     {
       "id": 1651,
@@ -77,7 +109,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 835,
+        "title": "API checklist",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.104Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "1snd1fdsdqcv46ng",
+        "project_id": 5,
+        "testcase_folder_parent_id": 0,
+        "description": ""
+      }
     },
     {
       "id": 1664,
@@ -102,7 +150,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 836,
+        "title": "Контрагенты",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.120Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "qq6dff311cqdxsgs",
+        "project_id": 5,
+        "testcase_folder_parent_id": 835,
+        "description": ""
+      }
     },
     {
       "id": 1671,
@@ -127,7 +191,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 836,
+        "title": "Контрагенты",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.120Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "qq6dff311cqdxsgs",
+        "project_id": 5,
+        "testcase_folder_parent_id": 835,
+        "description": ""
+      }
     },
     {
       "id": 1640,
@@ -152,7 +232,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 835,
+        "title": "API checklist",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.104Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "1snd1fdsdqcv46ng",
+        "project_id": 5,
+        "testcase_folder_parent_id": 0,
+        "description": ""
+      }
     },
     {
       "id": 1662,
@@ -177,7 +273,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 836,
+        "title": "Контрагенты",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.120Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "qq6dff311cqdxsgs",
+        "project_id": 5,
+        "testcase_folder_parent_id": 835,
+        "description": ""
+      }
     },
     {
       "id": 1669,
@@ -202,7 +314,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 836,
+        "title": "Контрагенты",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.120Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "qq6dff311cqdxsgs",
+        "project_id": 5,
+        "testcase_folder_parent_id": 835,
+        "description": ""
+      }
     },
     {
       "id": 1659,
@@ -227,7 +355,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 836,
+        "title": "Контрагенты",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.120Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "qq6dff311cqdxsgs",
+        "project_id": 5,
+        "testcase_folder_parent_id": 835,
+        "description": ""
+      }
     },
     {
       "id": 1666,
@@ -252,7 +396,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 836,
+        "title": "Контрагенты",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.120Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "qq6dff311cqdxsgs",
+        "project_id": 5,
+        "testcase_folder_parent_id": 835,
+        "description": ""
+      }
     },
     {
       "id": 1653,
@@ -277,7 +437,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 835,
+        "title": "API checklist",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.104Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "1snd1fdsdqcv46ng",
+        "project_id": 5,
+        "testcase_folder_parent_id": 0,
+        "description": ""
+      }
     },
     {
       "id": 1679,
@@ -302,7 +478,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 839,
+        "title": "Документы",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.120Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "ypy9mce5g8ps97rj",
+        "project_id": 5,
+        "testcase_folder_parent_id": 835,
+        "description": ""
+      }
     },
     {
       "id": 1644,
@@ -327,7 +519,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 835,
+        "title": "API checklist",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.104Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "1snd1fdsdqcv46ng",
+        "project_id": 5,
+        "testcase_folder_parent_id": 0,
+        "description": ""
+      }
     },
     {
       "id": 1650,
@@ -352,7 +560,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 835,
+        "title": "API checklist",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.104Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "1snd1fdsdqcv46ng",
+        "project_id": 5,
+        "testcase_folder_parent_id": 0,
+        "description": ""
+      }
     },
     {
       "id": 1673,
@@ -377,7 +601,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 837,
+        "title": "Заказы",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.120Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "5jnyrzctzdndh58c",
+        "project_id": 5,
+        "testcase_folder_parent_id": 835,
+        "description": ""
+      }
     },
     {
       "id": 1661,
@@ -402,7 +642,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 836,
+        "title": "Контрагенты",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.120Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "qq6dff311cqdxsgs",
+        "project_id": 5,
+        "testcase_folder_parent_id": 835,
+        "description": ""
+      }
     },
     {
       "id": 1668,
@@ -427,7 +683,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 836,
+        "title": "Контрагенты",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.120Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "qq6dff311cqdxsgs",
+        "project_id": 5,
+        "testcase_folder_parent_id": 835,
+        "description": ""
+      }
     },
     {
       "id": 1655,
@@ -452,7 +724,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 835,
+        "title": "API checklist",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.104Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "1snd1fdsdqcv46ng",
+        "project_id": 5,
+        "testcase_folder_parent_id": 0,
+        "description": ""
+      }
     },
     {
       "id": 1646,
@@ -477,7 +765,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 835,
+        "title": "API checklist",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.104Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "1snd1fdsdqcv46ng",
+        "project_id": 5,
+        "testcase_folder_parent_id": 0,
+        "description": ""
+      }
     },
     {
       "id": 1643,
@@ -502,7 +806,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 835,
+        "title": "API checklist",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.104Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "1snd1fdsdqcv46ng",
+        "project_id": 5,
+        "testcase_folder_parent_id": 0,
+        "description": ""
+      }
     },
     {
       "id": 1681,
@@ -527,7 +847,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 839,
+        "title": "Документы",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.120Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "ypy9mce5g8ps97rj",
+        "project_id": 5,
+        "testcase_folder_parent_id": 835,
+        "description": ""
+      }
     },
     {
       "id": 1682,
@@ -552,7 +888,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 839,
+        "title": "Документы",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.120Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "ypy9mce5g8ps97rj",
+        "project_id": 5,
+        "testcase_folder_parent_id": 835,
+        "description": ""
+      }
     },
     {
       "id": 1642,
@@ -577,7 +929,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 835,
+        "title": "API checklist",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.104Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "1snd1fdsdqcv46ng",
+        "project_id": 5,
+        "testcase_folder_parent_id": 0,
+        "description": ""
+      }
     },
     {
       "id": 1654,
@@ -602,7 +970,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 835,
+        "title": "API checklist",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.104Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "1snd1fdsdqcv46ng",
+        "project_id": 5,
+        "testcase_folder_parent_id": 0,
+        "description": ""
+      }
     },
     {
       "id": 1639,
@@ -627,7 +1011,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 835,
+        "title": "API checklist",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.104Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "1snd1fdsdqcv46ng",
+        "project_id": 5,
+        "testcase_folder_parent_id": 0,
+        "description": ""
+      }
     },
     {
       "id": 1680,
@@ -652,7 +1052,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 839,
+        "title": "Документы",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.120Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "ypy9mce5g8ps97rj",
+        "project_id": 5,
+        "testcase_folder_parent_id": 835,
+        "description": ""
+      }
     },
     {
       "id": 1656,
@@ -677,7 +1093,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 835,
+        "title": "API checklist",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.104Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "1snd1fdsdqcv46ng",
+        "project_id": 5,
+        "testcase_folder_parent_id": 0,
+        "description": ""
+      }
     },
     {
       "id": 1663,
@@ -702,7 +1134,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 836,
+        "title": "Контрагенты",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.120Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "qq6dff311cqdxsgs",
+        "project_id": 5,
+        "testcase_folder_parent_id": 835,
+        "description": ""
+      }
     },
     {
       "id": 1670,
@@ -727,7 +1175,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 836,
+        "title": "Контрагенты",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.120Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "qq6dff311cqdxsgs",
+        "project_id": 5,
+        "testcase_folder_parent_id": 835,
+        "description": ""
+      }
     },
     {
       "id": 1647,
@@ -752,7 +1216,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 835,
+        "title": "API checklist",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.104Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "1snd1fdsdqcv46ng",
+        "project_id": 5,
+        "testcase_folder_parent_id": 0,
+        "description": ""
+      }
     },
     {
       "id": 1641,
@@ -777,7 +1257,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 835,
+        "title": "API checklist",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.104Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "1snd1fdsdqcv46ng",
+        "project_id": 5,
+        "testcase_folder_parent_id": 0,
+        "description": ""
+      }
     },
     {
       "id": 1672,
@@ -802,7 +1298,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 837,
+        "title": "Заказы",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.120Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "5jnyrzctzdndh58c",
+        "project_id": 5,
+        "testcase_folder_parent_id": 835,
+        "description": ""
+      }
     },
     {
       "id": 1648,
@@ -827,7 +1339,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 835,
+        "title": "API checklist",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.104Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "1snd1fdsdqcv46ng",
+        "project_id": 5,
+        "testcase_folder_parent_id": 0,
+        "description": ""
+      }
     },
     {
       "id": 1676,
@@ -852,7 +1380,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 837,
+        "title": "Заказы",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.120Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "5jnyrzctzdndh58c",
+        "project_id": 5,
+        "testcase_folder_parent_id": 835,
+        "description": ""
+      }
     },
     {
       "id": 1677,
@@ -877,7 +1421,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 838,
+        "title": "Система лояльности",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.120Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "j2xzethg51j3gft3",
+        "project_id": 5,
+        "testcase_folder_parent_id": 835,
+        "description": ""
+      }
     },
     {
       "id": 1678,
@@ -902,7 +1462,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 838,
+        "title": "Система лояльности",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.120Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "j2xzethg51j3gft3",
+        "project_id": 5,
+        "testcase_folder_parent_id": 835,
+        "description": ""
+      }
     },
     {
       "id": 1658,
@@ -927,7 +1503,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 836,
+        "title": "Контрагенты",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.120Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "qq6dff311cqdxsgs",
+        "project_id": 5,
+        "testcase_folder_parent_id": 835,
+        "description": ""
+      }
     },
     {
       "id": 1665,
@@ -952,7 +1544,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 836,
+        "title": "Контрагенты",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.120Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "qq6dff311cqdxsgs",
+        "project_id": 5,
+        "testcase_folder_parent_id": 835,
+        "description": ""
+      }
     },
     {
       "id": 1660,
@@ -977,7 +1585,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 836,
+        "title": "Контрагенты",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.120Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "qq6dff311cqdxsgs",
+        "project_id": 5,
+        "testcase_folder_parent_id": 835,
+        "description": ""
+      }
     },
     {
       "id": 1667,
@@ -1002,7 +1626,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 836,
+        "title": "Контрагенты",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.120Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "qq6dff311cqdxsgs",
+        "project_id": 5,
+        "testcase_folder_parent_id": 835,
+        "description": ""
+      }
     },
     {
       "id": 1674,
@@ -1027,7 +1667,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 837,
+        "title": "Заказы",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.120Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "5jnyrzctzdndh58c",
+        "project_id": 5,
+        "testcase_folder_parent_id": 835,
+        "description": ""
+      }
     },
     {
       "id": 1649,
@@ -1052,7 +1708,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 835,
+        "title": "API checklist",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.104Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "1snd1fdsdqcv46ng",
+        "project_id": 5,
+        "testcase_folder_parent_id": 0,
+        "description": ""
+      }
     },
     {
       "id": 1652,
@@ -1077,32 +1749,23 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
-    },
-    {
-      "id": 1686,
-      "title": "Возможность создания контрагента через \"Добавить представителя\"",
-      "sort_index": 6465888732,
-      "created_at": "2025-12-16T12:38:53.067Z",
-      "created_by": 23476,
-      "modified_at": "2025-12-16T12:38:53.067Z",
-      "modified_by": 23476,
-      "deleted_at": null,
-      "deleted_by": null,
-      "_etag": "frvcjczcbh58m1v4",
-      "project_id": 5,
-      "owner_user_id": 23476,
-      "$owner_name": "Мильченко Денис",
-      "type": "",
-      "description": "",
-      "template": "STEPS",
-      "precondition_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Создан контрагент по типу тест кейса [C85159]\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Открыта карточка контрагента на вкладке \\\"Инфо\\\"\"}]}]}]}",
-      "content_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"t\",\"columns\":2,\"children\":[{\"t\":\"tr\",\"rid\":\"8kIKIxEb0K\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать кнопку \\\"Добавить контрагента\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображен выпадающий список с выбором добавляемого:\"}]}]},{\"t\":\"ul\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Представителя\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Представляемого\"}]}]},{\"t\":\"p\",\"children\":[{\"text\":\"—\"}]},{\"t\":\"p\",\"children\":[{\"text\":\"Для контрагента типа Физ.лицо список содержит Представителя и Представляемого, для контрагента типа Юр.лица только Представителя\"}]}]}]},{\"t\":\"tr\",\"rid\":\"IKZaTU1GWI\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Выбрать \\\"Представителя\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Осуществлен переход на вкладку \\\"Представители\\\"\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"WeIJNsCB7M\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на поле \\\"Выбрать из существующих или добавить нового\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Раскрылся список:\"}]}]},{\"t\":\"p\",\"children\":[{\"text\":\"\"}]},{\"t\":\"ul\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Возможен выбора существующего контрагента с помощью поиска\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Отображена кнопка \\\"+Добавить\\\"\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"tWhgs7E3sd\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать \\\"+Добавить\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображено окно \\\"Создание представителя\\\"\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поле \\\"Тип\\\" заполнено автоматически - Физ.лицо\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"YuaY8zBDK6\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Заполнить поля в блоке \\\"Контрагент\\\"\"}]}]},{\"t\":\"ul\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Фамилия - тестоваяФамилия2\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Имя - тестовоеИмя2\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Отчество - тестовоеОтчество2\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Пол - мужской\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Дата рождения - сегодняшняя дата\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Телефон - +79109999997\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"E-mail - \"},{\"t\":\"a\",\"children\":[{\"text\":\"testoviy2@mail.ru\"}],\"url\":\"mailto:testoviy2@mail.ru\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Телеграм - telegram2\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"ВКонтакте - VK2\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Инстаграм - inst2\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Вид контрагента - Клиент\"}]}]},{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Заполнить поля в блоке \\\"Дополнительно\\\"\"}]}]},{\"t\":\"ul\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Источник - МДМПринт\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Реклама - yandex.ru\"}]}]},{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать \\\"Создать контрагента и сделать представителем\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Страница обновилась\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Контрагент создан\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"На вкладке \\\"Представители\\\" в таблицу добавлен созданный контрагент\"}]}]}]}]}]}]}",
-      "steps_text": null,
-      "expected_result_text": null,
-      "priority": 2,
-      "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 835,
+        "title": "API checklist",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.104Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "1snd1fdsdqcv46ng",
+        "project_id": 5,
+        "testcase_folder_parent_id": 0,
+        "description": ""
+      }
     },
     {
       "id": 1657,
@@ -1127,232 +1790,23 @@
       "expected_result_text": "",
       "priority": 2,
       "testcase_type": "REGRESSION",
-      "cf__runautotests": null
-    },
-    {
-      "id": 1690,
-      "title": "Проверка кнопки копирования в буфер",
-      "sort_index": 6865888732,
-      "created_at": "2025-12-16T12:38:53.067Z",
-      "created_by": 23476,
-      "modified_at": "2025-12-16T12:38:53.067Z",
-      "modified_by": 23476,
-      "deleted_at": null,
-      "deleted_by": null,
-      "_etag": "0xy4yxk14996119l",
-      "project_id": 5,
-      "owner_user_id": 23476,
-      "$owner_name": "Мильченко Денис",
-      "type": "",
-      "description": "",
-      "template": "STEPS",
-      "precondition_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"h1\",\"children\":[{\"text\":\"ОПИСАНИЕ\"}]},{\"t\":\"h1\",\"children\":[{\"text\":\"Проверятся кнопка копирования в буфер обмена на странице создания заказа в блоке \\\"Заказчик\\\"\\nПРЕДУСЛОВИЯ\"}]},{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Создан контрагент Юр. лицо по типу тест кейса [C85160], на вкладке \\\"Юридические лица\\\" добавлено хотя бы 1 Юр.лицо, контрагент имеет хотя бы 1 представителя\"}]}]}]}",
-      "content_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"t\",\"columns\":2,\"children\":[{\"t\":\"tr\",\"rid\":\"rBskDTBxfm\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Щелкнуть по разделу \\\"Заказы\\\">\\\"Создать\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображена страница добавления нового заказа\"}]}]},{\"t\":\"p\",\"children\":[{\"text\":\"\"}]}]}]},{\"t\":\"tr\",\"rid\":\"lKDyTAKFHI\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле контрагент выбрать созданного контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Контрагент выбран\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поля Телефон,Email, Телеграм, Вконтакте, Инстаграм, Юр. Лицо заполнены автоматически данными контрагента\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Кнопка \\\"Создать заказ\\\" стала активна\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"dSgo7gdlMW\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле \\\"Представитель\\\" выбрать представителя контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Представитель выбран\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поля Телефон,Email, Телеграм, Вконтакте, Инстаграм заполнены автоматически данными представителя\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"loDu0S1vRI\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на кнопку копирования данных в поле \\\"Контрагент\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображен алерт \\\"Данные скопированы в буфер обмена\\\"\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"sfpXTE9MXZ\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Открыть любой текстовый редактор и вставить данные из буфера обмена\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Данные из буфера обмена корректно перенесены и отображены в текстовом редакторе\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"5Je2GdOkDz\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Вернуться на страницу создания заказа и повторить шаги 4-5 для полей:\"}]}]},{\"t\":\"ul\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Представитель\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Телефон\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Email\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Телеграм\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Вконтакте\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Инстаграм\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Юр.лицо\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Все результаты совпали с результатами из шагов 4-5\"}]}]}]}]}]}]}",
-      "steps_text": null,
-      "expected_result_text": null,
-      "priority": 2,
-      "testcase_type": "Automated",
-      "cf__runautotests": null
-    },
-    {
-      "id": 1691,
-      "title": "Проверка кнопки перехода в карточку",
-      "sort_index": 6965888732,
-      "created_at": "2025-12-16T12:38:53.067Z",
-      "created_by": 23476,
-      "modified_at": "2025-12-16T12:39:04.117Z",
-      "modified_by": 23476,
-      "deleted_at": null,
-      "deleted_by": null,
-      "_etag": "zlch1drdq5c44kd7",
-      "project_id": 5,
-      "owner_user_id": 23476,
-      "$owner_name": "Мильченко Денис",
-      "type": "",
-      "description": "",
-      "template": "STEPS",
-      "precondition_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"h1\",\"children\":[{\"text\":\"ОПИСАНИЕ\"}]},{\"t\":\"h1\",\"children\":[{\"text\":\"Проверятся кнопка перехода в карточку контрагента или представителя на странице создания заказа в блоке \\\"Заказчик\\\"\\nПРЕДУСЛОВИЯ\"}]},{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Создан контрагент Юр. лицо по типу тест кейса [C85160], на вкладке \\\"Юридические лица\\\" добавлено хотя бы 1 Юр.лицо, контрагент имеет хотя бы 1 представителя\"}]}]}]}",
-      "content_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"t\",\"columns\":2,\"children\":[{\"t\":\"tr\",\"rid\":\"mW95u53j9n\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Щелкнуть по разделу \\\"Заказы\\\">\\\"Создать\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображена страница добавления нового заказа\"}]}]},{\"t\":\"p\",\"children\":[{\"text\":\"\"}]}]}]},{\"t\":\"tr\",\"rid\":\"wrNvITHOa8\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле контрагент выбрать созданного контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Контрагент выбран\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поля Телефон,Email, Телеграм, Вконтакте, Инстаграм, Юр. Лицо заполнены автоматически данными контрагента\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Кнопка \\\"Создать заказ\\\" стала активна\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"OKCnSBSucf\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле \\\"Представитель\\\" выбрать представителя контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Представитель выбран\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поля Телефон,Email, Телеграм, Вконтакте, Инстаграм заполнены автоматически данными представителя\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"J0wSka4FEw\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на кнопку редактирования(перехода) \"},{\"t\":\"img\",\"children\":[{\"text\":\"\"}],\"blobId\":5,\"fullBlobId\":\"10f7c535fba510eaa694cb819509f180\",\"fileName\":\"image.png\",\"mimeType\":\"image/png\"},{\"text\":\"\\n в поле \\\"Контрагент\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В новой вкладке отображена карточка контрагента на вкладке \\\"Инфо\\\"\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"naMQQVgGEW\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на кнопку редактирования(перехода) \"},{\"t\":\"img\",\"children\":[{\"text\":\"\"}],\"blobId\":5,\"fullBlobId\":\"10f7c535fba510eaa694cb819509f180\",\"fileName\":\"image.png\",\"mimeType\":\"image/png\"},{\"text\":\"\\n в поле \\\"Представитель\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В новой вкладке отображена карточка контрагента-представителя на вкладке \\\"Инфо\\\"\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"nVa3YVS2qP\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на кнопку редактирования(перехода) \"},{\"t\":\"img\",\"children\":[{\"text\":\"\"}],\"blobId\":5,\"fullBlobId\":\"10f7c535fba510eaa694cb819509f180\",\"fileName\":\"image.png\",\"mimeType\":\"image/png\"},{\"text\":\"\\n в поле \\\"Телефон\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В новой вкладке отображена карточка контрагента-представителя на вкладке \\\"Инфо\\\"\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"RXw431WXsz\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на кнопку редактирования(перехода) \"},{\"t\":\"img\",\"children\":[{\"text\":\"\"}],\"blobId\":5,\"fullBlobId\":\"10f7c535fba510eaa694cb819509f180\",\"fileName\":\"image.png\",\"mimeType\":\"image/png\"},{\"text\":\"\\n в поле \\\"Email\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В новой вкладке отображена карточка контрагента-представителя на вкладке \\\"Инфо\\\"\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"Kd5K0hbgsC\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на кнопку редактирования(перехода) \"},{\"t\":\"img\",\"children\":[{\"text\":\"\"}],\"blobId\":5,\"fullBlobId\":\"10f7c535fba510eaa694cb819509f180\",\"fileName\":\"image.png\",\"mimeType\":\"image/png\"},{\"text\":\"\\n в поле \\\"Телеграм\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В новой вкладке отображена карточка контрагента-представителя на вкладке \\\"Инфо\\\"\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"xsdt4GfzpZ\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на кнопку редактирования(перехода) \"},{\"t\":\"img\",\"children\":[{\"text\":\"\"}],\"blobId\":5,\"fullBlobId\":\"10f7c535fba510eaa694cb819509f180\",\"fileName\":\"image.png\",\"mimeType\":\"image/png\"},{\"text\":\"\\n в поле \\\"Вконтакте\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В новой вкладке отображена карточка контрагента-представителя на вкладке \\\"Инфо\\\"\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"RyJqhLRU3W\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на кнопку редактирования(перехода) \"},{\"t\":\"img\",\"children\":[{\"text\":\"\"}],\"blobId\":5,\"fullBlobId\":\"10f7c535fba510eaa694cb819509f180\",\"fileName\":\"image.png\",\"mimeType\":\"image/png\"},{\"text\":\"\\n в поле \\\"Инстаграм\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В новой вкладке отображена карточка контрагента-представителя на вкладке \\\"Инфо\\\"\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"Xy6i99ENw8\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на кнопку редактирования(перехода) \"},{\"t\":\"img\",\"children\":[{\"text\":\"\"}],\"blobId\":5,\"fullBlobId\":\"10f7c535fba510eaa694cb819509f180\",\"fileName\":\"image.png\",\"mimeType\":\"image/png\"},{\"text\":\"\\n в поле \\\"Юр.лицо\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В новой вкладке отображена карточка Юр.лица на вкладке \\\"Инфо\\\"\"}]}]}]}]}]}]}",
-      "steps_text": null,
-      "expected_result_text": null,
-      "priority": 2,
-      "testcase_type": "Automated",
-      "cf__runautotests": null
-    },
-    {
-      "id": 1685,
-      "title": "Проверка поиска контрагента по контактам при создании заказа",
-      "sort_index": 6365888732,
-      "created_at": "2025-12-16T12:38:53.067Z",
-      "created_by": 23476,
-      "modified_at": "2025-12-16T12:38:53.067Z",
-      "modified_by": 23476,
-      "deleted_at": null,
-      "deleted_by": null,
-      "_etag": "fn0hrdsnqqv8cv0x",
-      "project_id": 5,
-      "owner_user_id": 23476,
-      "$owner_name": "Мильченко Денис",
-      "type": "",
-      "description": "",
-      "template": "STEPS",
-      "precondition_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"h1\",\"children\":[{\"text\":\"ОПИСАНИЕ\"}]},{\"t\":\"h1\",\"children\":[{\"text\":\"Проверяется проверка поиска контрагента по контактам в карточке создания заказа в блоке \\\"Заказчик\\\" в полях \\\"Контрагент\\\" и \\\"Представитель\\\"\\nПРЕДУСЛОВИЯ\"}]},{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Создан контрагент Юр. лицо по типу тест кейса [C85160], на вкладке \\\"Юридические лица\\\" добавлено хотя бы 1 Юр.лицо, контрагент имеет хотя бы 2 представителя\"}]}]}]}",
-      "content_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"t\",\"columns\":2,\"children\":[{\"t\":\"tr\",\"rid\":\"OdE7a2lAt5\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Щелкнуть по разделу \\\"Заказы\\\">\\\"Создать\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображена страница добавления нового заказа\"}]}]},{\"t\":\"p\",\"children\":[{\"text\":\"\"}]}]}]},{\"t\":\"tr\",\"rid\":\"jJTqjqg9sD\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле \\\"Контрагент\\\" ввести номер телефона созданного контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поиске отображен созданный контрагент\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поиск нужного контрагента произведен по номеру телефона\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"z18Hfv1QEd\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле \\\"Контрагент\\\" ввести Email созданного контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поиске отображен созданный контрагент\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поиск нужного контрагента произведен по Email\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"aUpCyEb3Dd\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле \\\"Контрагент\\\" выбрать созданного контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Контрагент выбран\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поля Телефон,Email, Телеграм, Вконтакте, Инстаграм, Юр. Лицо заполнены автоматически данными контрагента\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Кнопка \\\"Создать заказ\\\" стала активна\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"tktgZdOGvg\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле \\\"Представитель\\\" ввести номер телефона представителя контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поиске отображен созданный представитель\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поиск нужного представителя произведен по номеру телефона\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"CcjNVrV7dc\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле \\\"Представитель\\\" ввести Email представителя контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поиске отображен созданный представитель\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поиск нужного представителя произведен по Email\"}]}]}]}]}]}]}",
-      "steps_text": null,
-      "expected_result_text": null,
-      "priority": 2,
-      "testcase_type": "Automated",
-      "cf__runautotests": null
-    },
-    {
-      "id": 1692,
-      "title": "Проверка поиска контрагента по контактам при создании заказа",
-      "sort_index": 7065888732,
-      "created_at": "2025-12-16T12:38:53.067Z",
-      "created_by": 23476,
-      "modified_at": "2025-12-16T12:38:53.067Z",
-      "modified_by": 23476,
-      "deleted_at": null,
-      "deleted_by": null,
-      "_etag": "p7jhdxbj35jp8gc7",
-      "project_id": 5,
-      "owner_user_id": 23476,
-      "$owner_name": "Мильченко Денис",
-      "type": "",
-      "description": "",
-      "template": "STEPS",
-      "precondition_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"h1\",\"children\":[{\"text\":\"ОПИСАНИЕ\"}]},{\"t\":\"h1\",\"children\":[{\"text\":\"Проверяется проверка поиска контрагента по контактам в карточке создания заказа в блоке \\\"Заказчик\\\" в полях \\\"Контрагент\\\" и \\\"Представитель\\\"\\nПРЕДУСЛОВИЯ\"}]},{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Создан контрагент Юр. лицо по типу тест кейса [C85160], на вкладке \\\"Юридические лица\\\" добавлено хотя бы 1 Юр.лицо, контрагент имеет хотя бы 2 представителя\"}]}]}]}",
-      "content_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"t\",\"columns\":2,\"children\":[{\"t\":\"tr\",\"rid\":\"LiXViZCNrT\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Щелкнуть по разделу \\\"Заказы\\\">\\\"Создать\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображена страница добавления нового заказа\"}]}]},{\"t\":\"p\",\"children\":[{\"text\":\"\"}]}]}]},{\"t\":\"tr\",\"rid\":\"qdEYsxmANd\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле \\\"Контрагент\\\" ввести номер телефона созданного контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поиске отображен созданный контрагент\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поиск нужного контрагента произведен по номеру телефона\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"BhM08k1oXs\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле \\\"Контрагент\\\" ввести Email созданного контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поиске отображен созданный контрагент\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поиск нужного контрагента произведен по Email\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"Z7yQct1pTN\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле \\\"Контрагент\\\" выбрать созданного контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Контрагент выбран\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поля Телефон,Email, Телеграм, Вконтакте, Инстаграм, Юр. Лицо заполнены автоматически данными контрагента\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Кнопка \\\"Создать заказ\\\" стала активна\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"fEzSgMTZaO\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле \\\"Представитель\\\" ввести номер телефона представителя контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поиске отображен созданный представитель\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поиск нужного представителя произведен по номеру телефона\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"DsYy6F0e2K\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле \\\"Представитель\\\" ввести Email представителя контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поиске отображен созданный представитель\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поиск нужного представителя произведен по Email\"}]}]}]}]}]}]}",
-      "steps_text": null,
-      "expected_result_text": null,
-      "priority": 2,
-      "testcase_type": "Automated",
-      "cf__runautotests": null
-    },
-    {
-      "id": 1693,
-      "title": "Создание заказа из карточки контрагента",
-      "sort_index": 7165888732,
-      "created_at": "2025-12-16T12:38:53.067Z",
-      "created_by": 23476,
-      "modified_at": "2025-12-16T12:38:53.067Z",
-      "modified_by": 23476,
-      "deleted_at": null,
-      "deleted_by": null,
-      "_etag": "dz5zr549nk7nl07j",
-      "project_id": 5,
-      "owner_user_id": 23476,
-      "$owner_name": "Мильченко Денис",
-      "type": "",
-      "description": "",
-      "template": "STEPS",
-      "precondition_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"h1\",\"children\":[{\"text\":\"ОПИСАНИЕ\"}]},{\"t\":\"h1\",\"children\":[{\"text\":\"Проверяется возможность создания заказа из карточки контрагента с помощью кнопки \\\"Создать заказ\\\"\\nПРЕДУСЛОВИЯ\"}]},{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Создан контрагент по типу тест кейса [C85160]\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Открыта карточка контрагента на вкладке \\\"Инфо\\\"\"}]}]}]}",
-      "content_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"t\",\"columns\":2,\"children\":[{\"t\":\"tr\",\"rid\":\"evwD9SGOPm\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать кнопку \\\"Создать заказ/заявку\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображен выпадающий список с выбором:\"}]}]},{\"t\":\"ul\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Создать заказ\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Создать заявку\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"cKyd8apjdG\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Выбрать \\\"Создать заказ\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображена страница добавления нового заказа \"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Все поля заполнены данными из карточки контрагента\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Кнопка \\\"Создать заказ\\\" активна\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"HXANuuKSQB\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать \\\"Создать заказ\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Заказ создан\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Отображена карточка созданного заказа на странице \\\"Инфо\\\"\"}]}]}]}]}]}]}",
-      "steps_text": null,
-      "expected_result_text": null,
-      "priority": 2,
-      "testcase_type": "REGRESSION",
-      "cf__runautotests": null
-    },
-    {
-      "id": 1687,
-      "title": "Создание заказа из рабочего места оператора",
-      "sort_index": 6565888732,
-      "created_at": "2025-12-16T12:38:53.067Z",
-      "created_by": 23476,
-      "modified_at": "2025-12-16T12:39:04.117Z",
-      "modified_by": 23476,
-      "deleted_at": null,
-      "deleted_by": null,
-      "_etag": "jmxp5xv1kns0bz2x",
-      "project_id": 5,
-      "owner_user_id": 23476,
-      "$owner_name": "Мильченко Денис",
-      "type": "",
-      "description": "",
-      "template": "STEPS",
-      "precondition_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"h1\",\"children\":[{\"text\":\"ОПИСАНИЕ\"}]},{\"t\":\"h1\",\"children\":[{\"text\":\"Проверяется возможность создания заказа из рабочего места оператора (Касса) с добавлением расчёта (либо вручную либо из калькулятора)\\nПРЕДУСЛОВИЯ\"}]},{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Создан контрагент по типу тест кейса [C85159]\"}]}]}]}",
-      "content_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"t\",\"columns\":2,\"children\":[{\"t\":\"tr\",\"rid\":\"jbgQhwbuWE\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Перейти в раздел \\\"Касса\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображено рабочее место оператора\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"q2byKXGnNK\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В Поле \\\"Контрагент\\\" выбрать контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Контрагент выбран\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"4bEgbFwe3c\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Заполнить поля в ручную:\"}]}]},{\"t\":\"ul\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Наименование - Любое значение\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Цена - Любое значение\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Количество - Любое значение\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Все поля заполнены и корректно отображены\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"B7wyIvghmE\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на кнопку добавления строки спецификации \"},{\"t\":\"img\",\"children\":[{\"text\":\"\"}],\"blobId\":3,\"fullBlobId\":\"d7b7e0dca6d98add475a9dbf5709b7b2\",\"fileName\":\"image.png\",\"mimeType\":\"image/png\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Строка спецификации добавлена \"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Кнопка \\\"Создать заказ\\\" стала активна\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"SkRYbgK3ij\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать кнопку \\\"Создать заказ\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отобразилось окно \\\"Создания заказа\\\"\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Кнопки Отмена/Создать\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"CT7FbkXEMi\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на кнопку \\\"Создать\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В новой вкладке отображена карточка созданного заказа на вкладке инфо\"}]}]}]}]}]}]}",
-      "steps_text": null,
-      "expected_result_text": null,
-      "priority": 2,
-      "testcase_type": "Automated",
-      "cf__runautotests": null
-    },
-    {
-      "id": 1689,
-      "title": "Создание заказа из реестра заказов через кнопку Калькулятор",
-      "sort_index": 6765888732,
-      "created_at": "2025-12-16T12:38:53.067Z",
-      "created_by": 23476,
-      "modified_at": "2025-12-16T12:39:04.117Z",
-      "modified_by": 23476,
-      "deleted_at": null,
-      "deleted_by": null,
-      "_etag": "bmyeneganfd5dhyy",
-      "project_id": 5,
-      "owner_user_id": 23476,
-      "$owner_name": "Мильченко Денис",
-      "type": "",
-      "description": "",
-      "template": "STEPS",
-      "precondition_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"h1\",\"children\":[{\"text\":\"ОПИСАНИЕ\"}]},{\"t\":\"h1\",\"children\":[{\"text\":\"Проверяется возможность создания заказа из пункта \\\"Калькулятор\\\" в главном меню слева\\nПРЕДУСЛОВИЯ\"}]},{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Создан контрагент по типу тест кейса [C85159]\"}]}]}]}",
-      "content_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"t\",\"columns\":2,\"children\":[{\"t\":\"tr\",\"rid\":\"zgHpdyeOSX\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Щелкнуть по разделу \\\"Калькулятор\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображена форма создания расчета\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"MPIUJ2GHZi\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Заполнить таблицу спецификации:\"}]}]},{\"t\":\"ul\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Наименование - Любое значение\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Описание - Любое значение\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Кол-во, ед. - Любое значение \"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Цена за ед., ₽ - Любое значение\"}]}]},{\"t\":\"p\",\"children\":[{\"text\":\"\"}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Все поля заполнены и корректно отображены\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"DugIVtzzOA\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на кнопку добавления строки спецификации в расчет \"},{\"t\":\"img\",\"children\":[{\"text\":\"\"}],\"blobId\":4,\"fullBlobId\":\"29ed9ee04172c99142d34ff47d09ca75\",\"fileName\":\"image.png\",\"mimeType\":\"image/png\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Строка спецификации добавлена\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"3BBBV780hl\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать кнопку \\\"Создать заказ\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображена страница добавления нового заказа\"}]}]},{\"t\":\"p\",\"children\":[{\"text\":\"\"}]}]}]},{\"t\":\"tr\",\"rid\":\"5h8xTSqDi5\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле контрагент выбрать созданного контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Контрагент выбран\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поля Телефон,Email, Телеграм, Вконтакте, Инстаграм, Юр. Лицо заполнены автоматически данными контрагента\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Кнопка \\\"Создать заказ\\\" стала активна\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"25JaasqI8Y\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать кнопку \\\"Создать заказ\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображена карточка созданного заказа на странице \\\"Инфо\\\"\"}]}]}]}]}]}]}",
-      "steps_text": null,
-      "expected_result_text": null,
-      "priority": 2,
-      "testcase_type": "Automated",
-      "cf__runautotests": null
-    },
-    {
-      "id": 1688,
-      "title": "Создание заказа из реестра заказов через кнопку \"Новый заказ\"",
-      "sort_index": 6665888732,
-      "created_at": "2025-12-16T12:38:53.067Z",
-      "created_by": 23476,
-      "modified_at": "2025-12-16T12:38:53.067Z",
-      "modified_by": 23476,
-      "deleted_at": null,
-      "deleted_by": null,
-      "_etag": "rtcb3cht8f7t7m8k",
-      "project_id": 5,
-      "owner_user_id": 23476,
-      "$owner_name": "Мильченко Денис",
-      "type": "",
-      "description": "",
-      "template": "STEPS",
-      "precondition_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"h1\",\"children\":[{\"text\":\"ОПИСАНИЕ\"}]},{\"t\":\"h1\",\"children\":[{\"text\":\"Проверяется возможность создания заказа из реестра заказов через кнопку \\\"Новый заказ\\\"\\nПРЕДУСЛОВИЯ\"}]},{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Создан контрагент по типу тест кейса [C85159]\"}]}]}]}",
-      "content_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"t\",\"columns\":2,\"children\":[{\"t\":\"tr\",\"rid\":\"gMmTxxjkwb\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Щелкнуть по разделу \\\"Заказы\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображен реестр заказов\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"LNIJxZ2PWZ\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на кнопку \\\"Новый заказ\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображена страница добавления нового заказа\"}]}]},{\"t\":\"p\",\"children\":[{\"text\":\"\"}]}]}]},{\"t\":\"tr\",\"rid\":\"Eb3zBXMH8W\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле контрагент выбрать созданного контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Контрагент выбран\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поля Телефон,Email, Телеграм, Вконтакте, Инстаграм, Юр. Лицо заполнены автоматически данными контрагента\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Кнопка \\\"Создать заказ\\\" стала активна\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"JI9mGobZB7\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать кнопку \\\"Создать заказ\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображена карточка созданного заказа на странице \\\"Инфо\\\"\"}]}]}]}]}]}]}",
-      "steps_text": null,
-      "expected_result_text": null,
-      "priority": 2,
-      "testcase_type": "REGRESSION",
-      "cf__runautotests": null
-    },
-    {
-      "id": 1684,
-      "title": "Создание контрагента типа физ. лицо",
-      "sort_index": 6265888732,
-      "created_at": "2025-12-16T12:38:53.067Z",
-      "created_by": 23476,
-      "modified_at": "2025-12-16T12:38:53.067Z",
-      "modified_by": 23476,
-      "deleted_at": null,
-      "deleted_by": null,
-      "_etag": "kjsykxs22r2cfyhy",
-      "project_id": 5,
-      "owner_user_id": 23476,
-      "$owner_name": "Мильченко Денис",
-      "type": "",
-      "description": "",
-      "template": "STEPS",
-      "precondition_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Пользователь имеет учетную запись в системе\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Выполнена авторизация\"}]}]}]}",
-      "content_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"t\",\"columns\":2,\"children\":[{\"t\":\"tr\",\"rid\":\"mxQmSm3TgF\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"p\",\"children\":[{\"text\":\"Перейти в раздел \\\"Контрагенты\\\"\"}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Выполнен переход в раздел \\\"Контрагенты\\\"\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Отображен список контрагентов\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"gAum8uXk0L\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"p\",\"children\":[{\"text\":\"Нажать \\\"Создать контрагента\\\"\"}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Выполнен переход на страницу добавления контрагента\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"gXkrS3p6m1\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"p\",\"children\":[{\"text\":\"Выбрать \\\"Физическое лицо\\\" в блоке \\\"Контрагент\\\"\"}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отобразились поля для заполнения:\"}]}]},{\"t\":\"ul\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Фамилия\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Имя\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Отчество\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Пол\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Дата рождения\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Телефон\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"E-mail\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Телеграм\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"ВКонтакте\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Вид контрагента\"}]}]},{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Блок \\\"Дополнительно\\\"\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Кнопка \\\"Добавить представителя\\\"\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Кнопка \\\"Добавить адрес доставки\\\"\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"oRbQmhAW3g\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"p\",\"children\":[{\"text\":\"Нажать кнопку \\\"Создать\\\" без заполнения полей\"}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображён алерт: \\n\\\"Поле Имя обязательно для заполнения.\\n Поле Телефон обязательно для заполнения, когда E-mail не указано.\\n Поле E-mail обязательно для заполнения, когда Телефон не указано.\\\"\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"dChtuzT5QD\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"p\",\"children\":[{\"text\":\"Заполнить поля некорректными данными:\"}]},{\"t\":\"ul\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Телефон (не все цифры номера)\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"E-mail (несколько букв и символ \\\"@\\\")\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображён алерт: \\\"\\nПоле Имя обязательно для заполнения.\\nВведите корректный телефон\\nПоле E-mail должно быть действительным электронным адресом.\\\"\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"qSwPcxoVzJ\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"p\",\"children\":[{\"text\":\"Заполнить поля:\"}]},{\"t\":\"ul\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Фамилия, Имя, Отчество\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Пол, Дата рождения\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Телефон или/и E-mail\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Вид контрагента (выбрать любой пункт из списка)\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Поля заполнены\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"TmJ7SRCnEl\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"p\",\"children\":[{\"text\":\"В блоке \\\"Дополнительно\\\" выбрать:\"}]},{\"t\":\"ul\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле \\\"Источник\\\": МДМПринт\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"В поле \\\"Реклама\\\": yandex.ru\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Выбраны нужные параметры.\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"A59PJwCmuQ\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"p\",\"children\":[{\"text\":\"Нажать на кнопку \\\"Добавить представителя\\\"\"}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображён блок \\\"Представитель\\\"\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"8VAS3HPmS7\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"p\",\"children\":[{\"text\":\"В блоке \\\"Представитель\\\"\"}]},{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на выпадающий список\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Ввести в поле: Иванов\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Дождаться вывода результатов поиска\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Выбрать любой из вариантов\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Выбран представитель\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"5Py9fri3l4\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"p\",\"children\":[{\"text\":\"В блоке \\\"Представитель\\\"\"}]},{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на выпадающий список\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на кнопку \\\"+ Добавить\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображено модальное окно \\\"Создание представителя\\\"\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"vRXWJB11Vf\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"p\",\"children\":[{\"text\":\"Заполнить поля:\"}]},{\"t\":\"ul\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Фамилия, Имя, Отчество\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Пол, Дата рождения\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Телефон или/и E-mail\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Вид контрагента (выбрать любой пункт из списка)\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Поля заполнены\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"MPfH9Jrthv\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"p\",\"children\":[{\"text\":\"Нажать на кнопку \\\"Создать контрагента и сделать представителем\\\"\"}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Представитель добавлен\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"lPDotkGnR8\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"p\",\"children\":[{\"text\":\"Нажать на кнопку \\\"Создать\\\"\"}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Открылась карточка созданного контрагента.\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"Y8PoSID2Gg\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"p\",\"children\":[{\"text\":\"Проверить данные из карточки с введёнными значениями при создании контрагента.\"}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Данные совпадают.\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"На вкладке \\\"Представители\\\" указан выбранный ранее представитель.\"}]}]}]}]}]}]}",
-      "steps_text": null,
-      "expected_result_text": null,
-      "priority": 2,
-      "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 835,
+        "title": "API checklist",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.104Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "1snd1fdsdqcv46ng",
+        "project_id": 5,
+        "testcase_folder_parent_id": 0,
+        "description": ""
+      }
     },
     {
       "id": 1683,
@@ -1377,7 +1831,433 @@
       "expected_result_text": null,
       "priority": 2,
       "testcase_type": "Automated",
-      "cf__runautotests": null
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 840,
+        "title": "Реестр заказов",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.104Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "n3h9kd9r18xrd92e",
+        "project_id": 5,
+        "testcase_folder_parent_id": 0,
+        "description": ""
+      }
+    },
+    {
+      "id": 1684,
+      "title": "Создание контрагента типа физ. лицо",
+      "sort_index": 6265888732,
+      "created_at": "2025-12-16T12:38:53.067Z",
+      "created_by": 23476,
+      "modified_at": "2025-12-16T12:38:53.067Z",
+      "modified_by": 23476,
+      "deleted_at": null,
+      "deleted_by": null,
+      "_etag": "kjsykxs22r2cfyhy",
+      "project_id": 5,
+      "owner_user_id": 23476,
+      "$owner_name": "Мильченко Денис",
+      "type": "",
+      "description": "",
+      "template": "STEPS",
+      "precondition_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Пользователь имеет учетную запись в системе\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Выполнена авторизация\"}]}]}]}",
+      "content_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"t\",\"columns\":2,\"children\":[{\"t\":\"tr\",\"rid\":\"mxQmSm3TgF\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"p\",\"children\":[{\"text\":\"Перейти в раздел \\\"Контрагенты\\\"\"}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Выполнен переход в раздел \\\"Контрагенты\\\"\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Отображен список контрагентов\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"gAum8uXk0L\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"p\",\"children\":[{\"text\":\"Нажать \\\"Создать контрагента\\\"\"}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Выполнен переход на страницу добавления контрагента\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"gXkrS3p6m1\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"p\",\"children\":[{\"text\":\"Выбрать \\\"Физическое лицо\\\" в блоке \\\"Контрагент\\\"\"}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отобразились поля для заполнения:\"}]}]},{\"t\":\"ul\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Фамилия\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Имя\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Отчество\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Пол\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Дата рождения\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Телефон\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"E-mail\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Телеграм\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"ВКонтакте\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Вид контрагента\"}]}]},{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Блок \\\"Дополнительно\\\"\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Кнопка \\\"Добавить представителя\\\"\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Кнопка \\\"Добавить адрес доставки\\\"\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"oRbQmhAW3g\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"p\",\"children\":[{\"text\":\"Нажать кнопку \\\"Создать\\\" без заполнения полей\"}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображён алерт: \\n\\\"Поле Имя обязательно для заполнения.\\n Поле Телефон обязательно для заполнения, когда E-mail не указано.\\n Поле E-mail обязательно для заполнения, когда Телефон не указано.\\\"\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"dChtuzT5QD\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"p\",\"children\":[{\"text\":\"Заполнить поля некорректными данными:\"}]},{\"t\":\"ul\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Телефон (не все цифры номера)\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"E-mail (несколько букв и символ \\\"@\\\")\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображён алерт: \\\"\\nПоле Имя обязательно для заполнения.\\nВведите корректный телефон\\nПоле E-mail должно быть действительным электронным адресом.\\\"\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"qSwPcxoVzJ\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"p\",\"children\":[{\"text\":\"Заполнить поля:\"}]},{\"t\":\"ul\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Фамилия, Имя, Отчество\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Пол, Дата рождения\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Телефон или/и E-mail\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Вид контрагента (выбрать любой пункт из списка)\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Поля заполнены\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"TmJ7SRCnEl\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"p\",\"children\":[{\"text\":\"В блоке \\\"Дополнительно\\\" выбрать:\"}]},{\"t\":\"ul\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле \\\"Источник\\\": МДМПринт\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"В поле \\\"Реклама\\\": yandex.ru\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Выбраны нужные параметры.\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"A59PJwCmuQ\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"p\",\"children\":[{\"text\":\"Нажать на кнопку \\\"Добавить представителя\\\"\"}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображён блок \\\"Представитель\\\"\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"8VAS3HPmS7\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"p\",\"children\":[{\"text\":\"В блоке \\\"Представитель\\\"\"}]},{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на выпадающий список\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Ввести в поле: Иванов\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Дождаться вывода результатов поиска\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Выбрать любой из вариантов\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Выбран представитель\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"5Py9fri3l4\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"p\",\"children\":[{\"text\":\"В блоке \\\"Представитель\\\"\"}]},{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на выпадающий список\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на кнопку \\\"+ Добавить\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображено модальное окно \\\"Создание представителя\\\"\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"vRXWJB11Vf\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"p\",\"children\":[{\"text\":\"Заполнить поля:\"}]},{\"t\":\"ul\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Фамилия, Имя, Отчество\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Пол, Дата рождения\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Телефон или/и E-mail\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Вид контрагента (выбрать любой пункт из списка)\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Поля заполнены\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"MPfH9Jrthv\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"p\",\"children\":[{\"text\":\"Нажать на кнопку \\\"Создать контрагента и сделать представителем\\\"\"}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Представитель добавлен\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"lPDotkGnR8\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"p\",\"children\":[{\"text\":\"Нажать на кнопку \\\"Создать\\\"\"}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Открылась карточка созданного контрагента.\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"Y8PoSID2Gg\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"p\",\"children\":[{\"text\":\"Проверить данные из карточки с введёнными значениями при создании контрагента.\"}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Данные совпадают.\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"На вкладке \\\"Представители\\\" указан выбранный ранее представитель.\"}]}]}]}]}]}]}",
+      "steps_text": null,
+      "expected_result_text": null,
+      "priority": 2,
+      "testcase_type": "Automated",
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 841,
+        "title": "Создание контрагента",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.104Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "bsce6rrq2ad1837h",
+        "project_id": 5,
+        "testcase_folder_parent_id": 0,
+        "description": ""
+      }
+    },
+    {
+      "id": 1690,
+      "title": "Проверка кнопки копирования в буфер",
+      "sort_index": 6865888732,
+      "created_at": "2025-12-16T12:38:53.067Z",
+      "created_by": 23476,
+      "modified_at": "2025-12-16T12:38:53.067Z",
+      "modified_by": 23476,
+      "deleted_at": null,
+      "deleted_by": null,
+      "_etag": "0xy4yxk14996119l",
+      "project_id": 5,
+      "owner_user_id": 23476,
+      "$owner_name": "Мильченко Денис",
+      "type": "",
+      "description": "",
+      "template": "STEPS",
+      "precondition_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"h1\",\"children\":[{\"text\":\"ОПИСАНИЕ\"}]},{\"t\":\"h1\",\"children\":[{\"text\":\"Проверятся кнопка копирования в буфер обмена на странице создания заказа в блоке \\\"Заказчик\\\"\\nПРЕДУСЛОВИЯ\"}]},{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Создан контрагент Юр. лицо по типу тест кейса [C85160], на вкладке \\\"Юридические лица\\\" добавлено хотя бы 1 Юр.лицо, контрагент имеет хотя бы 1 представителя\"}]}]}]}",
+      "content_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"t\",\"columns\":2,\"children\":[{\"t\":\"tr\",\"rid\":\"rBskDTBxfm\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Щелкнуть по разделу \\\"Заказы\\\">\\\"Создать\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображена страница добавления нового заказа\"}]}]},{\"t\":\"p\",\"children\":[{\"text\":\"\"}]}]}]},{\"t\":\"tr\",\"rid\":\"lKDyTAKFHI\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле контрагент выбрать созданного контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Контрагент выбран\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поля Телефон,Email, Телеграм, Вконтакте, Инстаграм, Юр. Лицо заполнены автоматически данными контрагента\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Кнопка \\\"Создать заказ\\\" стала активна\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"dSgo7gdlMW\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле \\\"Представитель\\\" выбрать представителя контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Представитель выбран\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поля Телефон,Email, Телеграм, Вконтакте, Инстаграм заполнены автоматически данными представителя\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"loDu0S1vRI\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на кнопку копирования данных в поле \\\"Контрагент\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображен алерт \\\"Данные скопированы в буфер обмена\\\"\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"sfpXTE9MXZ\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Открыть любой текстовый редактор и вставить данные из буфера обмена\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Данные из буфера обмена корректно перенесены и отображены в текстовом редакторе\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"5Je2GdOkDz\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Вернуться на страницу создания заказа и повторить шаги 4-5 для полей:\"}]}]},{\"t\":\"ul\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Представитель\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Телефон\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Email\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Телеграм\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Вконтакте\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Инстаграм\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Юр.лицо\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Все результаты совпали с результатами из шагов 4-5\"}]}]}]}]}]}]}",
+      "steps_text": null,
+      "expected_result_text": null,
+      "priority": 2,
+      "testcase_type": "Automated",
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 842,
+        "title": "Проверка создания заказа",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.104Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "yfp11xf0zgryat3c",
+        "project_id": 5,
+        "testcase_folder_parent_id": 0,
+        "description": ""
+      }
+    },
+    {
+      "id": 1691,
+      "title": "Проверка кнопки перехода в карточку",
+      "sort_index": 6965888732,
+      "created_at": "2025-12-16T12:38:53.067Z",
+      "created_by": 23476,
+      "modified_at": "2025-12-16T12:39:04.117Z",
+      "modified_by": 23476,
+      "deleted_at": null,
+      "deleted_by": null,
+      "_etag": "zlch1drdq5c44kd7",
+      "project_id": 5,
+      "owner_user_id": 23476,
+      "$owner_name": "Мильченко Денис",
+      "type": "",
+      "description": "",
+      "template": "STEPS",
+      "precondition_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"h1\",\"children\":[{\"text\":\"ОПИСАНИЕ\"}]},{\"t\":\"h1\",\"children\":[{\"text\":\"Проверятся кнопка перехода в карточку контрагента или представителя на странице создания заказа в блоке \\\"Заказчик\\\"\\nПРЕДУСЛОВИЯ\"}]},{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Создан контрагент Юр. лицо по типу тест кейса [C85160], на вкладке \\\"Юридические лица\\\" добавлено хотя бы 1 Юр.лицо, контрагент имеет хотя бы 1 представителя\"}]}]}]}",
+      "content_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"t\",\"columns\":2,\"children\":[{\"t\":\"tr\",\"rid\":\"mW95u53j9n\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Щелкнуть по разделу \\\"Заказы\\\">\\\"Создать\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображена страница добавления нового заказа\"}]}]},{\"t\":\"p\",\"children\":[{\"text\":\"\"}]}]}]},{\"t\":\"tr\",\"rid\":\"wrNvITHOa8\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле контрагент выбрать созданного контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Контрагент выбран\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поля Телефон,Email, Телеграм, Вконтакте, Инстаграм, Юр. Лицо заполнены автоматически данными контрагента\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Кнопка \\\"Создать заказ\\\" стала активна\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"OKCnSBSucf\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле \\\"Представитель\\\" выбрать представителя контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Представитель выбран\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поля Телефон,Email, Телеграм, Вконтакте, Инстаграм заполнены автоматически данными представителя\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"J0wSka4FEw\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на кнопку редактирования(перехода) \"},{\"t\":\"img\",\"children\":[{\"text\":\"\"}],\"blobId\":5,\"fullBlobId\":\"10f7c535fba510eaa694cb819509f180\",\"fileName\":\"image.png\",\"mimeType\":\"image/png\"},{\"text\":\"\\n в поле \\\"Контрагент\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В новой вкладке отображена карточка контрагента на вкладке \\\"Инфо\\\"\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"naMQQVgGEW\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на кнопку редактирования(перехода) \"},{\"t\":\"img\",\"children\":[{\"text\":\"\"}],\"blobId\":5,\"fullBlobId\":\"10f7c535fba510eaa694cb819509f180\",\"fileName\":\"image.png\",\"mimeType\":\"image/png\"},{\"text\":\"\\n в поле \\\"Представитель\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В новой вкладке отображена карточка контрагента-представителя на вкладке \\\"Инфо\\\"\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"nVa3YVS2qP\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на кнопку редактирования(перехода) \"},{\"t\":\"img\",\"children\":[{\"text\":\"\"}],\"blobId\":5,\"fullBlobId\":\"10f7c535fba510eaa694cb819509f180\",\"fileName\":\"image.png\",\"mimeType\":\"image/png\"},{\"text\":\"\\n в поле \\\"Телефон\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В новой вкладке отображена карточка контрагента-представителя на вкладке \\\"Инфо\\\"\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"RXw431WXsz\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на кнопку редактирования(перехода) \"},{\"t\":\"img\",\"children\":[{\"text\":\"\"}],\"blobId\":5,\"fullBlobId\":\"10f7c535fba510eaa694cb819509f180\",\"fileName\":\"image.png\",\"mimeType\":\"image/png\"},{\"text\":\"\\n в поле \\\"Email\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В новой вкладке отображена карточка контрагента-представителя на вкладке \\\"Инфо\\\"\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"Kd5K0hbgsC\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на кнопку редактирования(перехода) \"},{\"t\":\"img\",\"children\":[{\"text\":\"\"}],\"blobId\":5,\"fullBlobId\":\"10f7c535fba510eaa694cb819509f180\",\"fileName\":\"image.png\",\"mimeType\":\"image/png\"},{\"text\":\"\\n в поле \\\"Телеграм\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В новой вкладке отображена карточка контрагента-представителя на вкладке \\\"Инфо\\\"\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"xsdt4GfzpZ\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на кнопку редактирования(перехода) \"},{\"t\":\"img\",\"children\":[{\"text\":\"\"}],\"blobId\":5,\"fullBlobId\":\"10f7c535fba510eaa694cb819509f180\",\"fileName\":\"image.png\",\"mimeType\":\"image/png\"},{\"text\":\"\\n в поле \\\"Вконтакте\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В новой вкладке отображена карточка контрагента-представителя на вкладке \\\"Инфо\\\"\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"RyJqhLRU3W\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на кнопку редактирования(перехода) \"},{\"t\":\"img\",\"children\":[{\"text\":\"\"}],\"blobId\":5,\"fullBlobId\":\"10f7c535fba510eaa694cb819509f180\",\"fileName\":\"image.png\",\"mimeType\":\"image/png\"},{\"text\":\"\\n в поле \\\"Инстаграм\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В новой вкладке отображена карточка контрагента-представителя на вкладке \\\"Инфо\\\"\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"Xy6i99ENw8\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на кнопку редактирования(перехода) \"},{\"t\":\"img\",\"children\":[{\"text\":\"\"}],\"blobId\":5,\"fullBlobId\":\"10f7c535fba510eaa694cb819509f180\",\"fileName\":\"image.png\",\"mimeType\":\"image/png\"},{\"text\":\"\\n в поле \\\"Юр.лицо\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В новой вкладке отображена карточка Юр.лица на вкладке \\\"Инфо\\\"\"}]}]}]}]}]}]}",
+      "steps_text": null,
+      "expected_result_text": null,
+      "priority": 2,
+      "testcase_type": "Automated",
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 842,
+        "title": "Проверка создания заказа",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.104Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "yfp11xf0zgryat3c",
+        "project_id": 5,
+        "testcase_folder_parent_id": 0,
+        "description": ""
+      }
+    },
+    {
+      "id": 1685,
+      "title": "Проверка поиска контрагента по контактам при создании заказа",
+      "sort_index": 6365888732,
+      "created_at": "2025-12-16T12:38:53.067Z",
+      "created_by": 23476,
+      "modified_at": "2025-12-16T12:38:53.067Z",
+      "modified_by": 23476,
+      "deleted_at": null,
+      "deleted_by": null,
+      "_etag": "fn0hrdsnqqv8cv0x",
+      "project_id": 5,
+      "owner_user_id": 23476,
+      "$owner_name": "Мильченко Денис",
+      "type": "",
+      "description": "",
+      "template": "STEPS",
+      "precondition_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"h1\",\"children\":[{\"text\":\"ОПИСАНИЕ\"}]},{\"t\":\"h1\",\"children\":[{\"text\":\"Проверяется проверка поиска контрагента по контактам в карточке создания заказа в блоке \\\"Заказчик\\\" в полях \\\"Контрагент\\\" и \\\"Представитель\\\"\\nПРЕДУСЛОВИЯ\"}]},{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Создан контрагент Юр. лицо по типу тест кейса [C85160], на вкладке \\\"Юридические лица\\\" добавлено хотя бы 1 Юр.лицо, контрагент имеет хотя бы 2 представителя\"}]}]}]}",
+      "content_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"t\",\"columns\":2,\"children\":[{\"t\":\"tr\",\"rid\":\"OdE7a2lAt5\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Щелкнуть по разделу \\\"Заказы\\\">\\\"Создать\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображена страница добавления нового заказа\"}]}]},{\"t\":\"p\",\"children\":[{\"text\":\"\"}]}]}]},{\"t\":\"tr\",\"rid\":\"jJTqjqg9sD\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле \\\"Контрагент\\\" ввести номер телефона созданного контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поиске отображен созданный контрагент\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поиск нужного контрагента произведен по номеру телефона\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"z18Hfv1QEd\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле \\\"Контрагент\\\" ввести Email созданного контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поиске отображен созданный контрагент\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поиск нужного контрагента произведен по Email\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"aUpCyEb3Dd\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле \\\"Контрагент\\\" выбрать созданного контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Контрагент выбран\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поля Телефон,Email, Телеграм, Вконтакте, Инстаграм, Юр. Лицо заполнены автоматически данными контрагента\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Кнопка \\\"Создать заказ\\\" стала активна\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"tktgZdOGvg\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле \\\"Представитель\\\" ввести номер телефона представителя контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поиске отображен созданный представитель\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поиск нужного представителя произведен по номеру телефона\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"CcjNVrV7dc\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле \\\"Представитель\\\" ввести Email представителя контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поиске отображен созданный представитель\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поиск нужного представителя произведен по Email\"}]}]}]}]}]}]}",
+      "steps_text": null,
+      "expected_result_text": null,
+      "priority": 2,
+      "testcase_type": "Automated",
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 842,
+        "title": "Проверка создания заказа",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.104Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "yfp11xf0zgryat3c",
+        "project_id": 5,
+        "testcase_folder_parent_id": 0,
+        "description": ""
+      }
+    },
+    {
+      "id": 1692,
+      "title": "Проверка поиска контрагента по контактам при создании заказа",
+      "sort_index": 7065888732,
+      "created_at": "2025-12-16T12:38:53.067Z",
+      "created_by": 23476,
+      "modified_at": "2025-12-16T12:38:53.067Z",
+      "modified_by": 23476,
+      "deleted_at": null,
+      "deleted_by": null,
+      "_etag": "p7jhdxbj35jp8gc7",
+      "project_id": 5,
+      "owner_user_id": 23476,
+      "$owner_name": "Мильченко Денис",
+      "type": "",
+      "description": "",
+      "template": "STEPS",
+      "precondition_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"h1\",\"children\":[{\"text\":\"ОПИСАНИЕ\"}]},{\"t\":\"h1\",\"children\":[{\"text\":\"Проверяется проверка поиска контрагента по контактам в карточке создания заказа в блоке \\\"Заказчик\\\" в полях \\\"Контрагент\\\" и \\\"Представитель\\\"\\nПРЕДУСЛОВИЯ\"}]},{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Создан контрагент Юр. лицо по типу тест кейса [C85160], на вкладке \\\"Юридические лица\\\" добавлено хотя бы 1 Юр.лицо, контрагент имеет хотя бы 2 представителя\"}]}]}]}",
+      "content_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"t\",\"columns\":2,\"children\":[{\"t\":\"tr\",\"rid\":\"LiXViZCNrT\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Щелкнуть по разделу \\\"Заказы\\\">\\\"Создать\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображена страница добавления нового заказа\"}]}]},{\"t\":\"p\",\"children\":[{\"text\":\"\"}]}]}]},{\"t\":\"tr\",\"rid\":\"qdEYsxmANd\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле \\\"Контрагент\\\" ввести номер телефона созданного контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поиске отображен созданный контрагент\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поиск нужного контрагента произведен по номеру телефона\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"BhM08k1oXs\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле \\\"Контрагент\\\" ввести Email созданного контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поиске отображен созданный контрагент\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поиск нужного контрагента произведен по Email\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"Z7yQct1pTN\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле \\\"Контрагент\\\" выбрать созданного контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Контрагент выбран\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поля Телефон,Email, Телеграм, Вконтакте, Инстаграм, Юр. Лицо заполнены автоматически данными контрагента\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Кнопка \\\"Создать заказ\\\" стала активна\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"fEzSgMTZaO\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле \\\"Представитель\\\" ввести номер телефона представителя контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поиске отображен созданный представитель\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поиск нужного представителя произведен по номеру телефона\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"DsYy6F0e2K\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле \\\"Представитель\\\" ввести Email представителя контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поиске отображен созданный представитель\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поиск нужного представителя произведен по Email\"}]}]}]}]}]}]}",
+      "steps_text": null,
+      "expected_result_text": null,
+      "priority": 2,
+      "testcase_type": "Automated",
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 842,
+        "title": "Проверка создания заказа",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.104Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "yfp11xf0zgryat3c",
+        "project_id": 5,
+        "testcase_folder_parent_id": 0,
+        "description": ""
+      }
+    },
+    {
+      "id": 1693,
+      "title": "Создание заказа из карточки контрагента",
+      "sort_index": 7165888732,
+      "created_at": "2025-12-16T12:38:53.067Z",
+      "created_by": 23476,
+      "modified_at": "2025-12-16T12:38:53.067Z",
+      "modified_by": 23476,
+      "deleted_at": null,
+      "deleted_by": null,
+      "_etag": "dz5zr549nk7nl07j",
+      "project_id": 5,
+      "owner_user_id": 23476,
+      "$owner_name": "Мильченко Денис",
+      "type": "",
+      "description": "",
+      "template": "STEPS",
+      "precondition_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"h1\",\"children\":[{\"text\":\"ОПИСАНИЕ\"}]},{\"t\":\"h1\",\"children\":[{\"text\":\"Проверяется возможность создания заказа из карточки контрагента с помощью кнопки \\\"Создать заказ\\\"\\nПРЕДУСЛОВИЯ\"}]},{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Создан контрагент по типу тест кейса [C85160]\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Открыта карточка контрагента на вкладке \\\"Инфо\\\"\"}]}]}]}",
+      "content_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"t\",\"columns\":2,\"children\":[{\"t\":\"tr\",\"rid\":\"evwD9SGOPm\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать кнопку \\\"Создать заказ/заявку\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображен выпадающий список с выбором:\"}]}]},{\"t\":\"ul\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Создать заказ\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Создать заявку\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"cKyd8apjdG\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Выбрать \\\"Создать заказ\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображена страница добавления нового заказа \"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Все поля заполнены данными из карточки контрагента\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Кнопка \\\"Создать заказ\\\" активна\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"HXANuuKSQB\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать \\\"Создать заказ\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Заказ создан\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Отображена карточка созданного заказа на странице \\\"Инфо\\\"\"}]}]}]}]}]}]}",
+      "steps_text": null,
+      "expected_result_text": null,
+      "priority": 2,
+      "testcase_type": "REGRESSION",
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 842,
+        "title": "Проверка создания заказа",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.104Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "yfp11xf0zgryat3c",
+        "project_id": 5,
+        "testcase_folder_parent_id": 0,
+        "description": ""
+      }
+    },
+    {
+      "id": 1687,
+      "title": "Создание заказа из рабочего места оператора",
+      "sort_index": 6565888732,
+      "created_at": "2025-12-16T12:38:53.067Z",
+      "created_by": 23476,
+      "modified_at": "2025-12-16T12:39:04.117Z",
+      "modified_by": 23476,
+      "deleted_at": null,
+      "deleted_by": null,
+      "_etag": "jmxp5xv1kns0bz2x",
+      "project_id": 5,
+      "owner_user_id": 23476,
+      "$owner_name": "Мильченко Денис",
+      "type": "",
+      "description": "",
+      "template": "STEPS",
+      "precondition_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"h1\",\"children\":[{\"text\":\"ОПИСАНИЕ\"}]},{\"t\":\"h1\",\"children\":[{\"text\":\"Проверяется возможность создания заказа из рабочего места оператора (Касса) с добавлением расчёта (либо вручную либо из калькулятора)\\nПРЕДУСЛОВИЯ\"}]},{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Создан контрагент по типу тест кейса [C85159]\"}]}]}]}",
+      "content_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"t\",\"columns\":2,\"children\":[{\"t\":\"tr\",\"rid\":\"jbgQhwbuWE\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Перейти в раздел \\\"Касса\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображено рабочее место оператора\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"q2byKXGnNK\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В Поле \\\"Контрагент\\\" выбрать контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Контрагент выбран\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"4bEgbFwe3c\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Заполнить поля в ручную:\"}]}]},{\"t\":\"ul\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Наименование - Любое значение\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Цена - Любое значение\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Количество - Любое значение\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Все поля заполнены и корректно отображены\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"B7wyIvghmE\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на кнопку добавления строки спецификации \"},{\"t\":\"img\",\"children\":[{\"text\":\"\"}],\"blobId\":3,\"fullBlobId\":\"d7b7e0dca6d98add475a9dbf5709b7b2\",\"fileName\":\"image.png\",\"mimeType\":\"image/png\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Строка спецификации добавлена \"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Кнопка \\\"Создать заказ\\\" стала активна\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"SkRYbgK3ij\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать кнопку \\\"Создать заказ\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отобразилось окно \\\"Создания заказа\\\"\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Кнопки Отмена/Создать\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"CT7FbkXEMi\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на кнопку \\\"Создать\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В новой вкладке отображена карточка созданного заказа на вкладке инфо\"}]}]}]}]}]}]}",
+      "steps_text": null,
+      "expected_result_text": null,
+      "priority": 2,
+      "testcase_type": "Automated",
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 842,
+        "title": "Проверка создания заказа",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.104Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "yfp11xf0zgryat3c",
+        "project_id": 5,
+        "testcase_folder_parent_id": 0,
+        "description": ""
+      }
+    },
+    {
+      "id": 1689,
+      "title": "Создание заказа из реестра заказов через кнопку Калькулятор",
+      "sort_index": 6765888732,
+      "created_at": "2025-12-16T12:38:53.067Z",
+      "created_by": 23476,
+      "modified_at": "2025-12-16T12:39:04.117Z",
+      "modified_by": 23476,
+      "deleted_at": null,
+      "deleted_by": null,
+      "_etag": "bmyeneganfd5dhyy",
+      "project_id": 5,
+      "owner_user_id": 23476,
+      "$owner_name": "Мильченко Денис",
+      "type": "",
+      "description": "",
+      "template": "STEPS",
+      "precondition_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"h1\",\"children\":[{\"text\":\"ОПИСАНИЕ\"}]},{\"t\":\"h1\",\"children\":[{\"text\":\"Проверяется возможность создания заказа из пункта \\\"Калькулятор\\\" в главном меню слева\\nПРЕДУСЛОВИЯ\"}]},{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Создан контрагент по типу тест кейса [C85159]\"}]}]}]}",
+      "content_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"t\",\"columns\":2,\"children\":[{\"t\":\"tr\",\"rid\":\"zgHpdyeOSX\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Щелкнуть по разделу \\\"Калькулятор\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображена форма создания расчета\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"MPIUJ2GHZi\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Заполнить таблицу спецификации:\"}]}]},{\"t\":\"ul\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Наименование - Любое значение\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Описание - Любое значение\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Кол-во, ед. - Любое значение \"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Цена за ед., ₽ - Любое значение\"}]}]},{\"t\":\"p\",\"children\":[{\"text\":\"\"}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Все поля заполнены и корректно отображены\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"DugIVtzzOA\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на кнопку добавления строки спецификации в расчет \"},{\"t\":\"img\",\"children\":[{\"text\":\"\"}],\"blobId\":4,\"fullBlobId\":\"29ed9ee04172c99142d34ff47d09ca75\",\"fileName\":\"image.png\",\"mimeType\":\"image/png\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Строка спецификации добавлена\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"3BBBV780hl\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать кнопку \\\"Создать заказ\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображена страница добавления нового заказа\"}]}]},{\"t\":\"p\",\"children\":[{\"text\":\"\"}]}]}]},{\"t\":\"tr\",\"rid\":\"5h8xTSqDi5\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле контрагент выбрать созданного контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Контрагент выбран\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поля Телефон,Email, Телеграм, Вконтакте, Инстаграм, Юр. Лицо заполнены автоматически данными контрагента\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Кнопка \\\"Создать заказ\\\" стала активна\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"25JaasqI8Y\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать кнопку \\\"Создать заказ\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображена карточка созданного заказа на странице \\\"Инфо\\\"\"}]}]}]}]}]}]}",
+      "steps_text": null,
+      "expected_result_text": null,
+      "priority": 2,
+      "testcase_type": "Automated",
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 842,
+        "title": "Проверка создания заказа",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.104Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "yfp11xf0zgryat3c",
+        "project_id": 5,
+        "testcase_folder_parent_id": 0,
+        "description": ""
+      }
+    },
+    {
+      "id": 1688,
+      "title": "Создание заказа из реестра заказов через кнопку \"Новый заказ\"",
+      "sort_index": 6665888732,
+      "created_at": "2025-12-16T12:38:53.067Z",
+      "created_by": 23476,
+      "modified_at": "2025-12-16T12:38:53.067Z",
+      "modified_by": 23476,
+      "deleted_at": null,
+      "deleted_by": null,
+      "_etag": "rtcb3cht8f7t7m8k",
+      "project_id": 5,
+      "owner_user_id": 23476,
+      "$owner_name": "Мильченко Денис",
+      "type": "",
+      "description": "",
+      "template": "STEPS",
+      "precondition_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"h1\",\"children\":[{\"text\":\"ОПИСАНИЕ\"}]},{\"t\":\"h1\",\"children\":[{\"text\":\"Проверяется возможность создания заказа из реестра заказов через кнопку \\\"Новый заказ\\\"\\nПРЕДУСЛОВИЯ\"}]},{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Создан контрагент по типу тест кейса [C85159]\"}]}]}]}",
+      "content_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"t\",\"columns\":2,\"children\":[{\"t\":\"tr\",\"rid\":\"gMmTxxjkwb\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Щелкнуть по разделу \\\"Заказы\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображен реестр заказов\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"LNIJxZ2PWZ\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на кнопку \\\"Новый заказ\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображена страница добавления нового заказа\"}]}]},{\"t\":\"p\",\"children\":[{\"text\":\"\"}]}]}]},{\"t\":\"tr\",\"rid\":\"Eb3zBXMH8W\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"В поле контрагент выбрать созданного контрагента\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Контрагент выбран\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поля Телефон,Email, Телеграм, Вконтакте, Инстаграм, Юр. Лицо заполнены автоматически данными контрагента\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Кнопка \\\"Создать заказ\\\" стала активна\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"JI9mGobZB7\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать кнопку \\\"Создать заказ\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображена карточка созданного заказа на странице \\\"Инфо\\\"\"}]}]}]}]}]}]}",
+      "steps_text": null,
+      "expected_result_text": null,
+      "priority": 2,
+      "testcase_type": "REGRESSION",
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 842,
+        "title": "Проверка создания заказа",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.104Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "yfp11xf0zgryat3c",
+        "project_id": 5,
+        "testcase_folder_parent_id": 0,
+        "description": ""
+      }
+    },
+    {
+      "id": 1686,
+      "title": "Возможность создания контрагента через \"Добавить представителя\"",
+      "sort_index": 6465888732,
+      "created_at": "2025-12-16T12:38:53.067Z",
+      "created_by": 23476,
+      "modified_at": "2025-12-16T12:38:53.067Z",
+      "modified_by": 23476,
+      "deleted_at": null,
+      "deleted_by": null,
+      "_etag": "frvcjczcbh58m1v4",
+      "project_id": 5,
+      "owner_user_id": 23476,
+      "$owner_name": "Мильченко Денис",
+      "type": "",
+      "description": "",
+      "template": "STEPS",
+      "precondition_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Создан контрагент по типу тест кейса [C85159]\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Открыта карточка контрагента на вкладке \\\"Инфо\\\"\"}]}]}]}",
+      "content_text": "{\"t\":\"slate\",\"v\":1,\"c\":[{\"t\":\"t\",\"columns\":2,\"children\":[{\"t\":\"tr\",\"rid\":\"8kIKIxEb0K\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать кнопку \\\"Добавить контрагента\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображен выпадающий список с выбором добавляемого:\"}]}]},{\"t\":\"ul\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Представителя\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Представляемого\"}]}]},{\"t\":\"p\",\"children\":[{\"text\":\"—\"}]},{\"t\":\"p\",\"children\":[{\"text\":\"Для контрагента типа Физ.лицо список содержит Представителя и Представляемого, для контрагента типа Юр.лица только Представителя\"}]}]}]},{\"t\":\"tr\",\"rid\":\"IKZaTU1GWI\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Выбрать \\\"Представителя\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Осуществлен переход на вкладку \\\"Представители\\\"\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"WeIJNsCB7M\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать на поле \\\"Выбрать из существующих или добавить нового\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Раскрылся список:\"}]}]},{\"t\":\"p\",\"children\":[{\"text\":\"\"}]},{\"t\":\"ul\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Возможен выбора существующего контрагента с помощью поиска\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Отображена кнопка \\\"+Добавить\\\"\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"tWhgs7E3sd\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать \\\"+Добавить\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Отображено окно \\\"Создание представителя\\\"\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Поле \\\"Тип\\\" заполнено автоматически - Физ.лицо\"}]}]}]}]},{\"t\":\"tr\",\"rid\":\"YuaY8zBDK6\",\"children\":[{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Заполнить поля в блоке \\\"Контрагент\\\"\"}]}]},{\"t\":\"ul\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Фамилия - тестоваяФамилия2\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Имя - тестовоеИмя2\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Отчество - тестовоеОтчество2\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Пол - мужской\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Дата рождения - сегодняшняя дата\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Телефон - +79109999997\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"E-mail - \"},{\"t\":\"a\",\"children\":[{\"text\":\"testoviy2@mail.ru\"}],\"url\":\"mailto:testoviy2@mail.ru\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Телеграм - telegram2\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"ВКонтакте - VK2\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Инстаграм - inst2\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Вид контрагента - Клиент\"}]}]},{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Заполнить поля в блоке \\\"Дополнительно\\\"\"}]}]},{\"t\":\"ul\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Источник - МДМПринт\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Реклама - yandex.ru\"}]}]},{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Нажать \\\"Создать контрагента и сделать представителем\\\"\"}]}]}]},{\"t\":\"td\",\"children\":[{\"t\":\"ol\",\"children\":[{\"t\":\"li\",\"children\":[{\"text\":\"Страница обновилась\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"Контрагент создан\"}]},{\"t\":\"li\",\"children\":[{\"text\":\"На вкладке \\\"Представители\\\" в таблицу добавлен созданный контрагент\"}]}]}]}]}]}]}",
+      "steps_text": null,
+      "expected_result_text": null,
+      "priority": 2,
+      "testcase_type": "Automated",
+      "cf__runautotests": null,
+      "testcase_folder": {
+        "id": 843,
+        "title": "Проверка создания контрагента",
+        "sort_index": 0,
+        "is_deleted": false,
+        "created_at": "2025-12-16T12:38:53.104Z",
+        "created_by": 23476,
+        "modified_at": "2025-12-16T12:38:53.104Z",
+        "modified_by": 23476,
+        "deleted_at": null,
+        "deleted_by": null,
+        "_etag": "n4qrq6qd9nfc8lj9",
+        "project_id": 5,
+        "testcase_folder_parent_id": 0,
+        "description": ""
+      }
     }
   ],
   "folders": [
@@ -1517,5 +2397,226 @@
       "description": ""
     }
   ],
-  "folderMappings": []
+  "folderMappings": [
+    {
+      "testcase_id": 1675,
+      "testcase_folder_id": 837
+    },
+    {
+      "testcase_id": 1645,
+      "testcase_folder_id": 835
+    },
+    {
+      "testcase_id": 1651,
+      "testcase_folder_id": 835
+    },
+    {
+      "testcase_id": 1664,
+      "testcase_folder_id": 836
+    },
+    {
+      "testcase_id": 1671,
+      "testcase_folder_id": 836
+    },
+    {
+      "testcase_id": 1640,
+      "testcase_folder_id": 835
+    },
+    {
+      "testcase_id": 1662,
+      "testcase_folder_id": 836
+    },
+    {
+      "testcase_id": 1669,
+      "testcase_folder_id": 836
+    },
+    {
+      "testcase_id": 1659,
+      "testcase_folder_id": 836
+    },
+    {
+      "testcase_id": 1666,
+      "testcase_folder_id": 836
+    },
+    {
+      "testcase_id": 1653,
+      "testcase_folder_id": 835
+    },
+    {
+      "testcase_id": 1679,
+      "testcase_folder_id": 839
+    },
+    {
+      "testcase_id": 1644,
+      "testcase_folder_id": 835
+    },
+    {
+      "testcase_id": 1650,
+      "testcase_folder_id": 835
+    },
+    {
+      "testcase_id": 1673,
+      "testcase_folder_id": 837
+    },
+    {
+      "testcase_id": 1661,
+      "testcase_folder_id": 836
+    },
+    {
+      "testcase_id": 1668,
+      "testcase_folder_id": 836
+    },
+    {
+      "testcase_id": 1655,
+      "testcase_folder_id": 835
+    },
+    {
+      "testcase_id": 1646,
+      "testcase_folder_id": 835
+    },
+    {
+      "testcase_id": 1643,
+      "testcase_folder_id": 835
+    },
+    {
+      "testcase_id": 1681,
+      "testcase_folder_id": 839
+    },
+    {
+      "testcase_id": 1682,
+      "testcase_folder_id": 839
+    },
+    {
+      "testcase_id": 1642,
+      "testcase_folder_id": 835
+    },
+    {
+      "testcase_id": 1654,
+      "testcase_folder_id": 835
+    },
+    {
+      "testcase_id": 1639,
+      "testcase_folder_id": 835
+    },
+    {
+      "testcase_id": 1680,
+      "testcase_folder_id": 839
+    },
+    {
+      "testcase_id": 1656,
+      "testcase_folder_id": 835
+    },
+    {
+      "testcase_id": 1663,
+      "testcase_folder_id": 836
+    },
+    {
+      "testcase_id": 1670,
+      "testcase_folder_id": 836
+    },
+    {
+      "testcase_id": 1647,
+      "testcase_folder_id": 835
+    },
+    {
+      "testcase_id": 1641,
+      "testcase_folder_id": 835
+    },
+    {
+      "testcase_id": 1672,
+      "testcase_folder_id": 837
+    },
+    {
+      "testcase_id": 1648,
+      "testcase_folder_id": 835
+    },
+    {
+      "testcase_id": 1676,
+      "testcase_folder_id": 837
+    },
+    {
+      "testcase_id": 1677,
+      "testcase_folder_id": 838
+    },
+    {
+      "testcase_id": 1678,
+      "testcase_folder_id": 838
+    },
+    {
+      "testcase_id": 1658,
+      "testcase_folder_id": 836
+    },
+    {
+      "testcase_id": 1665,
+      "testcase_folder_id": 836
+    },
+    {
+      "testcase_id": 1660,
+      "testcase_folder_id": 836
+    },
+    {
+      "testcase_id": 1667,
+      "testcase_folder_id": 836
+    },
+    {
+      "testcase_id": 1674,
+      "testcase_folder_id": 837
+    },
+    {
+      "testcase_id": 1649,
+      "testcase_folder_id": 835
+    },
+    {
+      "testcase_id": 1652,
+      "testcase_folder_id": 835
+    },
+    {
+      "testcase_id": 1657,
+      "testcase_folder_id": 835
+    },
+    {
+      "testcase_id": 1683,
+      "testcase_folder_id": 840
+    },
+    {
+      "testcase_id": 1684,
+      "testcase_folder_id": 841
+    },
+    {
+      "testcase_id": 1690,
+      "testcase_folder_id": 842
+    },
+    {
+      "testcase_id": 1691,
+      "testcase_folder_id": 842
+    },
+    {
+      "testcase_id": 1685,
+      "testcase_folder_id": 842
+    },
+    {
+      "testcase_id": 1692,
+      "testcase_folder_id": 842
+    },
+    {
+      "testcase_id": 1693,
+      "testcase_folder_id": 842
+    },
+    {
+      "testcase_id": 1687,
+      "testcase_folder_id": 842
+    },
+    {
+      "testcase_id": 1689,
+      "testcase_folder_id": 842
+    },
+    {
+      "testcase_id": 1688,
+      "testcase_folder_id": 842
+    },
+    {
+      "testcase_id": 1686,
+      "testcase_folder_id": 843
+    }
+  ]
 }
