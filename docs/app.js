@@ -1,4 +1,4 @@
-const DATA_BASE = 'data';
+﻿const DATA_BASE = 'data';
 const STORAGE_KEY = 'testiny-gh-launcher-v1';
 const DEFAULTS = {
     repo: 'ab7nt/HelloPrintAutotests',
@@ -42,6 +42,7 @@ const state = {
     totalTests: 0,
     runs: new Map(),
     latestRunByTestId: new Map(),
+    pendingRunLookups: new Map(),
     folders: [],
     folderMappings: [],
     testFolderMap: new Map(),
@@ -57,9 +58,13 @@ function loadStoredState() {
         const raw = localStorage.getItem(STORAGE_KEY);
         if (!raw) return;
         const saved = JSON.parse(raw);
-        Object.assign(state, saved, { runs: new Map(), latestRunByTestId: new Map() });
+        Object.assign(state, saved, {
+            runs: new Map(),
+            latestRunByTestId: new Map(),
+            pendingRunLookups: new Map(),
+        });
     } catch (e) {
-        console.warn('Не удалось прочитать сохранённое состояние', e);
+        console.warn('РќРµ СѓРґР°Р»РѕСЃСЊ РїСЂРѕС‡РёС‚Р°С‚СЊ СЃРѕС…СЂР°РЅС‘РЅРЅРѕРµ СЃРѕСЃС‚РѕСЏРЅРёРµ', e);
     }
 }
 
@@ -106,7 +111,7 @@ function setLoading(button, loading, label) {
 function togglePassword(input, btn) {
     const isHidden = input.type === 'password';
     input.type = isHidden ? 'text' : 'password';
-    btn.textContent = isHidden ? 'Скрыть' : 'Показать';
+    btn.textContent = isHidden ? 'РЎРєСЂС‹С‚СЊ' : 'РџРѕРєР°Р·Р°С‚СЊ';
 }
 
 function syncStateFromInputs() {
@@ -119,12 +124,12 @@ function syncStateFromInputs() {
 }
 
 function requireTokens() {
-    if (!state.ghToken) throw new Error('Добавьте GitHub token.');
-    if (!state.repo) throw new Error('Укажите репозиторий owner/repo.');
+    if (!state.ghToken) throw new Error('Р”РѕР±Р°РІСЊС‚Рµ GitHub token.');
+    if (!state.repo) throw new Error('РЈРєР°Р¶РёС‚Рµ СЂРµРїРѕР·РёС‚РѕСЂРёР№ owner/repo.');
 }
 
 async function githubRequest(path, { method = 'GET', body } = {}) {
-    if (!state.ghToken) throw new Error('Сначала введите GitHub token.');
+    if (!state.ghToken) throw new Error('РЎРЅР°С‡Р°Р»Р° РІРІРµРґРёС‚Рµ GitHub token.');
 
     const headers = {
         Accept: 'application/vnd.github+json',
@@ -198,7 +203,7 @@ function getFolderParentId(folder) {
 }
 
 function getFolderName(folder) {
-    return folder.name || folder.title || folder.folder_name || 'Без папки';
+    return folder.name || folder.title || folder.folder_name || 'Р‘РµР· РїР°РїРєРё';
 }
 
 function getTestFolderId(test) {
@@ -445,7 +450,7 @@ function renderRootTests(tests) {
 
     const title = document.createElement("span");
     title.className = "folder__title";
-    title.textContent = "Без папки";
+    title.textContent = "Р‘РµР· РїР°РїРєРё";
 
     const meta = document.createElement("span");
     meta.className = "folder__meta";
@@ -497,7 +502,7 @@ function isAutomated(test) {
 
 async function fetchCacheJson(url) {
     const res = await fetch(url, { cache: 'no-store' });
-    if (!res.ok) throw new Error(`Не найден кеш ${url}. Запустите workflow Sync Testiny data.`);
+    if (!res.ok) throw new Error(`РќРµ РЅР°Р№РґРµРЅ РєРµС€ ${url}. Р—Р°РїСѓСЃС‚РёС‚Рµ workflow Sync Testiny data.`);
     return res.json();
 }
 
@@ -510,7 +515,7 @@ async function loadProjects() {
         if (state.projectId) {
             loadTests();
         }
-        showToast('Проекты загружены');
+        showToast('РџСЂРѕРµРєС‚С‹ Р·Р°РіСЂСѓР¶РµРЅС‹');
     } catch (e) {
         console.error(e);
         showToast(e.message);
@@ -521,7 +526,7 @@ async function loadProjects() {
 
 async function loadTests() {
     if (!state.projectId) {
-        showToast('Не выбран проект.');
+        showToast('РќРµ РІС‹Р±СЂР°РЅ РїСЂРѕРµРєС‚.');
         return;
     }
     setLoading(els.btnLoadTests, true, "...");
@@ -533,13 +538,15 @@ async function loadTests() {
         state.folderMappings = cached?.folderMappings || [];
         state.testFolderMap = buildTestFolderMap();
         state.selectedTests = new Set();
+        state.pendingRunLookups.forEach((interval) => clearInterval(interval));
+        state.pendingRunLookups.clear();
         state.latestRunByTestId = new Map();
         const rootFolderIds = (state.folders || [])
             .filter((f) => !getFolderParentId(f))
             .map((f) => f.id);
         state.openFolders = new Set(rootFolderIds);
         renderTests();
-        showToast('Тесты загружены');
+        showToast('РўРµСЃС‚С‹ Р·Р°РіСЂСѓР¶РµРЅС‹');
     } catch (e) {
         console.error(e);
         showToast(e.message);
@@ -558,7 +565,7 @@ async function startRun(test) {
     }
 
     const startedAt = new Date().toISOString();
-    showToast(`Запуск теста: ${test.title}`);
+    showToast(`Р—Р°РїСѓСЃРє С‚РµСЃС‚Р°: ${test.title}`);
     try {
         await githubRequest(`/repos/${state.repo}/actions/workflows/${state.workflow}/dispatches`, {
             method: 'POST',
@@ -580,25 +587,87 @@ async function startRun(test) {
         });
         renderTests();
 
-        const run = await waitForRun(startedAt);
-        registerRun(run, test.title, test.id);
+        const run = await waitForRun(startedAt, test.title);
+        if (run) {
+            registerRun(run, test.title, test.id);
+        } else {
+            showToast('Run Р·Р°РїСѓС‰РµРЅ, РїСЂРѕРґРѕР»Р¶Р°СЋ РёСЃРєР°С‚СЊ РµРіРѕ РІ GitHub Actions...');
+            startRunDiscovery(startedAt, test);
+        }
     } catch (e) {
         console.error(e);
         showToast(e.message);
     }
 }
 
-async function waitForRun(startedAt) {
-    const started = new Date(startedAt).getTime();
-    for (let i = 0; i < 10; i += 1) {
-        await delay(2000);
+async function waitForRun(startedAt, testTitle) {
+    for (let i = 0; i < 30; i += 1) {
+        await delay(3000);
         const data = await githubRequest(
-            `/repos/${state.repo}/actions/workflows/${state.workflow}/runs?event=workflow_dispatch&branch=${state.branch}&per_page=20`
+            `/repos/${state.repo}/actions/workflows/${state.workflow}/runs?event=workflow_dispatch&branch=${state.branch}&per_page=50`
         );
-        const run = (data.workflow_runs || []).find((r) => new Date(r.created_at).getTime() >= started - 1500);
+        const run = findRunCandidate(data, startedAt, testTitle);
         if (run) return run;
     }
-    throw new Error('Не удалось найти созданный workflow run.');
+    return null;
+}
+
+function findRunCandidate(data, startedAt, testTitle) {
+    const runs = data.workflow_runs || [];
+    if (!runs.length) return null;
+    const started = new Date(startedAt).getTime();
+    const threshold = started - 10 * 60 * 1000;
+    const title = (testTitle || '').toLowerCase();
+    const filtered = runs.filter((r) => {
+        const created = new Date(r.created_at).getTime();
+        return (
+            r.event === 'workflow_dispatch' &&
+            (!state.branch || r.head_branch === state.branch) &&
+            created >= threshold
+        );
+    });
+    if (!filtered.length) return null;
+    const withTitle = title
+        ? filtered.filter((r) =>
+              ((r.display_title || r.name || '').toLowerCase().includes(title))
+          )
+        : filtered;
+    const list = withTitle.length ? withTitle : filtered;
+    return list.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())[0];
+}
+
+function startRunDiscovery(startedAt, test) {
+    if (state.pendingRunLookups.has(test.id)) return;
+    let tries = 0;
+    const interval = setInterval(async () => {
+        tries += 1;
+        try {
+            const data = await githubRequest(
+                `/repos/${state.repo}/actions/workflows/${state.workflow}/runs?event=workflow_dispatch&branch=${state.branch}&per_page=50`
+            );
+            const run = findRunCandidate(data, startedAt, test.title);
+            if (run) {
+                registerRun(run, test.title, test.id);
+                stopPendingLookup(test.id);
+                return;
+            }
+            if (tries >= 30) {
+                stopPendingLookup(test.id);
+                showToast('Не удалось найти workflow run. Проверьте список запусков в GitHub Actions.');
+            }
+        } catch (e) {
+            console.error(e);
+        }
+    }, 10000);
+    state.pendingRunLookups.set(test.id, interval);
+}
+
+function stopPendingLookup(testId) {
+    const interval = state.pendingRunLookups.get(testId);
+    if (interval) {
+        clearInterval(interval);
+        state.pendingRunLookups.delete(testId);
+    }
 }
 
 function registerRun(run, testTitle, testId) {
@@ -618,6 +687,7 @@ function registerRun(run, testTitle, testId) {
     state.runs.set(run.id, item);
     if (testId) {
         state.latestRunByTestId.set(testId, item);
+        stopPendingLookup(testId);
     }
     renderRuns();
     renderTests();
@@ -652,7 +722,7 @@ function renderRuns() {
         link.href = run.html_url;
         link.target = '_blank';
         link.rel = 'noreferrer';
-        link.textContent = 'Открыть run';
+        link.textContent = 'РћС‚РєСЂС‹С‚СЊ run';
 
         row.append(title, status, link);
         els.runsContainer.appendChild(row);
@@ -716,6 +786,8 @@ function clearRuns() {
         if (r.interval) clearInterval(r.interval);
     });
     state.runs.clear();
+    state.pendingRunLookups.forEach((interval) => clearInterval(interval));
+    state.pendingRunLookups.clear();
     state.latestRunByTestId.clear();
     renderRuns();
     renderTests();
@@ -725,7 +797,7 @@ function bindEvents() {
     els.btnSave.addEventListener('click', () => {
         syncStateFromInputs();
         persistState();
-        showToast('Сохранено');
+        showToast('РЎРѕС…СЂР°РЅРµРЅРѕ');
     });
 
     els.projectSelect.addEventListener('change', (e) => {
@@ -762,3 +834,5 @@ function init() {
 }
 
 init();
+
+
