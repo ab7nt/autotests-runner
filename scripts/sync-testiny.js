@@ -37,19 +37,28 @@ async function fetchProjects() {
     });
 }
 
-async function fetchTests(projectId) {
+async function fetchTestsForFolder(projectId, folderId) {
     let offset = 0;
     let total = 0;
     const acc = [];
 
-    // пагинация, пока не заберём все тесты проекта
-    // если тестов много, PAGE_LIMIT можно увеличить до 1000
+    // Fetch tests per root folder subtree via map to include testcase_folder.
     while (true) {
         const res = await post('/testcase/find', {
             pagination: { offset, limit: PAGE_LIMIT },
             order: [{ column: 'title', order: 'asc' }],
             includeTotalCount: true,
             filter: { project_id: Number(projectId) },
+            map: {
+                entities: ['testcase', 'testcase_folder'],
+                result: 'testcase_folder',
+                resultFilter: {
+                    or: [
+                        { testcase_folder_parent_id: { op: 'in_subtree', value: Number(folderId) } },
+                        { id: Number(folderId) },
+                    ],
+                },
+            },
         });
 
         acc.push(...(res.data || []));
@@ -85,28 +94,6 @@ async function fetchTestFolders(projectId) {
     return { data: acc, totalCount: total };
 }
 
-async function fetchTestFolderMappings(projectId) {
-    let offset = 0;
-    let total = 0;
-    const acc = [];
-    const limit = 2000;
-
-    while (true) {
-        const res = await post('/testcase-folder-testcase-mapping/find', {
-            pagination: { offset, limit },
-            filter: { project_id: Number(projectId) },
-        });
-
-        acc.push(...(res.data || []));
-        total = res.meta?.totalCount ?? acc.length;
-        offset += res.data?.length ?? 0;
-
-        if (offset >= total || !res.data?.length) break;
-    }
-
-    return { data: acc, totalCount: total };
-}
-
 async function main() {
     console.log('Syncing projects...');
     const projects = await fetchProjects();
@@ -124,25 +111,38 @@ async function main() {
 
     for (const project of projects.data || []) {
         console.log(`Syncing tests for project #${project.id} "${project.name}"...`);
-        const tests = await fetchTests(project.id);
         const folders = await fetchTestFolders(project.id);
-        let mappings = { data: [], totalCount: 0 };
-        try {
-            mappings = await fetchTestFolderMappings(project.id);
-        } catch (err) {
-            console.warn(`Failed to fetch folder mappings for project #${project.id}: ${err.message}`);
+        const rootFolders = (folders.data || []).filter((f) => !f.testcase_folder_parent_id);
+        const testsById = new Map();
+        const mappingsByTestId = new Map();
+
+        for (const folder of rootFolders) {
+            const tests = await fetchTestsForFolder(project.id, folder.id);
+            (tests.data || []).forEach((test) => {
+                testsById.set(test.id, test);
+                const folderId = test.testcase_folder?.id;
+                if (folderId && !mappingsByTestId.has(test.id)) {
+                    mappingsByTestId.set(test.id, folderId);
+                }
+            });
         }
+
+        const testsList = Array.from(testsById.values());
+        const mappings = Array.from(mappingsByTestId.entries()).map(([testcase_id, testcase_folder_id]) => ({
+            testcase_id,
+            testcase_folder_id,
+        }));
         const testsPayload = {
             projectId: project.id,
             projectName: project.name,
             generatedAt: new Date().toISOString(),
-            totalCount: tests.totalCount,
-            data: tests.data,
+            totalCount: testsList.length,
+            data: testsList,
             folders: folders.data,
-            folderMappings: mappings.data,
+            folderMappings: mappings,
         };
         fs.writeFileSync(path.join(outDir, `tests-${project.id}.json`), JSON.stringify(testsPayload, null, 2));
-        console.log(`Saved tests-${project.id}.json (${tests.totalCount})`);
+        console.log(`Saved tests-${project.id}.json (${testsList.length})`);
     }
 }
 

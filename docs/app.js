@@ -201,6 +201,7 @@ function getFolderName(folder) {
 function getTestFolderId(test) {
     return (
         test.testcase_folder_id ??
+        test.testcase_folder?.id ??
         test.folder_id ??
         test.testcaseFolderId ??
         state.testFolderMap.get(test.id) ??
