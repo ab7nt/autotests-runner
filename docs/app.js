@@ -343,7 +343,7 @@ function renderFolderNode(folder) {
 
     const caret = document.createElement("span");
     caret.className = "folder__caret";
-    caret.textContent = isOpen ? "?" : "?";
+    caret.textContent = isOpen ? "v" : ">";
 
     const title = document.createElement("span");
     title.className = "folder__title";
@@ -357,7 +357,7 @@ function renderFolderNode(folder) {
     summary.addEventListener("click", () => {
         if (forceOpen) return;
         setTimeout(() => {
-            caret.textContent = details.open ? "?" : "?";
+            caret.textContent = details.open ? "v" : ">";
         }, 0);
     });
     details.appendChild(summary);
@@ -373,7 +373,7 @@ function renderFolderNode(folder) {
     details.addEventListener("toggle", () => {
         if (forceOpen) {
             details.open = true;
-            caret.textContent = "?";
+            caret.textContent = "v";
             return;
         }
         if (details.open) {
@@ -381,7 +381,7 @@ function renderFolderNode(folder) {
         } else {
             state.openFolders.delete(folder.id);
         }
-        caret.textContent = details.open ? "?" : "?";
+        caret.textContent = details.open ? "v" : ">";
     });
 
     return details;
