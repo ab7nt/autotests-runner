@@ -151,6 +151,12 @@ async function githubRequest(path, { method = 'GET', body } = {}) {
 
 function renderProjects() {
     els.projectSelect.innerHTML = '';
+    const placeholder = document.createElement('option');
+    placeholder.value = '';
+    placeholder.textContent = 'Выбрать проект';
+    placeholder.disabled = true;
+    placeholder.selected = !state.projectId;
+    els.projectSelect.appendChild(placeholder);
     state.projects.forEach((p) => {
         const opt = document.createElement('option');
         opt.value = p.id;
@@ -158,9 +164,6 @@ function renderProjects() {
         els.projectSelect.appendChild(opt);
     });
     if (state.projectId) {
-        els.projectSelect.value = state.projectId;
-    } else if (state.projects[0]) {
-        state.projectId = state.projects[0].id;
         els.projectSelect.value = state.projectId;
     }
 }
@@ -291,11 +294,7 @@ function renderTestRow(test) {
     title.className = "test-row__title";
     title.textContent = test.title;
 
-    const badge = document.createElement("span");
-    badge.className = `pill ${automated ? "ok" : "neutral"}`;
-    badge.textContent = automated ? "automated" : "manual";
-
-    left.append(checkbox, title, badge);
+    left.append(checkbox, title);
 
     const action = document.createElement("div");
     action.className = "test-row__actions";
@@ -476,7 +475,18 @@ async function loadProjects() {
         const cached = await fetchCacheJson(`${DATA_BASE}/projects.json`);
         state.projects = cached?.data || [];
         renderProjects();
-        showToast('Проекты из кеша');
+        if (state.projectId) {
+            loadTests();
+        }
+        showToast('??????? ?????????');
+    } catch (e) {
+        console.error(e);
+        showToast(e.message);
+    } finally {
+        setLoading(els.btnLoadProjects, false);
+    }
+}
+        showToast('??????? ?????????');
     } catch (e) {
         console.error(e);
         showToast(e.message);
@@ -487,10 +497,10 @@ async function loadProjects() {
 
 async function loadTests() {
     if (!state.projectId) {
-        showToast('Не выбран проект.');
+        showToast('?? ?????? ??????.');
         return;
     }
-    setLoading(els.btnLoadTests, true, "...");
+    setLoading(els.btnLoadTests, true, "...");, true, "...");
     try {
         const cached = await fetchCacheJson(`${DATA_BASE}/tests-${state.projectId}.json`);
         state.tests = cached?.data || [];
@@ -504,7 +514,7 @@ async function loadTests() {
             .map((f) => f.id);
         state.openFolders = new Set(rootFolderIds);
         renderTests();
-        showToast('Тесты загружены');
+        showToast('????? ?????????');
     } catch (e) {
         console.error(e);
         showToast(e.message);
@@ -673,11 +683,23 @@ function bindEvents() {
     });
 
     els.projectSelect.addEventListener('change', (e) => {
-        state.projectId = e.target.value;
+        const value = e.target.value;
+        state.projectId = value || null;
+        if (!state.projectId) {
+            state.tests = [];
+            state.totalTests = 0;
+            renderTests();
+            return;
+        }
+        loadTests();
     });
 
-    els.btnLoadProjects.addEventListener('click', loadProjects);
-    els.btnLoadTests.addEventListener('click', loadTests);
+    if (els.btnLoadProjects) {
+        els.btnLoadProjects.addEventListener('click', loadProjects);
+    }
+    if (els.btnLoadTests) {
+        els.btnLoadTests.addEventListener('click', loadTests);
+    }
     els.search.addEventListener('input', renderTests);
     els.btnClearRuns.addEventListener('click', clearRuns);
 
@@ -688,7 +710,7 @@ function init() {
     loadStoredState();
     hydrateForm();
     bindEvents();
-    renderProjects();
+    loadProjects();
     renderTests();
     renderRuns();
 }
