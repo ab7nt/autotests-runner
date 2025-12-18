@@ -151,12 +151,6 @@ async function githubRequest(path, { method = 'GET', body } = {}) {
 
 function renderProjects() {
     els.projectSelect.innerHTML = '';
-    const placeholder = document.createElement('option');
-    placeholder.value = '';
-    placeholder.textContent = 'Выбрать проект';
-    placeholder.disabled = true;
-    placeholder.selected = !state.projectId;
-    els.projectSelect.appendChild(placeholder);
     state.projects.forEach((p) => {
         const opt = document.createElement('option');
         opt.value = p.id;
@@ -164,6 +158,11 @@ function renderProjects() {
         els.projectSelect.appendChild(opt);
     });
     if (state.projectId) {
+        els.projectSelect.value = state.projectId;
+        return;
+    }
+    if (state.projects[0]) {
+        state.projectId = state.projects[0].id;
         els.projectSelect.value = state.projectId;
     }
 }
