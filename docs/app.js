@@ -814,7 +814,13 @@ function getSelectedTests() {
 
 function updateSelectionPanelButtons() {
     const hasSelected = state.selectedTests.size > 0;
-    els.btnRunSelected.disabled = !hasSelected || state.bulkRun.active;
+    if (state.bulkRun.active) {
+        els.btnRunSelected.disabled = true;
+        els.btnRunSelected.textContent = 'Running';
+    } else {
+        els.btnRunSelected.disabled = !hasSelected;
+        els.btnRunSelected.textContent = 'Run secected';
+    }
     els.btnStopSelected.disabled = !state.bulkRun.active;
 }
 
@@ -831,20 +837,9 @@ function updateSelectionPanel() {
     let completed = 0;
     let success = 0;
     let failed = 0;
-    let queued = 0;
-    let running = 0;
-
     state.selectedTests.forEach((testId) => {
         const run = state.latestRunByTestId.get(testId);
         if (!run) return;
-        if (run.status === 'queued') {
-            queued += 1;
-            return;
-        }
-        if (run.status === 'in_progress') {
-            running += 1;
-            return;
-        }
         if (run.status === 'completed') {
             completed += 1;
             if ((run.conclusion || '').toLowerCase() === 'success') {
@@ -855,14 +850,11 @@ function updateSelectionPanel() {
         }
     });
 
-    const statusParts = [
+    els.selectionStatus.innerHTML = [
         `Выполнено ${completed} из ${total}`,
-        `Success ${success}`,
-        `Failed ${failed}`,
-        `В очереди ${queued}`,
-        `В работе ${running}`,
-    ];
-    els.selectionStatus.textContent = statusParts.join(' · ');
+        `<span class="status-success">Success ${success}</span>`,
+        `<span class="status-failed">Failed ${failed}</span>`,
+    ].join('<br>');
     els.selectionPanel.classList.add('is-visible');
     updateSelectionPanelButtons();
 }
