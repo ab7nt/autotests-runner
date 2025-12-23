@@ -37,6 +37,11 @@
                     </div>
                     <p class="hint">Токен нужно запросить у прямого руководителя. Хранится локально в браузере, если включено сохранение.</p>
                 </div>
+                <div class="field">
+                    <label for="testiny-key">Testiny API key</label>
+                    <input id="testiny-key" type="password" placeholder="key_xxx" autocomplete="off" />
+                    <p class="hint">Ключ нужен для создания test run и отправки результатов. Хранится локально, если включено сохранение.</p>
+                </div>
                 <div class="field inline">
                     <div>
                         <label for="repo">Репозиторий</label>
@@ -103,7 +108,7 @@
             <button class="primary" id="btn-run-selected">Run secected</button>
             <button class="ghost" id="btn-stop-selected" disabled>Stop</button>
         </div>
-        <p class="selection-panel__hint">Будет создан test run с выбранными тестами.</p>
+        <p class="selection-panel__hint">Будет создан test run в Testiny с выбранными тестами и туда же продублированы результаты.</p>
         <div class="selection-panel__status" id="selection-status">-</div>
     </div>
 
