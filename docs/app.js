@@ -1,6 +1,5 @@
 ﻿const DATA_BASE = 'data';
 const STORAGE_KEY = 'testiny-gh-launcher-v1';
-const TESTINY_API_BASE = 'https://app.testiny.io/api/v1';
 const DEFAULTS = {
     repo: 'ab7nt/HelloPrintAutotests',
     branch: 'main',
@@ -10,7 +9,6 @@ const DEFAULTS = {
 
 const els = {
     ghToken: document.getElementById('gh-token'),
-    testinyKey: document.getElementById('testiny-key'),
     repo: document.getElementById('repo'),
     branch: document.getElementById('branch'),
     workflow: document.getElementById('workflow'),
@@ -37,7 +35,6 @@ const els = {
 
 const state = {
     ghToken: '',
-    testinyKey: '',
     repo: DEFAULTS.repo,
     branch: DEFAULTS.branch,
     workflow: DEFAULTS.workflow,
@@ -59,9 +56,8 @@ const state = {
     bulkRun: {
         active: false,
         stopRequested: false,
-        testRunId: null,
-        testRunTests: new Set(),
-        updatedTestIds: new Set(),
+        runId: null,
+        discoveryInterval: null,
     },
 };
 
@@ -93,7 +89,6 @@ function persistState() {
 
     if (state.remember) {
         payload.ghToken = state.ghToken;
-        payload.testinyKey = state.testinyKey;
     }
 
     localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
@@ -101,9 +96,6 @@ function persistState() {
 
 function hydrateForm() {
     els.ghToken.value = state.ghToken;
-    if (els.testinyKey) {
-        els.testinyKey.value = state.testinyKey;
-    }
     els.repo.value = state.repo;
     els.branch.value = state.branch;
     els.workflow.value = state.workflow;
@@ -134,9 +126,6 @@ function togglePassword(input, btn) {
 
 function syncStateFromInputs() {
     state.ghToken = els.ghToken.value.trim();
-    if (els.testinyKey) {
-        state.testinyKey = els.testinyKey.value.trim();
-    }
     state.repo = els.repo.value.trim() || DEFAULTS.repo;
     state.branch = els.branch.value.trim() || DEFAULTS.branch;
     state.workflow = els.workflow.value.trim() || DEFAULTS.workflow;
@@ -147,10 +136,6 @@ function syncStateFromInputs() {
 function requireTokens() {
     if (!state.ghToken) throw new Error('Добавьте GitHub token.');
     if (!state.repo) throw new Error('Укажите репозиторий owner/repo.');
-}
-
-function requireTestinyKey() {
-    if (!state.testinyKey) throw new Error('Добавьте Testiny API key.');
 }
 
 async function githubRequest(path, { method = 'GET', body } = {}) {
@@ -177,25 +162,6 @@ async function githubRequest(path, { method = 'GET', body } = {}) {
     }
 
     if (res.status === 204) return null;
-    return res.json();
-}
-
-async function testinyRequest(endpoint, body, { method = 'POST' } = {}) {
-    if (!state.testinyKey) throw new Error('Сначала введите Testiny API key.');
-
-    const res = await fetch(`${TESTINY_API_BASE}${endpoint}`, {
-        method,
-        headers: {
-            'Content-Type': 'application/json',
-            'X-Api-Key': state.testinyKey,
-        },
-        body: JSON.stringify(body),
-    });
-
-    if (!res.ok) {
-        const text = await res.text();
-        throw new Error(`Testiny ${res.status}: ${text}`);
-    }
     return res.json();
 }
 
@@ -658,11 +624,11 @@ async function dispatchRun(test, waitForLookup) {
     }
 }
 
-async function waitForRun(startedAt, testTitle) {
+async function waitForRun(startedAt, testTitle, workflow = state.workflow) {
     for (let i = 0; i < 30; i += 1) {
         await delay(3000);
         const data = await githubRequest(
-            `/repos/${state.repo}/actions/workflows/${state.workflow}/runs?event=workflow_dispatch&branch=${state.branch}&per_page=50`
+            `/repos/${state.repo}/actions/workflows/${workflow}/runs?event=workflow_dispatch&branch=${state.branch}&per_page=50`
         );
         const run = findRunCandidate(data, startedAt, testTitle);
         if (run) return run;
@@ -728,7 +694,7 @@ function stopPendingLookup(testId) {
     }
 }
 
-function registerRun(run, testTitle, testId) {
+function registerRun(run, testTitle, testId, extra = {}) {
     const existing = state.runs.get(run.id);
     if (existing?.interval) clearInterval(existing.interval);
 
@@ -740,12 +706,17 @@ function registerRun(run, testTitle, testId) {
         testTitle,
         created_at: run.created_at,
         testId,
+        ...extra,
     };
 
     state.runs.set(run.id, item);
     if (testId) {
         state.latestRunByTestId.set(testId, item);
         stopPendingLookup(testId);
+    }
+    if (extra.isBulk) {
+        stopBulkRunDiscovery();
+        state.bulkRun.runId = run.id;
     }
     renderRuns();
     renderTests();
@@ -823,13 +794,10 @@ function startPolling(runId) {
             if (data.status === 'completed') {
                 const current = state.runs.get(runId);
                 clearInterval(current.interval);
-                if (updated.testId) {
-                    try {
-                        await updateTestinyResult(updated.testId, updated);
-                    } catch (e) {
-                        console.error(e);
-                        showToast(e.message);
-                    }
+                if (updated.isBulk) {
+                    state.bulkRun.active = false;
+                    state.bulkRun.runId = null;
+                    updateSelectionPanelButtons();
                 }
                 showToast(`Run #${runId}: ${data.conclusion || 'completed'}`);
             }
@@ -856,6 +824,9 @@ function clearRuns() {
     state.pendingRunLookups.forEach((interval) => clearInterval(interval));
     state.pendingRunLookups.clear();
     state.latestRunByTestId.clear();
+    stopBulkRunDiscovery();
+    state.bulkRun.active = false;
+    state.bulkRun.runId = null;
     renderRuns();
     renderTests();
 }
@@ -930,7 +901,6 @@ async function startSelectedRuns() {
     syncStateFromInputs();
     try {
         requireTokens();
-        requireTestinyKey();
     } catch (e) {
         showToast(e.message);
         return;
@@ -938,107 +908,87 @@ async function startSelectedRuns() {
 
     state.bulkRun.active = true;
     state.bulkRun.stopRequested = false;
-    state.bulkRun.updatedTestIds = new Set();
     updateSelectionPanelButtons();
 
     try {
-        const testRunId = await createTestRun(selected);
-        state.bulkRun.testRunId = testRunId;
-        state.bulkRun.testRunTests = new Set(selected.map((test) => test.id));
+        await dispatchBulkRun(selected);
     } catch (e) {
         console.error(e);
         showToast(e.message);
         state.bulkRun.active = false;
         updateSelectionPanelButtons();
-        return;
     }
-
-    for (const test of selected) {
-        if (state.bulkRun.stopRequested) break;
-        if (!isAutomated(test)) continue;
-        try {
-            await dispatchRun(test, false);
-        } catch (e) {
-            console.error(e);
-            showToast(e.message);
-        }
-        await delay(350);
-    }
-
-    state.bulkRun.active = false;
-    updateSelectionPanelButtons();
 }
 
 function stopSelectedRuns() {
     state.bulkRun.stopRequested = true;
 }
 
-function formatRunTitle(date) {
-    const pad = (value) => String(value).padStart(2, '0');
-    const day = pad(date.getDate());
-    const month = pad(date.getMonth() + 1);
-    const year = String(date.getFullYear()).slice(-2);
-    const hours = pad(date.getHours());
-    const minutes = pad(date.getMinutes());
-    const seconds = pad(date.getSeconds());
-    return `Autocreated test run ${day}.${month}.${year} ${hours}:${minutes}:${seconds}`;
-}
+async function dispatchBulkRun(selectedTests) {
+    const startedAt = new Date().toISOString();
+    const testsPayload = selectedTests.map((test) => ({
+        id: test.id,
+        title: test.title,
+    }));
 
-async function createTestRun(selectedTests) {
-    const title = formatRunTitle(new Date());
-    const payload = {
-        title,
-        project_id: Number(state.projectId),
-        description: 'Создано через API',
-    };
-    const run = await testinyRequest('/testrun', payload);
-    const testRunId = run?.id;
-    if (!testRunId) {
-        throw new Error('Не удалось создать test run в Testiny.');
+    await githubRequest(`/repos/${state.repo}/actions/workflows/testiny-bulk-run.yml/dispatches`, {
+        method: 'POST',
+        body: JSON.stringify({
+            ref: state.branch || 'main',
+            inputs: {
+                tests_json: JSON.stringify(testsPayload),
+                project_id: String(state.projectId || ''),
+                environment: state.environment || 'staging',
+                tests_count: String(testsPayload.length),
+            },
+        }),
+    });
+
+    showToast(`Bulk run запущен: ${testsPayload.length} тестов`);
+
+    const run = await waitForRun(startedAt, 'bulk run', 'testiny-bulk-run.yml');
+    if (run) {
+        registerRun(run, `Bulk run (${testsPayload.length} tests)`, null, { isBulk: true });
+        return;
     }
 
-    const mappingPayload = selectedTests.map((test) => ({
-        ids: {
-            testcase_id: test.id,
-            testrun_id: testRunId,
-        },
-        mapped: {
-            result_status: 'NOTRUN',
-        },
-    }));
-    await testinyRequest('/testrun/mapping/bulk/testcase:testrun?op=add_or_update', mappingPayload);
-    showToast(`Test run создан: ${title}`);
-    return testRunId;
+    showToast('Run запущен, продолжаю искать его в GitHub Actions...');
+    startBulkRunDiscovery(startedAt, testsPayload.length);
 }
 
-function mapConclusionToStatus(conclusion) {
-    const val = (conclusion || '').toLowerCase();
-    if (val === 'success') return 'PASSED';
-    if (val === 'cancelled') return 'BLOCKED';
-    if (val === 'skipped' || val === 'neutral') return 'NOTRUN';
-    return 'FAILED';
+function startBulkRunDiscovery(startedAt, testsCount) {
+    if (state.bulkRun.discoveryInterval) return;
+    let tries = 0;
+    const interval = setInterval(async () => {
+        tries += 1;
+        try {
+            const data = await githubRequest(
+                `/repos/${state.repo}/actions/workflows/testiny-bulk-run.yml/runs?event=workflow_dispatch&branch=${state.branch}&per_page=50`
+            );
+            const run = findRunCandidate(data, startedAt, 'bulk run');
+            if (run) {
+                registerRun(run, `Bulk run (${testsCount} tests)`, null, { isBulk: true });
+                stopBulkRunDiscovery();
+                return;
+            }
+            if (tries >= 30) {
+                stopBulkRunDiscovery();
+                state.bulkRun.active = false;
+                updateSelectionPanelButtons();
+                showToast('Не удалось найти workflow run. Проверьте список запусков в GitHub Actions.');
+            }
+        } catch (e) {
+            console.error(e);
+        }
+    }, 10000);
+    state.bulkRun.discoveryInterval = interval;
 }
 
-async function updateTestinyResult(testId, run) {
-    if (!state.bulkRun.testRunId || !state.bulkRun.testRunTests.has(testId)) return;
-    if (state.bulkRun.updatedTestIds.has(testId)) return;
-    const resultStatus = mapConclusionToStatus(run.conclusion);
-    const link = run.html_url ? `<a href="${run.html_url}">Actions run</a>` : '';
-    const comment = `Автоматически пройденны тест. Подробнее ${link}`.trim();
-    const payload = [
-        {
-            ids: {
-                testcase_id: testId,
-                testrun_id: state.bulkRun.testRunId,
-            },
-            mapped: {
-                result_status: resultStatus,
-                comment,
-            },
-        },
-    ];
-    await testinyRequest('/testrun/mapping/bulk/testcase:testrun?op=update', payload);
-    state.bulkRun.updatedTestIds.add(testId);
+function stopBulkRunDiscovery() {
+    if (state.bulkRun.discoveryInterval) {
+        clearInterval(state.bulkRun.discoveryInterval);
+        state.bulkRun.discoveryInterval = null;
+    }
 }
 
 function bindEvents() {
