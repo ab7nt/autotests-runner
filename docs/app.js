@@ -275,7 +275,7 @@ function collectFolderTests(folder, acc = []) {
 }
 
 function folderSelectionState(folder, testsCache) {
-    const tests = testsCache || collectFolderTests(folder, []);
+    const tests = (testsCache || collectFolderTests(folder, [])).filter(isAutomated);
     if (!tests.length) return "none";
     const selected = tests.filter((t) => state.selectedTests.has(t.id)).length;
     if (selected === 0) return "none";
@@ -296,17 +296,22 @@ function renderTestRow(test) {
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.checked = state.selectedTests.has(test.id);
-    checkbox.addEventListener("change", (e) => {
-        if (e.target.checked) {
-            state.selectedTests.add(test.id);
-        } else {
-            state.selectedTests.delete(test.id);
-        }
-        renderTests();
-    });
+    checkbox.id = `test-${test.id}`;
+    checkbox.disabled = !automated;
+    if (automated) {
+        checkbox.addEventListener("change", (e) => {
+            if (e.target.checked) {
+                state.selectedTests.add(test.id);
+            } else {
+                state.selectedTests.delete(test.id);
+            }
+            renderTests();
+        });
+    }
 
-    const title = document.createElement("span");
+    const title = document.createElement("label");
     title.className = "test-row__title";
+    title.setAttribute("for", checkbox.id);
     title.textContent = test.title;
 
     const status = renderTestStatus(test.id);
@@ -363,15 +368,16 @@ function renderFolderNode(folder) {
     summary.className = "folder__header";
 
     const folderTests = collectFolderTests(folder, []);
+    const automatedTests = folderTests.filter(isAutomated);
 
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
-    const selection = folderSelectionState(folder, folderTests);
+    const selection = folderSelectionState(folder, automatedTests);
     checkbox.checked = selection === "all";
     checkbox.indeterminate = selection === "partial";
     checkbox.addEventListener("click", (e) => e.stopPropagation());
     checkbox.addEventListener("change", (e) => {
-        folderTests.forEach((t) => {
+        automatedTests.forEach((t) => {
             if (e.target.checked) {
                 state.selectedTests.add(t.id);
             } else {
@@ -433,16 +439,18 @@ function renderRootTests(tests) {
     const block = document.createElement("div");
     block.className = "folder folder--root";
 
+    const automatedTests = tests.filter(isAutomated);
+
     const header = document.createElement("div");
     header.className = "folder__header folder__header--root";
 
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
-    const selected = tests.filter((t) => state.selectedTests.has(t.id)).length;
-    checkbox.checked = selected > 0 && selected === tests.length;
-    checkbox.indeterminate = selected > 0 && selected < tests.length;
+    const selected = automatedTests.filter((t) => state.selectedTests.has(t.id)).length;
+    checkbox.checked = selected > 0 && selected === automatedTests.length;
+    checkbox.indeterminate = selected > 0 && selected < automatedTests.length;
     checkbox.addEventListener("change", (e) => {
-        tests.forEach((t) => {
+        automatedTests.forEach((t) => {
             if (e.target.checked) {
                 state.selectedTests.add(t.id);
             } else {
@@ -830,7 +838,7 @@ function updateSelectionPanelButtons() {
         els.btnRunSelected.textContent = 'Running';
     } else {
         els.btnRunSelected.disabled = !hasSelected;
-        els.btnRunSelected.textContent = 'Run secected';
+        els.btnRunSelected.textContent = `Run selected (${state.selectedTests.size})`;
     }
     els.btnStopSelected.disabled = !state.bulkRun.active;
 }
