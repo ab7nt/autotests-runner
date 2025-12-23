@@ -812,9 +812,20 @@ function getSelectedTests() {
     return state.tests.filter((test) => state.selectedTests.has(test.id));
 }
 
+function hasActiveSelectedRuns() {
+    for (const testId of state.selectedTests) {
+        const run = state.latestRunByTestId.get(testId);
+        if (run && run.status !== 'completed') {
+            return true;
+        }
+    }
+    return false;
+}
+
 function updateSelectionPanelButtons() {
     const hasSelected = state.selectedTests.size > 0;
-    if (state.bulkRun.active) {
+    const isRunning = state.bulkRun.active || hasActiveSelectedRuns();
+    if (isRunning) {
         els.btnRunSelected.disabled = true;
         els.btnRunSelected.textContent = 'Running';
     } else {
@@ -850,11 +861,11 @@ function updateSelectionPanel() {
         }
     });
 
-    els.selectionStatus.innerHTML = [
-        `Выполнено ${completed} из ${total}`,
-        `<span class="status-success">Success ${success}</span>`,
-        `<span class="status-failed">Failed ${failed}</span>`,
-    ].join('<br>');
+    els.selectionStatus.innerHTML = `
+        <div>Выполнено ${completed} из ${total}</div>
+        <div class="status-success">Success ${success}</div>
+        <div class="status-failed">Failed ${failed}</div>
+    `;
     els.selectionPanel.classList.add('is-visible');
     updateSelectionPanelButtons();
 }
