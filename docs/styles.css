@@ -521,6 +521,52 @@ button.is-busy {
     opacity: 1;
 }
 
+.selection-panel {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 320px;
+    padding: 14px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: linear-gradient(140deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 10;
+}
+
+.selection-panel.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.selection-panel__actions {
+    display: flex;
+    gap: 8px;
+}
+
+.selection-panel__actions button {
+    flex: 1;
+}
+
+.selection-panel__hint {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.selection-panel__status {
+    font-size: 13px;
+    font-weight: 600;
+}
+
 @media (max-width: 640px) {
     .hero {
         flex-direction: column;
@@ -529,5 +575,12 @@ button.is-busy {
     .run {
         grid-template-columns: 1fr;
         align-items: flex-start;
+    }
+
+    .selection-panel {
+        left: 16px;
+        right: 16px;
+        width: auto;
+        bottom: 16px;
     }
 }

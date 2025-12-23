@@ -27,6 +27,10 @@ const els = {
     testsMeta: document.getElementById('tests-meta'),
     btnClearRuns: document.getElementById('btn-clear-runs'),
     toggleGh: document.getElementById('toggle-gh-visibility'),
+    selectionPanel: document.getElementById('selection-panel'),
+    btnRunSelected: document.getElementById('btn-run-selected'),
+    btnStopSelected: document.getElementById('btn-stop-selected'),
+    selectionStatus: document.getElementById('selection-status'),
 };
 
 const state = {
@@ -49,6 +53,10 @@ const state = {
     openFolders: new Set(),
     selectedTests: new Set(),
     searchQuery: '',
+    bulkRun: {
+        active: false,
+        stopRequested: false,
+    },
 };
 
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
@@ -475,6 +483,7 @@ function renderTests() {
     if (!items.length) {
         els.testsEmpty.style.display = "block";
         updateTestsMeta(0);
+        updateSelectionPanel();
         return;
     }
     els.testsEmpty.style.display = "none";
@@ -489,6 +498,7 @@ function renderTests() {
     els.testsContainer.appendChild(fragment);
 
     updateTestsMeta(items.length);
+    updateSelectionPanel();
 }
 
 function isAutomated(test) {
@@ -560,29 +570,38 @@ async function startRun(test) {
         return;
     }
 
+    try {
+        await dispatchRun(test, true);
+    } catch (e) {
+        console.error(e);
+        showToast(e.message);
+    }
+}
+
+async function dispatchRun(test, waitForLookup) {
     const startedAt = new Date().toISOString();
     showToast(`Запуск теста: ${test.title}`);
-    try {
-        await githubRequest(`/repos/${state.repo}/actions/workflows/${state.workflow}/dispatches`, {
-            method: 'POST',
-            body: JSON.stringify({
-                ref: state.branch || 'main',
-                inputs: {
-                    test_name: test.title,
-                    environment: state.environment || 'staging',
-                },
-            }),
-        });
+    await githubRequest(`/repos/${state.repo}/actions/workflows/${state.workflow}/dispatches`, {
+        method: 'POST',
+        body: JSON.stringify({
+            ref: state.branch || 'main',
+            inputs: {
+                test_name: test.title,
+                environment: state.environment || 'staging',
+            },
+        }),
+    });
 
-        state.latestRunByTestId.set(test.id, {
-            status: "queued",
-            conclusion: null,
-            testTitle: test.title,
-            created_at: startedAt,
-            testId: test.id,
-        });
-        renderTests();
+    state.latestRunByTestId.set(test.id, {
+        status: "queued",
+        conclusion: null,
+        testTitle: test.title,
+        created_at: startedAt,
+        testId: test.id,
+    });
+    renderTests();
 
+    if (waitForLookup) {
         const run = await waitForRun(startedAt, test.title);
         if (run) {
             registerRun(run, test.title, test.id);
@@ -590,9 +609,8 @@ async function startRun(test) {
             showToast('Run запущен, продолжаю искать его в GitHub Actions...');
             startRunDiscovery(startedAt, test);
         }
-    } catch (e) {
-        console.error(e);
-        showToast(e.message);
+    } else {
+        startRunDiscovery(startedAt, test);
     }
 }
 
@@ -723,6 +741,7 @@ function renderRuns() {
         row.append(title, status, link);
         els.runsContainer.appendChild(row);
     });
+    updateSelectionPanel();
 }
 
 function statusClass(run) {
@@ -789,6 +808,102 @@ function clearRuns() {
     renderTests();
 }
 
+function getSelectedTests() {
+    return state.tests.filter((test) => state.selectedTests.has(test.id));
+}
+
+function updateSelectionPanelButtons() {
+    const hasSelected = state.selectedTests.size > 0;
+    els.btnRunSelected.disabled = !hasSelected || state.bulkRun.active;
+    els.btnStopSelected.disabled = !state.bulkRun.active;
+}
+
+function updateSelectionPanel() {
+    if (!els.selectionPanel) return;
+    const total = state.selectedTests.size;
+    if (total === 0) {
+        els.selectionPanel.classList.remove('is-visible');
+        els.selectionStatus.textContent = '-';
+        updateSelectionPanelButtons();
+        return;
+    }
+
+    let completed = 0;
+    let success = 0;
+    let failed = 0;
+    let queued = 0;
+    let running = 0;
+
+    state.selectedTests.forEach((testId) => {
+        const run = state.latestRunByTestId.get(testId);
+        if (!run) return;
+        if (run.status === 'queued') {
+            queued += 1;
+            return;
+        }
+        if (run.status === 'in_progress') {
+            running += 1;
+            return;
+        }
+        if (run.status === 'completed') {
+            completed += 1;
+            if ((run.conclusion || '').toLowerCase() === 'success') {
+                success += 1;
+            } else {
+                failed += 1;
+            }
+        }
+    });
+
+    const statusParts = [
+        `Выполнено ${completed} из ${total}`,
+        `Success ${success}`,
+        `Failed ${failed}`,
+        `В очереди ${queued}`,
+        `В работе ${running}`,
+    ];
+    els.selectionStatus.textContent = statusParts.join(' · ');
+    els.selectionPanel.classList.add('is-visible');
+    updateSelectionPanelButtons();
+}
+
+async function startSelectedRuns() {
+    if (state.bulkRun.active) return;
+    const selected = getSelectedTests();
+    if (!selected.length) return;
+
+    syncStateFromInputs();
+    try {
+        requireTokens();
+    } catch (e) {
+        showToast(e.message);
+        return;
+    }
+
+    state.bulkRun.active = true;
+    state.bulkRun.stopRequested = false;
+    updateSelectionPanelButtons();
+
+    for (const test of selected) {
+        if (state.bulkRun.stopRequested) break;
+        if (!isAutomated(test)) continue;
+        try {
+            await dispatchRun(test, false);
+        } catch (e) {
+            console.error(e);
+            showToast(e.message);
+        }
+        await delay(350);
+    }
+
+    state.bulkRun.active = false;
+    updateSelectionPanelButtons();
+}
+
+function stopSelectedRuns() {
+    state.bulkRun.stopRequested = true;
+}
+
 function bindEvents() {
     els.btnSave.addEventListener('click', () => {
         syncStateFromInputs();
@@ -818,6 +933,12 @@ function bindEvents() {
     els.btnClearRuns.addEventListener('click', clearRuns);
 
     els.toggleGh.addEventListener('click', () => togglePassword(els.ghToken, els.toggleGh));
+    if (els.btnRunSelected) {
+        els.btnRunSelected.addEventListener('click', startSelectedRuns);
+    }
+    if (els.btnStopSelected) {
+        els.btnStopSelected.addEventListener('click', stopSelectedRuns);
+    }
 }
 
 function init() {

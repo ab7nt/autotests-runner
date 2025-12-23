@@ -98,6 +98,15 @@
         </section>
     </div>
 
+    <div id="selection-panel" class="selection-panel">
+        <div class="selection-panel__actions">
+            <button class="primary" id="btn-run-selected">Run secected</button>
+            <button class="ghost" id="btn-stop-selected" disabled>Stop</button>
+        </div>
+        <p class="selection-panel__hint">Будет создан test run с выбранными тестами.</p>
+        <div class="selection-panel__status" id="selection-status">-</div>
+    </div>
+
     <div id="toast" class="toast"></div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
