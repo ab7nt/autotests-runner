@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-17T13:00:01.525Z",
+  "generatedAt": "2026-03-17T18:54:41.985Z",
   "totalCount": 5,
   "data": [
     {
@@ -14,7 +14,9 @@
       "owner_user_id": 23476,
       "name": "copy.ru",
       "project_key": "COPY",
-      "description": ""
+      "description": "",
+      "is_archived": false,
+      "quota": null
     },
     {
       "id": 4,
@@ -28,7 +30,9 @@
       "owner_user_id": 23476,
       "name": "HelloPrint",
       "project_key": "HP",
-      "description": ""
+      "description": "",
+      "is_archived": false,
+      "quota": null
     },
     {
       "id": 5,
@@ -42,7 +46,9 @@
       "owner_user_id": 23476,
       "name": "HelloPrint API",
       "project_key": "HPAPI",
-      "description": ""
+      "description": "",
+      "is_archived": false,
+      "quota": null
     },
     {
       "id": 3,
@@ -56,7 +62,9 @@
       "owner_user_id": 23476,
       "name": "litera.studio",
       "project_key": "LITER",
-      "description": ""
+      "description": "",
+      "is_archived": false,
+      "quota": null
     },
     {
       "id": 1,
@@ -70,7 +78,9 @@
       "owner_user_id": 23476,
       "name": "mdmprint.ru",
       "project_key": "MDM",
-      "description": ""
+      "description": "",
+      "is_archived": false,
+      "quota": null
     }
   ]
 }
